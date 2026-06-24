@@ -3,58 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAARD TV | Portal Oficial</title>
+    <title>ZAARD TV | Portal Centralizado</title>
     <style>
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
             margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+            text-align: center;
+            color: white;
+            /* Fondo con la IPFS que proporcionaste */
+            background: url('https://ipfs.io/ipfs/bafybeidnbe4knxriwgp3hjnpupozk5xg6f75xvvhuottvudryqmxvsrleu') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #000;
         }
-        h1 {
-            color: #00ffcc;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #cccccc;
-            margin-bottom: 30px;
-        }
-        .menu {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        .btn {
-            background-color: #1e1e1e;
-            color: #00ffcc;
-            border: 2px solid #00ffcc;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-            width: 250px;
-        }
-        .btn:hover {
-            background-color: #00ffcc;
-            color: #121212;
-        }
+        h1 { color: #00ffcc; text-shadow: 2px 2px 4px #000; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 800px; margin: 20px auto; }
+        .btn { background: rgba(0, 0, 0, 0.7); border: 1px solid #00ffcc; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #00ffcc; color: black; }
+        .swap-section { background: rgba(0, 0, 0, 0.85); padding: 20px; border-radius: 15px; margin: 20px auto; max-width: 500px; border: 2px solid #00ffcc; }
     </style>
 </head>
 <body>
 
     <h1>ZAARD TV</h1>
-    <p>Portal centralizado de recursos financieros y entretenimiento Web3.</p>
+    
+    <h3>Canales en Vivo</h3>
+    <div class="grid">
+        <a href="#" class="btn">🎵 Música</a>
+        <a href="#" class="btn">⚽ Deportes</a>
+        <a href="#" class="btn">📰 Noticias</a>
+        <a href="#" class="btn">📺 Comiquitas</a>
+        <a href="#" class="btn">🎬 Cine</a>
+        <a href="#" class="btn">🎮 Gaming Live</a>
+    </div>
 
-    <div class="menu">
-        <!-- Aquí añadirás tus futuros juegos y enlaces -->
-        <a href="#" class="btn">TV en vivo</a>
-        <a href="#" class="btn">Golden Run</a>
-        <a href="#" class="btn">Recursos Financieros</a>
+    <div class="swap-section">
+        <h3>Intercambio ZAARD</h3>
+        <p>Contrato: <code>0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65</code></p>
+        <p>Aceptamos: USDT, BNB, BTC, SOL, MATIC, ETH</p>
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn" style="display:block;">Ir al Swap (PancakeSwap)</a>
+    </div>
+
+    <div class="grid">
+        <a href="https://figueredo56.github.io/zaard-official/" class="btn">Web Oficial</a>
+        <a href="https://figueredo56.github.io/ZAARD-Arcade/index-menu.html" class="btn">Menu de Juegos</a>
     </div>
 
 </body>
