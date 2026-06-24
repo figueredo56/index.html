@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAARD TV | Ecosistema Multimedia</title>
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+    <style>
+        body { background: #0f172a; color: white; font-family: sans-serif; margin: 0; padding: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: #1e293b; padding: 15px; border-radius: 15px; border: 2px solid #d946ef; }
+        .nav-buttons { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+        .btn { padding: 10px 20px; background: #d946ef; color: white; text-decoration: none; border-radius: 20px; font-weight: bold; }
+        .video-js { width: 100%; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1 style="color: #d946ef;">ZAARD TV LIVE</h1>
+    <p>Bienvenido al Centro de Entretenimiento de ZAARD Innovation</p>
+</div>
+
+<div class="nav-buttons">
+    <a href="https://figueredo56.github.io/" class="btn">WEB OFICIAL</a>
+    <a href="https://t.me/+_wtm4sRxTB1lZjcx" class="btn" style="background:#3b82f6;">COMUNIDAD</a>
+    <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x3468ea4e6ce13ec4c7f86511e649e3557e002446" class="btn" style="background:#f59e0b;">COMPRAR ZAARD</a>
+</div>
+
+<div class="grid-container">
+    <div class="card">
+        <h3>Música 24/7</h3>
+        <video id="vid1" class="video-js vjs-default-skin" controls preload="auto" height="264">
+            <source src="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" type="application/x-mpegURL">
+        </video>
+    </div>
+
+    <div class="card">
+        <h3>Noticias en Vivo</h3>
+        <video id="vid2" class="video-js vjs-default-skin" controls preload="auto" height="264">
+            <source src="https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8" type="application/x-mpegURL">
+        </video>
+    </div>
+</div>
+
+<script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+</body>
+</html>
