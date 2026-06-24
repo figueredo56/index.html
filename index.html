@@ -3,50 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAARD TV | Portal Centralizado</title>
+    <title>ZAARD TV | LIVE</title>
     <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: sans-serif;
-            text-align: center;
-            color: white;
-            /* Fondo con la IPFS que proporcionaste */
-            background: url('https://ipfs.io/ipfs/bafybeidnbe4knxriwgp3hjnpupozk5xg6f75xvvhuottvudryqmxvsrleu') no-repeat center center fixed;
-            background-size: cover;
-            background-color: #000;
-        }
-        h1 { color: #00ffcc; text-shadow: 2px 2px 4px #000; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 800px; margin: 20px auto; }
-        .btn { background: rgba(0, 0, 0, 0.7); border: 1px solid #00ffcc; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
-        .btn:hover { background: #00ffcc; color: black; }
-        .swap-section { background: rgba(0, 0, 0, 0.85); padding: 20px; border-radius: 15px; margin: 20px auto; max-width: 500px; border: 2px solid #00ffcc; }
+        body { margin: 0; background: #000; color: white; font-family: sans-serif; text-align: center; }
+        .video-container { margin: 20px auto; max-width: 600px; }
+        iframe { width: 100%; height: 300px; border-radius: 10px; border: 2px solid #00ffcc; }
+        .menu { display: flex; overflow-x: auto; gap: 10px; padding: 10px; }
+        .btn { background: #1e1e1e; color: #00ffcc; border: 1px solid #00ffcc; padding: 10px 20px; text-decoration: none; border-radius: 5px; white-space: nowrap; }
     </style>
 </head>
 <body>
 
-    <h1>ZAARD TV</h1>
-    
-    <h3>Canales en Vivo</h3>
-    <div class="grid">
-        <a href="#" class="btn">🎵 Música</a>
-        <a href="#" class="btn">⚽ Deportes</a>
-        <a href="#" class="btn">📰 Noticias</a>
-        <a href="#" class="btn">📺 Comiquitas</a>
-        <a href="#" class="btn">🎬 Cine</a>
-        <a href="#" class="btn">🎮 Gaming Live</a>
+    <h1>ZAARD TV - Tendencias</h1>
+
+    <!-- El video principal -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/live_stream?channel=UCtJb5d2W38Z8w5P9Q9q8-Sw" frameborder="0" allowfullscreen></iframe>
+        <p>Transmisión en vivo</p>
     </div>
 
-    <div class="swap-section">
-        <h3>Intercambio ZAARD</h3>
-        <p>Contrato: <code>0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65</code></p>
-        <p>Aceptamos: USDT, BNB, BTC, SOL, MATIC, ETH</p>
-        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn" style="display:block;">Ir al Swap (PancakeSwap)</a>
+    <!-- Menú de navegación rápida -->
+    <div class="menu">
+        <a href="https://www.youtube.com/@LofiGirl" class="btn">🎵 Música 24/7</a>
+        <a href="https://www.youtube.com/@SkyNews" class="btn">📰 Noticias</a>
+        <a href="https://www.youtube.com/@IGN" class="btn">🎮 Gaming</a>
+        <a href="https://www.youtube.com/@NASA" class="btn">🚀 Ciencia</a>
     </div>
 
-    <div class="grid">
-        <a href="https://figueredo56.github.io/zaard-official/" class="btn">Web Oficial</a>
-        <a href="https://figueredo56.github.io/ZAARD-Arcade/index-menu.html" class="btn">Menu de Juegos</a>
+    <!-- Sección de Swap y Web -->
+    <div style="padding: 20px;">
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn" style="background:#00ffcc; color:#000;">COMPRAR ZAARD</a>
+        <br><br>
+        <a href="https://figueredo56.github.io/ZAARD-Arcade/index-menu.html" class="btn">Juegos Arcade</a>
     </div>
 
 </body>
