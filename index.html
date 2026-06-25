@@ -10,7 +10,7 @@
         /* Carrusel superior */
         .marquee-container { width: 100%; overflow: hidden; margin: 15px 0; border-top: 1px solid #800080; border-bottom: 1px solid #800080; padding: 10px 0; background: rgba(0,0,0,0.5); }
         .marquee { display: flex; white-space: nowrap; animation: scroll 20s linear infinite; gap: 20px; align-items: center; }
-        .marquee img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid #00ffcc; object-fit: cover; flex-shrink: 0; }
+        .marquee img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid #00ffcc; object-fit: cover; flex-shrink: 0; display: block; }
         @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
 
         /* Botón Token */
@@ -18,9 +18,12 @@
         .btn-token { display: block; width: 130px; height: 130px; margin: 0 auto; border-radius: 50%; border: 4px solid #fff; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; background-size: cover; animation: pulse 1.5s infinite; }
         .token-label { display: block; margin-top: 10px; font-weight: bold; font-size: 1.3em; animation: blink-text 1.5s infinite; text-decoration: none; }
 
+        /* Sección Vídeo */
+        .video-container { max-width: 600px; margin: 20px auto; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; }
+
         /* Sección Swap */
         .swap-section { background: url('https://ipfs.io/ipfs/bafybeiby2hij6rb775xb4jqdguxvpqjkvhnacsjbqwb6lzjcwuglj6frse') no-repeat center center; background-size: cover; padding: 30px; border-radius: 20px; margin: 20px auto; max-width: 500px; border: 3px solid #800080; }
-        .contract-text { color: white; font-weight: bold; font-size: 1em; margin: 10px 0; background: rgba(0,0,0,0.4); padding: 5px; border-radius: 5px; }
+        .contract-text { color: white; font-weight: bold; font-size: 1em; margin: 10px 0; background: rgba(0,0,0,0.4); padding: 5px; border-radius: 5px; word-break: break-all; }
         .swap-info { color: #00ff00; font-weight: bold; font-size: 1.2em; text-shadow: 2px 2px 4px #000; }
         
         .btn-go-pancake { display: block; width: 180px; height: 180px; margin: 15px auto; background: url('https://ipfs.io/ipfs/bafybeiakl2nuugolggppxfttwcxfsv56zsjms4ityd5vjyyd54ctirzaeq') no-repeat center center; background-size: contain; border: none; }
@@ -38,7 +41,6 @@
 </head>
 <body>
 
-    <!-- Carrusel de imágenes visual -->
     <div class="marquee-container">
         <div class="marquee">
             <img src="https://ipfs.io/ipfs/bafybeifqlutpp6fq4se2qtmg2i7nfn4htbguz736aomiubcnycrmveo35y">
@@ -49,13 +51,15 @@
         </div>
     </div>
 
-    <!-- Botón hacia Token -->
     <div class="token-container">
         <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65&binanceChainId=56&chain=bsc" class="btn-token"></a>
         <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65&binanceChainId=56&chain=bsc" class="token-label">Ir al Token</a>
     </div>
 
-    <!-- Sección Swap -->
+    <div class="video-container">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/3ZLhfmZWLXk" title="El chupulum de ZAARD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
     <div class="swap-section">
         <h3>Intercambio ZAARD</h3>
         <p>Contrato:</p>
@@ -66,7 +70,6 @@
         <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="go-label">GO PANKACKE SWAT</a>
     </div>
 
-    <!-- Seccion de Canales -->
     <h3>Canales</h3>
     <div class="grid">
         <a href="https://www.youtube.com/@LofiGirl/live" class="btn">🎵 Música</a>
