@@ -21,7 +21,6 @@
         .btn-token { display: block; width: 130px; height: 130px; margin: 0 auto; border-radius: 50%; border: 4px solid #fff; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; background-size: cover; animation: pulse 1.5s infinite; }
         .token-label { display: block; margin-top: 10px; font-weight: bold; font-size: 1.3em; animation: blink-text 1.5s infinite; text-decoration: none; }
 
-        /* Contenedor de video ligeramente más pequeño para mayor nitidez */
         .video-container { max-width: 300px; margin: 25px auto; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; aspect-ratio: 9/16; }
         .video-container iframe { width: 100%; height: 100%; }
 
@@ -36,9 +35,31 @@
         .info-text { color: #00ff00; font-weight: bold; font-size: 0.95em; margin-bottom: 15px; text-shadow: 1px 1px 2px #000; }
         .contract-text { color: white; font-weight: bold; font-size: 0.85em; margin-bottom: 20px; background: rgba(0,0,0,0.5); padding: 8px; border-radius: 5px; word-break: break-all; }
         
-        .btn-go-pancake { display: block; width: 300px; height: 110px; margin: 0 auto 10px auto; background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; background-size: contain; border: none; }
+        /* Contenedor de la imagen con espacio separado del contrato */
+        .btn-go-pancake-wrapper { 
+            position: relative;
+            display: block; 
+            width: 100%; 
+            height: 150px; 
+            margin-top: 20px; /* AQUÍ ESTÁ EL ESPACIO QUE PEDISTE */
+            background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; 
+            background-size: cover; 
+            border-radius: 10px;
+            text-decoration: none;
+            border: 2px solid #800080;
+        }
         
-        .go-label { font-weight: bold; font-size: 1.5em; text-decoration: none; display: block; animation: blink-colors-custom 2s infinite; }
+        .go-label { 
+            position: absolute; 
+            bottom: 15px; 
+            left: 0; 
+            width: 100%;
+            font-weight: bold; 
+            font-size: 1.3em; 
+            color: #00ff00;
+            text-shadow: 2px 2px 4px #000;
+            animation: blink-green 1.5s infinite;
+        }
 
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 500px; margin: 30px auto; }
         .btn { 
@@ -57,7 +78,6 @@
 
         @keyframes blink-text { 0% { color: #800080; } 50% { color: #00ccff; } 100% { color: #000; } }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(128,0,128, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(128,0,128, 0); } 100% { box-shadow: 0 0 0 0 rgba(128,0,128, 0); } }
-        @keyframes blink-colors-custom { 0% { color: #00ccff; } 25% { color: #00ff00; } 50% { color: #800080; } 75% { color: #000000; } 100% { color: #00ccff; } }
         @keyframes blink-green { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
     </style>
 </head>
@@ -85,8 +105,10 @@
     <div class="swap-section">
         <div class="info-text">ZARD es un token certificado en BSC y puedes realizar trading con el par BNB, BTC, CAKE, USDT</div>
         <div class="contract-text">0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65</div>
-        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-go-pancake"></a>
-        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="go-label">GO PANKACKE CHANGE</a>
+        
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-go-pancake-wrapper">
+            <span class="go-label">GO PANKACKE CHANGE</span>
+        </a>
     </div>
 
     <h3>Canales</h3>
