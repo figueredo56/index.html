@@ -7,6 +7,7 @@
     <style>
         body { margin: 0; padding: 20px; font-family: sans-serif; text-align: center; color: white; background: url('https://ipfs.io/ipfs/bafybeidnbe4knxriwgp3hjnpupozk5xg6f75xvvhuottvudryqmxvsrleu') no-repeat center center fixed; background-size: cover; background-color: #000; }
         
+        /* Carrusel actualizado */
         .marquee-container { width: 100%; overflow: hidden; margin: 15px 0; border-top: 1px solid #800080; border-bottom: 1px solid #800080; padding: 10px 0; background: rgba(0,0,0,0.5); }
         .marquee { display: flex; white-space: nowrap; animation: scroll 20s linear infinite; gap: 20px; align-items: center; }
         .marquee img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid #00ffcc; object-fit: cover; flex-shrink: 0; display: block; }
@@ -19,15 +20,13 @@
         .video-container { max-width: 350px; margin: 20px auto; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; aspect-ratio: 9/16; }
         .video-container iframe { width: 100%; height: 100%; }
 
-        /* Sección Swap ajustada */
+        /* Sección Swap */
         .swap-section { background: url('https://ipfs.io/ipfs/bafybeiby2hij6rb775xb4jqdguxvpqjkvhnacsjbqwb6lzjcwuglj6frse') no-repeat center center; background-size: cover; padding: 20px; border-radius: 20px; margin: 20px auto; max-width: 500px; border: 3px solid #800080; }
         .contract-text { color: white; font-weight: bold; font-size: 0.9em; margin: 10px 0; background: rgba(0,0,0,0.4); padding: 5px; border-radius: 5px; word-break: break-all; }
         
-        /* Botón más ancho y menos alto */
-        .btn-go-pancake { display: block; width: 300px; height: 100px; margin: 15px auto; background: url('https://ipfs.io/ipfs/bafybeieiiuojv6snmh2vchhigyoq7s5vcdvel66ih5tacnhp6ceaveg3um') no-repeat center center; background-size: contain; border: none; }
+        .btn-go-pancake { display: block; width: 300px; height: 100px; margin: 15px auto; background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; background-size: contain; border: none; }
         
-        /* Texto que parpadea Azul, Verde, Morado */
-        .go-label { font-weight: bold; font-size: 1.4em; text-decoration: none; display: block; animation: blink-colors 2s infinite; }
+        .go-label { font-weight: bold; font-size: 1.4em; text-decoration: none; display: block; animation: blink-colors-custom 2.5s infinite; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 800px; margin: 20px auto; }
         .btn { background: rgba(0, 0, 0, 0.7); border: 2px solid #800080; color: #00ffcc; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
@@ -36,18 +35,18 @@
         @keyframes blink-text { 0% { color: #800080; } 50% { color: #00ccff; } 100% { color: #000; } }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(128,0,128, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(128,0,128, 0); } 100% { box-shadow: 0 0 0 0 rgba(128,0,128, 0); } }
         
-        /* Animación colores */
-        @keyframes blink-colors { 0% { color: #00ccff; } 33% { color: #00ff00; } 66% { color: #800080; } 100% { color: #00ccff; } }
+        @keyframes blink-colors-custom { 0% { color: #00ccff; } 25% { color: #00ff00; } 50% { color: #800080; } 75% { color: #000000; } 100% { color: #00ccff; } }
     </style>
 </head>
 <body>
 
     <div class="marquee-container">
         <div class="marquee">
-            <img src="https://ipfs.io/ipfs/bafybeia7l62ua4ohmzsnjfai2p4hkol5ufo5jcg2ovvvag5f37x6szv3fu">
-            <img src="https://ipfs.io/ipfs/bafybeihqftstfjm3i32e3xm54xo52h6tpldlmfkwc2z6tx5qthbonyboue">
-            <img src="https://ipfs.io/ipfs/bafybeif5pqgoxonxnxscoayvpzawsxzw5lm6upxkbslnkbgjeenf5cg24m">
+            <img src="https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq">
+            <img src="https://ipfs.io/ipfs/bafybeiginlvb63afmlicnvsx4fwfekanoipydzgzv3ay7njpvq6nm4zzym">
             <img src="https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue">
+            <img src="https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu">
+            <img src="https://ipfs.io/ipfs/bafybeigxro3eht2lctrk4akglifsxuvwolwqfzgqzvnstabnpjjiungza4">
         </div>
     </div>
 
@@ -61,11 +60,10 @@
     </div>
 
     <div class="swap-section">
-        <h3>Intercambio ZAARD</h3>
         <p>Contrato:</p>
         <div class="contract-text">0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65</div>
         <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-go-pancake"></a>
-        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="go-label">GO PANKACKE SWAT</a>
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="go-label">GO PANKACKE CHANGE</a>
     </div>
 
     <h3>Canales</h3>
