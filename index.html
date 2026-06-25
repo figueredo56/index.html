@@ -5,46 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZAARD | Ecosistema</title>
     <style>
+        /* Fondo alejado con más padding superior e inferior */
         body { 
-            margin: 0; padding: 40px 20px; font-family: sans-serif; text-align: center; color: white; 
+            margin: 0; padding: 60px 20px; font-family: sans-serif; text-align: center; color: white; 
             background: url('https://ipfs.io/ipfs/bafybeiensrvoxwau75lkm6dl2lcmby63c4h2x2u5j43f5ayplhkzzhm6pe') no-repeat center center fixed; 
             background-size: cover; background-color: #000;
         }
         
-        .marquee-container { width: 100%; overflow: hidden; margin: 15px 0; border-top: 1px solid #800080; border-bottom: 1px solid #800080; padding: 10px 0; background: rgba(0,0,0,0.5); }
+        .marquee-container { width: 100%; overflow: hidden; margin: 20px 0; border-top: 1px solid #800080; border-bottom: 1px solid #800080; padding: 10px 0; background: rgba(0,0,0,0.5); }
         .marquee { display: flex; white-space: nowrap; animation: scroll 20s linear infinite; gap: 20px; align-items: center; }
         .marquee img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid #00ffcc; object-fit: cover; flex-shrink: 0; display: block; }
         @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
 
-        .token-container { margin: 25px auto; }
+        .token-container { margin: 30px auto; }
         .btn-token { display: block; width: 130px; height: 130px; margin: 0 auto; border-radius: 50%; border: 4px solid #fff; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; background-size: cover; animation: pulse 1.5s infinite; }
         .token-label { display: block; margin-top: 10px; font-weight: bold; font-size: 1.3em; animation: blink-text 1.5s infinite; text-decoration: none; }
 
-        .video-container { max-width: 350px; margin: 20px auto; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; aspect-ratio: 9/16; }
+        .video-container { max-width: 350px; margin: 25px auto; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; aspect-ratio: 9/16; }
         .video-container iframe { width: 100%; height: 100%; }
 
-        /* Cuadro de contrato mejorado con fondo transparente y sombra */
+        /* Cuadro de swap optimizado para profundidad y transparencia */
         .swap-section { 
-            background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci');
-            background-size: cover;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 25px; border-radius: 20px; margin: 20px auto; max-width: 90%; 
-            border: 2px solid #800080; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.3); /* Transparencia para ver el fondo */
+            padding: 25px; border-radius: 20px; margin: 20px auto; max-width: 300px; 
+            border: 1px solid rgba(128, 0, 128, 0.5); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
             display: flex; flex-direction: column; align-items: center; 
         }
-        .info-text { color: #00ff00; font-weight: bold; font-size: 1em; margin-bottom: 10px; text-shadow: 1px 1px 2px #000; }
-        .contract-text { color: white; font-weight: bold; font-size: 0.9em; margin: 10px 0; background: rgba(0,0,0,0.5); padding: 5px; border-radius: 5px; word-break: break-all; max-width: 300px; }
         
-        .btn-go-pancake { display: block; width: 280px; height: 120px; margin: 15px auto; background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; background-size: contain; border: none; }
-        .go-label { font-weight: bold; font-size: 1.4em; text-decoration: none; display: block; color: #00ff00; }
+        .swap-img { 
+            width: 120px; height: 120px; opacity: 0.8; margin-bottom: 15px;
+            background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; 
+            background-size: contain;
+        }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 800px; margin: 20px auto; }
-        .btn { background: rgba(0, 0, 0, 0.7); border: 2px solid #800080; color: #00ffcc; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+        .info-text { color: #00ff00; font-weight: bold; font-size: 0.85em; margin-bottom: 10px; }
+        .contract-text { color: white; font-weight: bold; font-size: 0.8em; margin: 10px 0; background: rgba(0,0,0,0.4); padding: 5px; border-radius: 5px; word-break: break-all; }
+        
+        .btn-go-pancake { display: block; width: 220px; height: 70px; margin: 10px auto; background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; background-size: contain; border: none; }
+        
+        .go-label { font-weight: bold; font-size: 1.3em; text-decoration: none; display: block; animation: blink-colors-custom 2s infinite; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 800px; margin: 30px auto; }
+        .btn { background: rgba(0, 0, 0, 0.6); border: 2px solid #800080; color: #00ffcc; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
         .btn:hover { background: #800080; color: white; }
 
         @keyframes blink-text { 0% { color: #800080; } 50% { color: #00ccff; } 100% { color: #000; } }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(128,0,128, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(128,0,128, 0); } 100% { box-shadow: 0 0 0 0 rgba(128,0,128, 0); } }
+        @keyframes blink-colors-custom { 0% { color: #00ccff; } 25% { color: #00ff00; } 50% { color: #800080; } 75% { color: #000000; } 100% { color: #00ccff; } }
     </style>
 </head>
 <body>
@@ -69,6 +77,7 @@
     </div>
 
     <div class="swap-section">
+        <div class="swap-img"></div>
         <div class="info-text">ZARD es un token certificado en BSC y puedes realizar trading con el par BNB, BTC, CAKE, USDT</div>
         <div class="contract-text">0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65</div>
         <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-go-pancake"></a>
