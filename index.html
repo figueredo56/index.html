@@ -7,37 +7,45 @@
     <style>
         body { 
             margin: 0; padding: 10px; font-family: sans-serif; text-align: center; color: white; 
-            background: #000; display: flex; flex-direction: column; align-items: center; 
+            background: url('https://ipfs.io/ipfs/bafybeic3rhz5qpxq3slf4n77h6jwhtspd3jifjm2z7777cm4whniozi32u') no-repeat center center fixed; 
+            background-size: cover;
+            display: flex; flex-direction: column; align-items: center; 
             min-height: 100vh; box-sizing: border-box;
         }
-        
-        /* Ajustes de tamaño y orden */
-        .btn-go-pancake-wrapper { 
-            display: block; width: 100%; max-width: 300px; height: 60px; 
-            background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; 
-            background-size: cover; border-radius: 8px; border: 1px solid #800080; 
-            text-decoration: none; display: flex; align-items: center; justify-content: center; 
-            margin-bottom: 15px;
-        }
-        .go-label { font-size: 0.8em; color: #00ff00; font-weight: bold; text-shadow: 1px 1px 1px #000; }
 
+        /* Estilos del Marquee */
+        .marquee-container { width: 100%; max-width: 400px; overflow: hidden; margin-bottom: 15px; border-bottom: 2px solid #800080; }
+        .marquee { display: flex; animation: marquee 15s linear infinite; }
+        .marquee img { height: 50px; margin: 0 10px; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        
         .video-container { 
-            width: 100%; max-width: 320px; height: 200px; /* Video más grande */
+            width: 100%; max-width: 350px; height: 220px; 
             border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; margin-bottom: 15px; 
+            background: rgba(0,0,0,0.6);
         }
         .video-container iframe { width: 100%; height: 100%; }
         
         .btn-token { 
-            width: 60px; height: 60px; border-radius: 50%; border: 2px solid #fff; 
+            width: 80px; height: 80px; border-radius: 50%; border: 3px solid #fff; 
             background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; 
             background-size: cover; margin-bottom: 15px; display: block;
         }
         
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 400px; margin-top: 5px; }
+        .btn-go-pancake-wrapper { 
+            display: block; width: 100%; max-width: 280px; height: 50px; 
+            background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; 
+            background-size: cover; border-radius: 8px; border: 1px solid #800080; 
+            text-decoration: none; display: flex; align-items: center; justify-content: center; 
+            margin-bottom: 20px;
+        }
+        .go-label { font-size: 0.8em; color: #00ff00; font-weight: bold; text-shadow: 1px 1px 2px #000; }
+
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; max-width: 400px; }
         .btn { 
-            background: rgba(0,0,0,0.7); border: 1px solid #800080; padding: 12px 2px; 
-            text-decoration: none; border-radius: 8px; font-size: 0.8em; color: #00ff00; 
-            animation: blink-green 1.5s infinite; 
+            background: rgba(0,0,0,0.8); border: 1px solid #800080; padding: 12px 2px; 
+            text-decoration: none; border-radius: 8px; font-size: 0.7em; color: #00ff00; 
+            animation: blink-green 1.5s infinite; display: flex; align-items: center; justify-content: center;
         }
 
         @keyframes blink-green { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
@@ -45,16 +53,34 @@
 </head>
 <body>
 
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-go-pancake-wrapper">
-        <span class="go-label">PANKACKE</span>
-    </a>
+    <!-- Cinta superior -->
+    <div class="marquee-container">
+        <div class="marquee">
+            <img src="https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq">
+            <img src="https://ipfs.io/ipfs/bafybeiginlvb63afmlicnvsx4fwfekanoipydzgzv3ay7njpvq6nm4zzym">
+            <img src="https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue">
+            <img src="https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu">
+            <img src="https://ipfs.io/ipfs/bafybeigxro3eht2lctrk4akglifsxuvwolwqfzgqzvnstabnpjjiungza4">
+            <!-- Repetimos imágenes para un bucle infinito fluido -->
+            <img src="https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq">
+            <img src="https://ipfs.io/ipfs/bafybeiginlvb63afmlicnvsx4fwfekanoipydzgzv3ay7njpvq6nm4zzym">
+        </div>
+    </div>
 
+    <!-- Video -->
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" frameborder="0" allowfullscreen></iframe>
     </div>
 
+    <!-- Token -->
     <a href="#" class="btn-token"></a>
 
+    <!-- Botón PancakeSwap -->
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-go-pancake-wrapper">
+        <span class="go-label">PANKACKE</span>
+    </a>
+
+    <!-- Botones -->
     <div class="grid">
         <a href="#" class="btn">MÚSICA</a>
         <a href="#" class="btn">DEPORTES</a>
