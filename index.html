@@ -23,7 +23,6 @@
         .video-container { max-width: 350px; margin: 25px auto; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; aspect-ratio: 9/16; }
         .video-container iframe { width: 100%; height: 100%; }
 
-        /* Cuadro de swap simplificado y limpio */
         .swap-section { 
             background: rgba(0, 0, 0, 0.4); 
             padding: 25px; border-radius: 20px; margin: 20px auto; max-width: 320px; 
@@ -35,18 +34,23 @@
         .info-text { color: #00ff00; font-weight: bold; font-size: 0.95em; margin-bottom: 15px; text-shadow: 1px 1px 2px #000; }
         .contract-text { color: white; font-weight: bold; font-size: 0.85em; margin-bottom: 20px; background: rgba(0,0,0,0.5); padding: 8px; border-radius: 5px; word-break: break-all; }
         
-        /* Botón más grande y nítido */
-        .btn-go-pancake { display: block; width: 280px; height: 100px; margin: 0 auto 10px auto; background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; background-size: contain; border: none; }
+        .btn-go-pancake { display: block; width: 280px; height: 100px; margin: 0 auto 10px auto; background: url('https://ipfs.io/ipfs/bafybeiakl2nuugolggppxfttwcxfsv56zsjms4ityd5vjyyd54ctirzaeq') no-repeat center center; background-size: contain; border: none; }
         
         .go-label { font-weight: bold; font-size: 1.5em; text-decoration: none; display: block; animation: blink-colors-custom 2s infinite; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 800px; margin: 30px auto; }
-        .btn { background: rgba(0, 0, 0, 0.7); border: 2px solid #800080; color: #00ffcc; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+        .btn { 
+            background: rgba(0, 0, 0, 0.7); border: 2px solid #800080; padding: 15px; 
+            text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s;
+            color: #00ff00;
+            animation: pulse-green 1.5s infinite;
+        }
         .btn:hover { background: #800080; color: white; }
 
         @keyframes blink-text { 0% { color: #800080; } 50% { color: #00ccff; } 100% { color: #000; } }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(128,0,128, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(128,0,128, 0); } 100% { box-shadow: 0 0 0 0 rgba(128,0,128, 0); } }
         @keyframes blink-colors-custom { 0% { color: #00ccff; } 25% { color: #00ff00; } 50% { color: #800080; } 75% { color: #000000; } 100% { color: #00ccff; } }
+        @keyframes pulse-green { 0% { text-shadow: 0 0 5px #00ff00; } 50% { text-shadow: 0 0 20px #00ff00; } 100% { text-shadow: 0 0 5px #00ff00; } }
     </style>
 </head>
 <body>
@@ -79,10 +83,10 @@
 
     <h3>Canales</h3>
     <div class="grid">
-        <a href="https://www.youtube.com/@LofiGirl/live" class="btn">🎵 Música</a>
-        <a href="https://www.youtube.com/@SkyNews/live" class="btn">⚽ Deportes</a>
-        <a href="https://www.youtube.com/@France24/live" class="btn">📰 Noticias</a>
-        <a href="https://www.youtube.com/@NASA/live" class="btn">📺 Ciencia</a>
+        <a href="https://open.spotify.com/playlist/2WoPMH4aMnQ0IsHx0yPZFk?si=FjySnDUtSg-HAcy4eYZbAg&pi=hAiCxZNjQPSqJ" class="btn">🎵 MÚSICA</a>
+        <a href="https://www.youtube.com/@SkyNews/live" class="btn" style="background: url('https://ipfs.io/ipfs/bafybeif2pjebwhe3eodqoxhu3rccaxt6frh2mb5lxro2gy6p5syacgtaly') no-repeat center center; background-size: cover;">⚽ DEPORTES</a>
+        <a href="https://www.youtube.com/@France24/live" class="btn" style="background: url('https://ipfs.io/ipfs/bafybeibmhheisrjxpxpcsh6goj6c4pxraz5xkcizn4aiyl5eamdc5qyc3m') no-repeat center center; background-size: cover;">📰 NOTICIAS</a>
+        <a href="https://www.youtube.com/@NASA/live" class="btn" style="background: url('https://ipfs.io/ipfs/bafybeickwp5h3ew6bm4aim6r5v5sc5xha6h3hdsbrhja2zeruosphac5ba') no-repeat center center; background-size: cover;">📺 CIENCIAS</a>
         <a href="https://www.youtube.com/@IGN/live" class="btn">🎬 Cine/Gaming</a>
         <a href="https://www.youtube.com/@thelonelybiscuits/live" class="btn">🎮 Gaming Live</a>
     </div>
