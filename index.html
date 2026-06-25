@@ -9,30 +9,27 @@
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; max-width: 800px; margin: 20px auto; }
         
+        /* Cinta de imágenes (Efecto visual) */
+        .marquee-container { width: 100%; overflow: hidden; margin: 10px 0; border-top: 1px solid #800080; border-bottom: 1px solid #800080; padding: 5px 0; }
+        .marquee { display: flex; white-space: nowrap; animation: scroll 15s linear infinite; }
+        .marquee img { width: 60px; height: 60px; margin: 0 15px; border-radius: 50%; border: 2px solid #00ffcc; }
+        @keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
+
         .btn { background: rgba(0, 0, 0, 0.7); border: 2px solid #800080; color: #00ffcc; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; }
         .btn:hover { background: #800080; color: white; }
         
         .video-box { margin: 20px auto; max-width: 600px; border: 3px solid #800080; border-radius: 15px; overflow: hidden; }
         iframe { width: 100%; height: 315px; display: block; }
 
-        /* Botón Token */
         .token-container { margin: 20px auto; }
         .btn-token { display: block; width: 120px; height: 120px; margin: 0 auto; border-radius: 50%; border: 3px solid #800080; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; background-size: cover; }
         .token-label { display: block; margin-top: 8px; color: #800080; font-weight: bold; text-decoration: none; font-size: 1.2em; }
 
-        /* Sección Swap */
         .swap-section { background: url('https://ipfs.io/ipfs/bafybeiby2hij6rb775xb4jqdguxvpqjkvhnacsjbqwb6lzjcwuglj6frse') no-repeat center center; background-size: cover; padding: 40px 20px; border-radius: 15px; margin: 20px auto; max-width: 500px; border: 2px solid #800080; }
-        
-        /* Contrato en negro con fondo resaltado */
         .contract-box { background: rgba(255, 255, 255, 0.8); color: black; padding: 10px; border-radius: 5px; font-weight: bold; margin: 10px 0; }
-        
         .text-green { color: #00ff00; font-weight: bold; }
-
-        /* Animación parpadeo morado-azul */
         .blink-morph { animation: morphing 2s infinite; font-weight: bold; }
         @keyframes morphing { 0% { color: #800080; } 50% { color: #00ccff; } 100% { color: #800080; } }
-
-        /* Botón final */
         .btn-swap-custom { display: block; width: 100%; max-width: 300px; height: 60px; margin: 15px auto; background: url('https://ipfs.io/ipfs/bafybeia7l62ua4ohmzsnjfai2p4hkol5ufo5jcg2ovvvag5f37x6szv3fu') no-repeat center center; background-size: contain; border: none; }
     </style>
 </head>
@@ -42,6 +39,16 @@
         <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" frameborder="0" allowfullscreen></iframe>
     </div>
     
+    <div class="marquee-container">
+        <div class="marquee">
+            <img src="https://ipfs.io/ipfs/bafybeifqlutpp6fq4se2qtmg2i7nfn4htbguz736aomiubcnycrmveo35y">
+            <img src="https://ipfs.io/ipfs/bafybeia7l62ua4ohmzsnjfai2p4hkol5ufo5jcg2ovvvag5f37x6szv3fu">
+            <img src="https://ipfs.io/ipfs/bafybeihqftstfjm3i32e3xm54xo52h6tpldlmfkwc2z6tx5qthbonyboue">
+            <img src="https://ipfs.io/ipfs/bafybeif5pqgoxonxnxscoayvpzawsxzw5lm6upxkbslnkbgjeenf5cg24m">
+            <img src="https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue">
+        </div>
+    </div>
+
     <h3>Canales</h3>
     <div class="grid">
         <a href="https://www.youtube.com/@LofiGirl/live" class="btn">🎵 Música</a>
