@@ -3,69 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ZAARD | Ecosistema</title>
+    <title>ZAARD | Menú Principal</title>
     <style>
         body { 
             margin: 0; padding: 10px; font-family: sans-serif; text-align: center; color: white; 
             background: #000; display: flex; flex-direction: column; align-items: center; height: 100vh; overflow: hidden;
         }
         
-        /* Contenedor principal para organizar */
-        .main-menu { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; }
-
-        .btn-go-pancake-wrapper { 
-            width: 90%; height: 60px; border: 2px solid #800080; border-radius: 12px;
-            background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') center/cover;
-            display: flex; align-items: center; justify-content: center; text-decoration: none;
-        }
-        .go-label { color: #00ff00; font-weight: bold; font-size: 1.1em; text-shadow: 2px 2px 4px #000; animation: blink-green 1.5s infinite; }
-
-        .video-container { width: 160px; height: 90px; border: 2px solid #00ffcc; border-radius: 8px; overflow: hidden; }
+        /* Ajuste de tamaños para que todo quepa en pantalla */
+        .swap-section { background: rgba(0,0,0,0.5); padding: 5px; border-radius: 10px; width: 90%; border: 1px solid #800080; margin-bottom: 5px; }
+        .video-container { width: 140px; height: 140px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden; margin-bottom: 5px; }
         .video-container iframe { width: 100%; height: 100%; }
+        
+        .btn-go-pancake-wrapper { display: block; width: 140px; height: 50px; background: url('https://ipfs.io/ipfs/bafybeialafpyzu6sfct2xchwiza4xh2jcrfyrbonv2dkctnxocpaclcyci') no-repeat center center; background-size: cover; border-radius: 8px; border: 1px solid #800080; text-decoration: none; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+        .go-label { font-size: 0.6em; color: #00ff00; font-weight: bold; text-shadow: 1px 1px 1px #000; }
 
-        .btn-token { width: 50px; height: 50px; border-radius: 50%; border: 3px solid #fff; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') center/cover; animation: pulse 1.5s infinite; }
-
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; width: 95%; margin-top: 5px; }
-        .btn { background: rgba(0,0,0,0.7); border: 1px solid #800080; padding: 10px 2px; border-radius: 8px; font-weight: bold; font-size: 0.75em; color: #00ff00; text-decoration: none; animation: blink-green 1.5s infinite; }
-
-        .bottom-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 95%; margin-top: 5px; }
-        .btn-bottom { border: 2px solid #00ffcc; color: #fff; padding: 12px; border-radius: 8px; font-weight: bold; text-decoration: none; font-size: 0.8em; }
+        .btn-token { width: 60px; height: 60px; border-radius: 50%; border: 2px solid #fff; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') no-repeat center center; background-size: cover; margin: 5px auto; }
+        
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 95%; margin-top: 5px; }
+        .btn { background: rgba(0,0,0,0.7); border: 1px solid #800080; padding: 8px 2px; text-decoration: none; border-radius: 8px; font-size: 0.7em; color: #00ff00; animation: blink-green 1.5s infinite; }
 
         @keyframes blink-green { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(128,0,128, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(128,0,128, 0); } 100% { box-shadow: 0 0 0 0 rgba(128,0,128, 0); } }
     </style>
 </head>
 <body>
 
-    <div class="main-menu">
-        <!-- Pancake -->
-        <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-go-pancake-wrapper">
-            <span class="go-label">GO PANKACKE CHANGE</span>
-        </a>
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65" class="btn-go-pancake-wrapper">
+        <span class="go-label">PANKACKE</span>
+    </a>
 
-        <!-- Video -->
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" frameborder="0" allowfullscreen></iframe>
-        </div>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-        <!-- Token -->
-        <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x3468ea4e6ce13ec4c7f8651f7efc6aa6046f4d65&binanceChainId=56&chain=bsc" class="btn-token"></a>
+    <a href="#" class="btn-token"></a>
 
-        <!-- Canales -->
-        <div class="grid">
-            <a href="https://open.spotify.com/playlist/2WoPMH4aMnQ0IsHx0yPZFk" class="btn">MÚSICA</a>
-            <a href="https://www.youtube.com/@SkyNews/live" class="btn">DEPORTES</a>
-            <a href="https://www.youtube.com/@France24/live" class="btn">NOTICIAS</a>
-            <a href="https://www.youtube.com/@NASA/live" class="btn">CIENCIAS</a>
-            <a href="https://www.youtube.com/@IGN/live" class="btn">CINE</a>
-            <a href="https://www.youtube.com/@thelonelybiscuits/live" class="btn">GAMING</a>
-        </div>
+    <div class="grid">
+        <a href="#" class="btn">MÚSICA</a>
+        <a href="#" class="btn">DEPORTES</a>
+        <a href="#" class="btn">NOTICIAS</a>
+        <a href="#" class="btn">CIENCIAS</a>
+        <a href="#" class="btn">CINE</a>
+        <a href="#" class="btn">GAMING</a>
+    </div>
 
-        <!-- Botones extra -->
-        <div class="bottom-nav">
-            <a href="#" class="btn-bottom">ZAARD ARCADE</a>
-            <a href="#" class="btn-bottom">ZAARD WEB</a>
-        </div>
+    <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 10px;">
+        <a href="#" class="btn" style="border-color: #00ffcc;">ZAARD ARCADE</a>
+        <a href="#" class="btn" style="border-color: #00ffcc;">ZAARD WEB</a>
     </div>
 
 </body>
