@@ -6,24 +6,31 @@
     <title>ECOSISTEMA ZAARD</title>
     
     <style>
-        /* CAMBIA EL CID AQUÍ ABAJO */
-        body { margin: 0; padding: 10px; font-family: sans-serif; text-align: center; color: white; background: url('https://ipfs.io/ipfs/TU_NUEVO_CID_AQUI') no-repeat center center fixed; background-size: cover; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        body { margin: 0; padding: 10px; font-family: sans-serif; text-align: center; color: white; 
+               background: url('https://ipfs.io/ipfs/bafybeiejii4j44whnjthdfqlradk2loh7hgjirloqt4mrpzarfnadvjfsm') no-repeat center center fixed; 
+               background-size: cover; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
         
-        /* Y CAMBIA EL CID AQUÍ TAMBIÉN */
-        #welcome-screen { position: fixed; top:0; left:0; width:100%; height:100%; background: url('https://ipfs.io/ipfs/TU_NUEVO_CID_AQUI') center/cover; z-index: 100; display: flex; justify-content: center; align-items: center; }
+        #welcome-screen { position: fixed; top:0; left:0; width:100%; height:100%; 
+                          background: url('https://ipfs.io/ipfs/bafybeiejii4j44whnjthdfqlradk2loh7hgjirloqt4mrpzarfnadvjfsm') center/cover; 
+                          z-index: 100; display: flex; justify-content: center; align-items: center; }
         
         .text-box { background: rgba(128, 0, 128, 0.7); padding: 25px; border-radius: 20px; width: 80%; border: 2px solid #800080; }
-        .marquee-container { width: 100%; max-width: 350px; overflow: hidden; margin-bottom: 15px; }
-        .marquee { display: flex; animation: scroll 12s linear infinite; }
-        .marquee img { height: 40px; margin: 0 5px; flex-shrink: 0; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        
+        /* Animaciones */
         @keyframes border-cycle { 0% { border-color: #00ff00; } 33% { border-color: #0000ff; } 66% { border-color: #800080; } 100% { border-color: #00ff00; } }
-        .btn { border: 3px solid; padding: 10px 5px; text-decoration: none; border-radius: 8px; font-size: 0.65em; color: #00ff00; background: rgba(75,0,130,0.7); display: flex; align-items: center; justify-content: center; margin: 5px; animation: border-cycle 3s infinite; }
-        .btn-token { width: 50px; height: 50px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu') center/cover; border: 3px solid; animation: border-cycle 3s infinite; display: block; margin: 0 auto; }
-        .btn-nft { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeia7l62ua4ohmzsnjfai2p4hkol5ufo5jcg2ovvvag5f37x6szv3fu') center/cover; border: 3px solid; animation: border-cycle 3s infinite; display: block; margin: 10px auto; }
-        .blink-green { color: #00ff00; font-weight: bold; font-size: 0.8em; animation: blink 1s infinite; display: block; margin-top: 5px; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        
+        .btn-token { width: 55px; height: 55px; border-radius: 50%; background-size: cover; background-position: center; 
+                     border: 3px solid; animation: border-cycle 3s infinite; display: block; margin: 0 auto; }
+        
+        .blink-green { color: #00ff00; font-weight: bold; font-size: 0.6em; animation: blink 1s infinite; margin-top: 5px; }
+        
+        .btn { border: 3px solid; padding: 10px 5px; text-decoration: none; border-radius: 8px; font-size: 0.65em; 
+               color: #00ff00; background: rgba(75,0,130,0.7); display: flex; align-items: center; 
+               justify-content: center; margin: 5px; animation: border-cycle 3s infinite; }
+
         .btn-pancake-img { width: 90%; max-width: 280px; height: 50px; background: url('https://ipfs.io/ipfs/bafybeigusn7dfvcrsli3dzv4qka656gk6h3u6kaxkrhhl4evexhdisadua') center/cover; border: 3px solid; border-radius: 10px; display: block; margin-top: 10px; animation: border-cycle 3s infinite; }
+        .btn-nft { width: 70px; height: 70px; border-radius: 50%; background: url('https://ipfs.io/ipfs/bafybeia7l62ua4ohmzsnjfai2p4hkol5ufo5jcg2ovvvag5f37x6szv3fu') center/cover; border: 3px solid; animation: border-cycle 3s infinite; display: block; margin: 10px auto; }
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 90%; max-width: 350px; margin-top: 15px; }
     </style>
 </head>
@@ -36,25 +43,24 @@
         </div>
     </div>
 
-    <!-- Contenedor Principal -->
     <div style="display: flex; align-items: center; justify-content: center; gap: 15px; width: 90%; max-width: 350px; margin-bottom: 20px;">
         <div style="width: 60%; height: 130px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden;">
             <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" style="width:100%; height:100%; border:none;"></iframe>
         </div>
         
-        <!-- Aquí están los 3 espacios: Para poner imagen, cambia el background-image -->
-        <div style="width: 35%; display: flex; flex-direction: column; gap: 8px;">
-            <!-- BOTÓN 1: ZARD -->
-            <div class="btn-token" style="background-image: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu');"></div>
-            <span class="blink-green" style="font-size: 0.5em;">ZARD</span>
-            
-            <!-- BOTÓN 2: ZARED (Cambia el CID en background-image) -->
-            <div class="btn-token" style="background-image: url('https://ipfs.io/ipfs/TU_CID_ZARED_AQUI'); border-style: dashed; opacity: 0.8;"></div>
-            <span style="font-size: 0.5em; color: #00ff00;">ZARED</span>
-            
-            <!-- BOTÓN 3: PANGA (Cambia el CID en background-image) -->
-            <div class="btn-token" style="background-image: url('https://ipfs.io/ipfs/TU_CID_PANGA_AQUI'); border-style: dashed; opacity: 0.8;"></div>
-            <span style="font-size: 0.5em; color: #00ff00;">PANGA</span>
+        <div style="width: 35%; display: flex; flex-direction: column; gap: 12px;">
+            <div>
+                <a href="#" class="btn-token" style="background-image: url('https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu');"></a>
+                <span class="blink-green">ZARD</span>
+            </div>
+            <div>
+                <a href="#" class="btn-token" style="background-image: url('https://ipfs.io/ipfs/bafybeihqftstfjm3i32e3xm54xo52h6tpldlmfkwc2z6tx5qthbonyboue');"></a>
+                <span class="blink-green">PANGA</span>
+            </div>
+            <div>
+                <a href="#" class="btn-token" style="background-image: url('https://ipfs.io/ipfs/bafybeif5pqgoxonxnxscoayvpzawsxzw5lm6upxkbslnkbgjeenf5cg24m');"></a>
+                <span class="blink-green">ZARED</span>
+            </div>
         </div>
     </div>
 
@@ -65,7 +71,7 @@
     <span class="blink-green">NFT</span>
 
     <div class="grid">
-        <a href="https://open.spotify.com/playlist/2WoPMH4aMnQ0IsHx0yPZFk" class="btn">MÚSICA</a>
+        <a href="#" class="btn">MÚSICA</a>
         <a href="#" class="btn">DEPORTES</a>
         <a href="#" class="btn">NOTICIAS</a>
     </div>
