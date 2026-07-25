@@ -19,7 +19,7 @@
 **ZAARD INNOVATION** es un ecosistema Web3 de alta gama desarrollado en la Binance Smart Chain (BSC), diseñado para fusionar la tecnología financiera descentralizada, la seguridad de vanguardia y el entretenimiento digital interactivo. 
 
 El ecosistema interconecta diversas herramientas y plataformas especializadas:
-* **Tokens Nativos e Interactivos ($ZARD, $PANGA, $ZARED, $ZAIRD):** Activos digitales con utilidades específicas dentro del protocolo y pools de liquidez gestionados en PancakeSwap.
+* **Tokens Nativos e Interactivos ($ZARD, $PANGA, $ZARED):** Activos digitales con utilidades específicas dentro del protocolo y pools de liquidez gestionados en PancakeSwap.
 * **ZAARD Wallet:** Cartera descentralizada integrada para la gestión segura de activos y validación de identidad.
 * **ZAARD Tracker:** Herramienta en tiempo real para el seguimiento de métricas, transacciones y valor del ecosistema.
 * **ZAARD Arcade:** Plataforma de juegos Web3 (con títulos como Golden Run, Memory Game, Lucky y Combat Arena) que integra dinámicas de entretenimiento y tecnología descentralizada.
