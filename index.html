@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECOSISTEMA ZAARD</title>
     
-    <!-- ICONO Y FAVICON OFICIAL -->
+    <!-- ICONOS Y FAVICONS PARA MÓVIL Y ESCRITORIO -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png" type="image/png">
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png">
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png">
     
@@ -25,17 +26,15 @@
                           background: url('https://raw.githubusercontent.com/figueredo56/index.html/refs/heads/main/Screenshot_20260724-220736_1.png') center/cover; 
                           z-index: 1000; display: flex; justify-content: center; align-items: center; }
         
-        .text-box { background: rgba(128, 0, 128, 0.7); padding: 25px; border-radius: 20px; width: 85%; border: 2px solid #800080; }
+        /* Fondo más claro y legible */
+        .text-box { background: rgba(80, 0, 120, 0.55); padding: 25px; border-radius: 20px; width: 85%; border: 2px solid #00ffcc; }
         
-        /* Carrusel */
-        .marquee-container { width: 100%; overflow: hidden; margin-top: 10px; margin-bottom: 20px; }
-        .marquee { display: flex; animation: scroll 12s linear infinite; }
-        .marquee img { height: 40px; margin: 0 5px; flex-shrink: 0; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* Estilos generales */
+        /* Animaciones para titilar texto y bordes */
+        @keyframes text-color-cycle { 0% { color: #00ffff; } 50% { color: #a020f0; } 100% { color: #00ffff; } }
         @keyframes border-cycle { 0% { border-color: #00ff00; } 33% { border-color: #0000ff; } 66% { border-color: #800080; } 100% { border-color: #00ff00; } }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        
+        .title-blink { animation: text-color-cycle 3s infinite; font-weight: bold; }
         
         .btn-token { width: 55px; height: 55px; border-radius: 50%; background-size: cover; background-position: center; 
                      border: 3px solid; animation: border-cycle 3s infinite; display: block; margin: 0 auto; }
@@ -48,6 +47,12 @@
         .btn { border: 3px solid; padding: 10px 5px; text-decoration: none; border-radius: 8px; font-size: 0.7em; 
                color: #00ff00; background: rgba(75,0,130,0.7); display: flex; align-items: center; 
                justify-content: center; margin: 5px; animation: border-cycle 3s infinite; }
+
+        /* Carrusel */
+        .marquee-container { width: 100%; overflow: hidden; margin-top: 10px; margin-bottom: 20px; }
+        .marquee { display: flex; animation: scroll 12s linear infinite; }
+        .marquee img { height: 40px; margin: 0 5px; flex-shrink: 0; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     </style>
 </head>
 <body>
@@ -55,9 +60,9 @@
     <!-- Pantalla de Bienvenida -->
     <div id="welcome-screen">
         <div class="text-box">
-            <h1 style="color: #00ff00; font-size: 1.4em;">Bienvenidos al ecosistema ZAARD INNOVATION</h1>
-            <p style="color: white; font-size: 0.95em;">Somos un ecosistema de alta gama, diseñado para llevar la experiencia Web3 al siguiente nivel. Aquí, la tecnología se une con la diversión: disfruta de nuestra utilidad exclusiva en NFTs y sumérgete en un catálogo de juegos innovadores creados para apasionados como tú.</p>
-            <button onclick="document.getElementById('welcome-screen').style.display='none'" class="btn" style="background: rgba(128,0,128,0.8); color: #00ff00; font-size: 1.1em; padding: 15px; margin: 10px auto; border-color: #00ff00;">GO ecosystem ZAARD</button>
+            <h1 class="title-blink" style="font-size: 1.4em;">Bienvenidos al ecosistema ZAARD INNOVATION</h1>
+            <p style="color: #00ff00; font-size: 0.95em; font-weight: bold;">Somos un ecosistema de alta gama, diseñado para llevar la experiencia Web3 al siguiente nivel. Aquí, la tecnología se une con la diversión: disfruta de nuestra utilidad exclusiva en NFTs y sumérgete en un catálogo de juegos innovadores creados para apasionados como tú.</p>
+            <button onclick="document.getElementById('welcome-screen').style.display='none'" class="btn title-blink" style="background: rgba(40,0,80,0.85); font-size: 1.1em; padding: 15px; margin: 10px auto; width: 100%;">GO ecosystem ZAARD</button>
         </div>
     </div>
 
