@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +26,23 @@
                           background: url('https://raw.githubusercontent.com/figueredo56/index.html/refs/heads/main/Screenshot_20260724-220736_1.png') center/cover; 
                           z-index: 1000; display: flex; justify-content: center; align-items: center; }
         
+        /* Selector de idiomas flotante superior */
+        .language-selector {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 1100;
+            background: rgba(40, 0, 80, 0.85);
+            border: 2px solid #00ffcc;
+            border-radius: 10px;
+            padding: 5px 10px;
+            color: #00ff00;
+            font-weight: bold;
+            font-size: 0.85em;
+            cursor: pointer;
+            outline: none;
+        }
+
         /* Fondo más claro y legible */
         .text-box { background: rgba(80, 0, 120, 0.55); padding: 25px; border-radius: 20px; width: 85%; border: 2px solid #00ffcc; }
         
@@ -57,12 +74,20 @@
 </head>
 <body>
 
+    <!-- Selector de Idiomas Flotante -->
+    <select id="lang-switcher" class="language-selector" onchange="cambiarIdioma(this.value)">
+        <option value="es">🇪🇸 Español</option>
+        <option value="en">🇬🇧 English</option>
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="zh">🇨🇳 中文</option>
+    </select>
+
     <!-- Pantalla de Bienvenida -->
     <div id="welcome-screen">
         <div class="text-box">
-            <h1 class="title-blink" style="font-size: 1.4em;">Bienvenidos al ecosistema ZAARD INNOVATION</h1>
-            <p style="color: #00ff00; font-size: 0.95em; font-weight: bold;">Somos un ecosistema de alta gama, diseñado para llevar la experiencia Web3 al siguiente nivel. Aquí, la tecnología se une con la diversión: disfruta de nuestra utilidad exclusiva en NFTs y sumérgete en un catálogo de juegos innovadores creados para apasionados como tú.</p>
-            <button onclick="document.getElementById('welcome-screen').style.display='none'" class="btn title-blink" style="background: rgba(40,0,80,0.85); font-size: 1.1em; padding: 15px; margin: 10px auto; width: 100%;">GO ecosystem ZAARD</button>
+            <h1 id="txt-welcome-title" class="title-blink" style="font-size: 1.4em;">Bienvenidos al ecosistema ZAARD INNOVATION</h1>
+            <p id="txt-welcome-desc" style="color: #00ff00; font-size: 0.95em; font-weight: bold;">Somos un ecosistema de alta gama, diseñado para llevar la experiencia Web3 al siguiente nivel. Aquí, la tecnología se une con la diversión: disfruta de nuestra utilidad exclusiva en NFTs y sumérgete en un catálogo de juegos innovadores creados para apasionados como tú.</p>
+            <button onclick="document.getElementById('welcome-screen').style.display='none'" id="txt-welcome-btn" class="btn title-blink" style="background: rgba(40,0,80,0.85); font-size: 1.1em; padding: 15px; margin: 10px auto; width: 100%;">GO ecosystem ZAARD</button>
         </div>
     </div>
 
@@ -103,17 +128,98 @@
 
        <!-- Bloque de 6 botones (2 filas de 3) -->
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 90%; max-width: 350px; margin-top: 10px;">
-            <a href="https://open.spotify.com/playlist/2WoPMH4aMnQ0IsHx0yPZFk?si=RyYSkwQETm6bp-oV-3GwlQ" class="btn">MÚSICA</a>
-            <a href="https://www.youtube.com/live/iZqU70-LizY?si=BO-ST_sdUTmKSzDd" class="btn">DEPORTES</a>
-            <a href="https://share.google/kFlBcNnLr7SvJ8QRF" class="btn">WEB3</a>
+            <a href="https://open.spotify.com/playlist/2WoPMH4aMnQ0IsHx0yPZFk?si=RyYSkwQETm6bp-oV-3GwlQ" class="btn" id="txt-btn-music">MÚSICA</a>
+            <a href="https://www.youtube.com/live/iZqU70-LizY?si=BO-ST_sdUTmKSzDd" class="btn" id="txt-btn-sports">DEPORTES</a>
+            <a href="https://share.google/kFlBcNnLr7SvJ8QRF" class="btn" id="txt-btn-web3">WEB3</a>
         </div>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 90%; max-width: 350px; margin-top: 5px;">
-            <a href="https://figueredo56.github.io/ZAARD-Arcade/index-menu.html" class="btn">ZAARD ARCADE</a>
-            <a href="https://figueredo56.github.io/zaard-official/" class="btn">ZAARD WEB</a>
+            <a href="https://figueredo56.github.io/ZAARD-Arcade/index-menu.html" class="btn" id="txt-btn-arcade">ZAARD ARCADE</a>
+            <a href="https://figueredo56.github.io/zaard-official/" class="btn" id="txt-btn-web">ZAARD WEB</a>
             <!-- Botón Discord -->
-            <a href="https://discord.gg/rRxNpNXdj" class="btn">DISCORD</a>
+            <a href="https://discord.gg/rRxNpNXdj" class="btn" id="txt-btn-discord">DISCORD</a>
         </div>
     </div>
 
+    <script>
+        const traducciones = {
+            es: {
+                welcomeTitle: "Bienvenidos al ecosistema ZAARD INNOVATION",
+                welcomeDesc: "Somos un ecosistema de alta gama, diseñado para llevar la experiencia Web3 al siguiente nivel. Aquí, la tecnología se une con la diversión: disfruta de nuestra utilidad exclusiva en NFTs y sumérgete en un catálogo de juegos innovadores creados para apasionados como tú.",
+                welcomeBtn: "GO ecosystem ZAARD",
+                btnMusic: "MÚSICA",
+                btnSports: "DEPORTES",
+                btnWeb3: "WEB3",
+                btnArcade: "ZAARD ARCADE",
+                btnWeb: "ZAARD WEB",
+                btnDiscord: "DISCORD"
+            },
+            en: {
+                welcomeTitle: "Welcome to the ZAARD INNOVATION Ecosystem",
+                welcomeDesc: "We are a high-end ecosystem designed to take the Web3 experience to the next level. Here, technology meets fun: enjoy our exclusive NFT utility and dive into a catalog of innovative games built for enthusiasts like you.",
+                welcomeBtn: "GO ecosystem ZAARD",
+                btnMusic: "MUSIC",
+                btnSports: "SPORTS",
+                btnWeb3: "WEB3",
+                btnArcade: "ZAARD ARCADE",
+                btnWeb: "ZAARD WEB",
+                btnDiscord: "DISCORD"
+            },
+            ar: {
+                welcomeTitle: "أهلاً بك في نظام ZAARD INNOVATION البيئي",
+                welcomeDesc: "نحن نظام بيئي راقي مصمم للارتقاء بتجربة Web3 إلى المستوى التالي. هنا تلتقي التكنولوجيا بالمرح: استمتع بفائدة الـ NFT الحصرية الخاصة بنا وانغمس في كتالوج من الألعاب المبتكرة المصممة لعشاق مثلك.",
+                welcomeBtn: "انطلق إلى نظام ZAARD البيئي",
+                btnMusic: "موسيقى",
+                btnSports: "رياضة",
+                btnWeb3: "WEB3",
+                btnArcade: "أركيد ZAARD",
+                btnWeb: "موقع ZAARD",
+                btnDiscord: "ديسكورد"
+            },
+            zh: {
+                welcomeTitle: "欢迎来到 ZAARD INNOVATION 生态系统",
+                welcomeDesc: "我们是一个高端生态系统，旨在将 Web3 体验提升到新高度。在这里，技术与娱乐完美结合：尽享我们独家的 NFT 实用权益，沉浸在为像您这样的爱好者打造的创新游戏目录中。",
+                welcomeBtn: "进入 ZAARD 生态系统",
+                btnMusic: "音乐",
+                btnSports: "体育",
+                btnWeb3: "WEB3",
+                btnArcade: "ZAARD 游戏机",
+                btnWeb: "ZAARD 网页",
+                btnDiscord: "迪斯卡德"
+            }
+        };
+
+        function cambiarIdioma(lang) {
+            localStorage.setItem('zaard_lang', lang);
+            const t = traducciones[lang] || traducciones.es;
+            
+            document.getElementById('txt-welcome-title').innerText = t.welcomeTitle;
+            document.getElementById('txt-welcome-desc').innerText = t.welcomeDesc;
+            document.getElementById('txt-welcome-btn').innerText = t.welcomeBtn;
+            document.getElementById('txt-btn-music').innerText = t.btnMusic;
+            document.getElementById('txt-btn-sports').innerText = t.btnSports;
+            document.getElementById('txt-btn-web3').innerText = t.btnWeb3;
+            document.getElementById('txt-btn-arcade').innerText = t.btnArcade;
+            document.getElementById('txt-btn-web').innerText = t.btnWeb;
+            document.getElementById('txt-btn-discord').innerText = t.btnDiscord;
+
+            // Soporte para dirección de texto en árabe (RTL)
+            const htmlRoot = document.getElementById('html-root');
+            if (lang === 'ar') {
+                htmlRoot.setAttribute('dir', 'rtl');
+            } else {
+                htmlRoot.setAttribute('dir', 'ltr');
+            }
+        }
+
+        // Cargar el idioma guardado al iniciar la página
+        window.addEventListener('DOMContentLoaded', () => {
+            const idiomaGuardado = localStorage.getItem('zaard_lang') || 'es';
+            const selector = document.getElementById('lang-switcher');
+            if (selector) {
+                selector.value = idiomaGuardado;
+            }
+            cambiarIdioma(idiomaGuardado);
+        });
+    </script>
 </body>
 </html>
