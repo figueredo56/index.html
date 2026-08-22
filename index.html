@@ -55,28 +55,44 @@
         
         .title-blink { animation: text-color-cycle 3s infinite; font-weight: bold; }
         
+        /* Contenedores circulares corregidos con etiquetas img internas */
         .btn-token { 
             width: 55px; 
             height: 55px; 
             border-radius: 50%; 
-            background-size: cover; 
-            background-position: center; 
             border: 3px solid; 
             animation: border-cycle 3s infinite; 
-            display: block; 
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000;
             margin: 0 auto; 
+            text-decoration: none;
+        }
+        .btn-token img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .btn-nft { 
             width: 70px; 
             height: 70px; 
             border-radius: 50%; 
-            background-size: cover; 
-            background-position: center; 
             border: 3px solid; 
             animation: border-cycle 3s infinite; 
-            display: block; 
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000;
             margin: 5px auto; 
+        }
+        .btn-nft img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .blink-green { color: #00ff00; font-weight: bold; font-size: 0.6em; animation: blink 1s infinite; margin-top: 5px; }
@@ -96,10 +112,10 @@
             animation: border-cycle 3s infinite; 
         }
 
-        /* Carrusel superior corregido para que no falle */
+        /* Carrusel */
         .marquee-container { width: 100%; overflow: hidden; margin-top: 5px; margin-bottom: 10px; }
         .marquee { display: flex; animation: scroll 15s linear infinite; }
-        .marquee img { height: 35px; width: 35px; border-radius: 50%; object-fit: cover; border: 2px solid #00ffcc; margin: 0 4px; flex-shrink: 0; }
+        .marquee img { height: 38px; width: 38px; border-radius: 50%; object-fit: cover; border: 2px solid #00ffcc; margin: 0 5px; flex-shrink: 0; background: #000; }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     </style>
 </head>
@@ -114,38 +130,54 @@
         </div>
     </div>
 
-    <!-- Carrusel Superior (Imágenes corregidas para que no se queden en blanco) -->
+    <!-- Carrusel con imágenes directas (Evita que se queden en blanco) -->
     <div class="marquee-container">
         <div class="marquee">
-            <img src="https://raw.githubusercontent.com/figueredo56/ZAARD.token/main/logo.png" onerror="this.src='https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq'">
-            <img src="https://raw.githubusercontent.com/figueredo56/ZAARD.token/main/panga.png" onerror="this.src='https://ipfs.io/ipfs/bafybeiginlvb63afmlicnvsx4fwfekanoipydzgzv3ay7njpvq6nm4zzym'">
-            <img src="https://raw.githubusercontent.com/figueredo56/ZAARD.token/main/zared.png" onerror="this.src='https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue'">
-            <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png" onerror="this.src='https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu'">
-            <img src="https://raw.githubusercontent.com/figueredo56/ZAARD.token/main/logo.png" onerror="this.src='https://ipfs.io/ipfs/bafybeie5wqjyuwdezpoe5tqkqlojxv5evtdkv6mxhondx5hvod44txbobq'">
-            <img src="https://raw.githubusercontent.com/figueredo56/ZAARD.token/main/panga.png" onerror="this.src='https://ipfs.io/ipfs/bafybeiginlvb63afmlicnvsx4fwfekanoipydzgzv3ay7njpvq6nm4zzym'">
-            <img src="https://raw.githubusercontent.com/figueredo56/ZAARD.token/main/zared.png" onerror="this.src='https://ipfs.io/ipfs/bafybeiheko4izm53qfmhejmvz5elek4hb2lp3weaduwndvrvpxdamwklue'">
-            <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png" onerror="this.src='https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu'">
+            <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png" alt="Z">
+            <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-220736_1.png" alt="Z">
+            <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png" alt="Z">
+            <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-220736_1.png" alt="Z">
+            <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png" alt="Z">
+            <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-220736_1.png" alt="Z">
         </div>
     </div>
 
-    <!-- Contenedor Principal con el diseño visual exacto -->
+    <!-- Contenedor Principal -->
     <div class="main-container" style="margin-top: 5px; width: 100%; display: flex; flex-direction: column; align-items: center;"> 
         <div style="display: flex; align-items: center; justify-content: center; gap: 15px; width: 90%; max-width: 350px; margin-bottom: 5px;">
             <div style="width: 60%; height: 130px; border: 2px solid #00ffcc; border-radius: 10px; overflow: hidden;">
                 <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" style="width:100%; height:100%; border:none;"></iframe>
             </div>
+            
+            <!-- Botones Laterales con etiquetas IMG reales para que SÍ se vean -->
             <div style="width: 35%; display: flex; flex-direction: column; gap: 5px;">
-                <!-- BOTÓN ZARD CON EL NUEVO LINK EXACTO -->
-                <div><a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x5cac292558049638f39fb492e70fdbf3c4f5eb4e&binanceChainId=56&chain=bsc" class="btn-token" style="background-image: url('https://raw.githubusercontent.com/figueredo56/ZAARD.token/main/logo.png');"></a><span class="blink-green">ZARD</span></div>
-                <div><a href="#" class="btn-token" style="background-image: url('https://raw.githubusercontent.com/figueredo56/ZAARD.token/main/panga.png');"></a><span class="blink-green">PANGA</span></div>
-                <div><a href="#" class="btn-token" style="background-image: url('https://raw.githubusercontent.com/figueredo56/ZAARD.token/main/zared.png');"></a><span class="blink-green">ZARED</span></div>
+                <div>
+                    <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x5cac292558049638f39fb492e70fdbf3c4f5eb4e&binanceChainId=56&chain=bsc" class="btn-token">
+                        <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png" alt="ZARD">
+                    </a>
+                    <span class="blink-green">ZARD</span>
+                </div>
+                <div>
+                    <a href="#" class="btn-token">
+                        <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-220736_1.png" alt="PANGA">
+                    </a>
+                    <span class="blink-green">PANGA</span>
+                </div>
+                <div>
+                    <a href="#" class="btn-token">
+                        <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png" alt="ZARED">
+                    </a>
+                    <span class="blink-green">ZARED</span>
+                </div>
             </div>
         </div>
 
         <a href="https://pancakeswap.finance/swap?outputCurrency=0x5cac292558049638f39fb492e70fdbf3c4f5eb4e" style="width: 90%; max-width: 280px; height: 50px; background: url('https://raw.githubusercontent.com/figueredo56/index.html/refs/heads/main/Screenshot_20260724-220736_1.png') center/cover; border: 3px solid; border-radius: 10px; animation: border-cycle 3s infinite; margin-top: 5px;"></a>
         
-        <!-- Botón NFT -->
-        <a href="https://element.market/account/collection" class="btn-nft" style="background-image: url('https://raw.githubusercontent.com/figueredo56/ZAARD.token/main/logo.png'); margin-top: 5px;"></a>
+        <!-- Botón NFT con imagen real -->
+        <a href="https://element.market/account/collection" class="btn-nft" style="margin-top: 5px;">
+            <img src="https://raw.githubusercontent.com/figueredo56/index.html/main/Screenshot_20260724-221435_1.png" alt="NFT">
+        </a>
         <span class="blink-green" style="margin-top: -5px;">NFT</span>
 
        <!-- Bloque de 6 botones (2 filas de 3) -->
