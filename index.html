@@ -3,248 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAARD INNOVATION - Ecosistema Web3</title>
-    
-    <!-- ICONOS Y FAVICONS -->
-    <link rel="shortcut icon" href="https://photos.pinksale.finance/file/pinksale-logo-upload/1790265552390-0f039d18ee1d653bf30587b1e0baca3a.png" type="image/png">
-    <link rel="icon" type="image/png" href="https://photos.pinksale.finance/file/pinksale-logo-upload/1790265552390-0f039d18ee1d653bf30587b1e0baca3a.png">
-    <link rel="apple-touch-icon" href="https://photos.pinksale.finance/file/pinksale-logo-upload/1790265552390-0f039d18ee1d653bf30587b1e0baca3a.png">
-    
-    <!-- METADATOS OFICIALES PARA VISTA PREVIA -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://figueredo56.github.io/index.html/">
-    <meta property="og:title" content="ZAARD INNOVATION - Ecosistema Oficial">
-    <meta property="og:description" content="Portal central del ecosistema Web3 de alta gama. Conoce los tokens, juegos arcade y herramientas del protocolo.">
-    <meta property="og:image" content="https://photos.pinksale.finance/file/pinksale-logo-upload/1790265552390-0f039d18ee1d653bf30587b1e0baca3a.png">
-
+    <title>ZAARD INNOVATION</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
-
-        body { 
-            font-family: sans-serif; 
-            text-align: center; 
-            color: white; 
-            background: url('https://raw.githubusercontent.com/figueredo56/index.html/refs/heads/main/Screenshot_20260724-220736_1.png') no-repeat center center fixed; 
-            background-size: cover; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            min-height: 100vh; 
-            overflow-x: hidden;
-        }
-        
-        /* --- PANTALLA DE INTRODUCCIÓN Y BIENVENIDA UNIFICADA --- */
-        #welcome-screen { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: radial-gradient(circle at center, #1b0c3f 0%, #030308 90%), url('https://raw.githubusercontent.com/figueredo56/index.html/refs/heads/main/Screenshot_20260724-220736_1.png') center/cover;
-            background-blend-mode: overlay;
-            z-index: 2000; 
-            display: flex; 
+        body {
+            margin: 0;
+            padding: 0;
+            background: #050505 url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
             flex-direction: column;
-            justify-content: center; 
-            align-items: center; 
-            transition: opacity 0.8s ease, visibility 0.8s ease;
+            justify-content: space-between;
         }
 
-        .intro-logo {
-            width: 130px;
-            height: 130px;
-            object-fit: contain;
-            border-radius: 50%;
-            box-shadow: 0 0 40px rgba(0, 243, 255, 0.6), inset 0 0 15px rgba(138, 43, 226, 0.7);
-            border: 2px solid #00f3ff;
-            margin-bottom: 20px;
-            animation: pulseLogo 2s infinite ease-in-out;
-        }
-        
-        /* Caja de bienvenida legible */
-        .text-box { 
-            background: rgba(18, 9, 38, 0.85); 
-            padding: 25px; 
-            border-radius: 20px; 
-            width: 85%; 
-            max-width: 420px;
-            border: 2px solid #00f3ff; 
-            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
-        }
-        
-        /* Animaciones */
-        @keyframes text-color-cycle { 0% { color: #00f3ff; } 50% { color: #8a2be2; } 100% { color: #00f3ff; } }
-        @keyframes border-cycle { 0% { border-color: #00f3ff; } 33% { border-color: #8a2be2; } 66% { border-color: #00ffcc; } 100% { border-color: #00f3ff; } }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        @keyframes pulseLogo { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        
-        .title-blink { animation: text-color-cycle 3s infinite; font-weight: bold; }
-        
-        /* Contenedores de Tokens */
-        .btn-token { 
-            width: 55px; 
-            height: 55px; 
-            border-radius: 50%; 
-            border: 3px solid; 
-            animation: border-cycle 3s infinite; 
-            display: flex; 
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: #000;
-            margin: 0 auto; 
-            text-decoration: none;
-        }
-        .btn-token img {
+        /* Overlay oscuro para legibilidad */
+        .overlay {
+            background: rgba(5, 5, 5, 0.85);
+            min-height: 100vh;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .btn-nft { 
-            width: 70px; 
-            height: 70px; 
-            border-radius: 50%; 
-            border: 3px solid; 
-            animation: border-cycle 3s infinite; 
-            display: flex; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: #000;
-            margin: 5px auto; 
+            padding-bottom: 30px;
         }
-        .btn-nft img {
+
+        /* Selector de Idioma */
+        .language-selector {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 20px;
         }
-        
-        .blink-green { color: #00f3ff; font-weight: bold; font-size: 0.65em; animation: blink 1s infinite; margin-top: 5px; text-shadow: 0 0 5px rgba(0,243,255,0.5); }
-        
-        .btn { 
-            border: 3px solid; 
-            padding: 10px 5px; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-size: 0.7em; 
-            color: #00f3ff; 
-            background: rgba(18,9,38,0.85); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            margin: 5px; 
-            animation: border-cycle 3s infinite; 
+        .language-selector select {
+            background: rgba(0, 255, 255, 0.1);
+            color: #00ffff;
+            border: 1px solid #00ffff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
             font-weight: bold;
-            transition: 0.3s;
+            outline: none;
+            transition: all 0.3s ease;
         }
-        .btn:hover {
-            background: rgba(0, 243, 255, 0.2);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+        .language-selector select:hover {
+            background: rgba(0, 255, 255, 0.3);
         }
 
-        /* Carrusel fluido sin saltos */
-        .marquee-container { width: 100%; overflow: hidden; margin-top: 10px; margin-bottom: 10px; background: rgba(3,3,8,0.5); padding: 5px 0; border-top: 1px solid rgba(0,243,255,0.3); border-bottom: 1px solid rgba(0,243,255,0.3); }
-        .marquee { display: flex; width: max-content; animation: scroll 25s linear infinite; }
-        .marquee img { height: 42px; width: 42px; border-radius: 50%; object-fit: cover; border: 2px solid #00f3ff; margin: 0 6px; flex-shrink: 0; background: #000; box-shadow: 0 0 8px rgba(0,243,255,0.4); }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        /* Contenedor Superior (Iconos / Redes redondas) */
+        .top-icons-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 10px 0 15px 0;
+            flex-wrap: wrap;
+            max-width: 90%;
+        }
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #00ffff;
+            overflow: hidden;
+            background: #111;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+        .icon-circle:hover {
+            transform: scale(1.1);
+        }
+        .icon-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Carrusel de Imágenes corregido */
+        .carousel-container {
+            width: 90%;
+            max-width: 420px;
+            margin: 10px auto;
+            overflow: hidden;
+            border: 2px solid #00ffff;
+            border-radius: 12px;
+            background: #111;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            position: relative;
+        }
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .carousel-slide-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .carousel-slides img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Banner central decorativo */
+        .central-banner {
+            width: 90%;
+            max-width: 420px;
+            margin: 15px auto;
+            border: 2px solid #00ffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+        .central-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Círculo NFT Central */
+        .nft-badge-container {
+            margin: 10px auto;
+        }
+        .nft-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid #00ffff;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+        }
+        .nft-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Botones del menú principal (Grid) */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            width: 90%;
+            max-width: 420px;
+            margin: 15px auto;
+        }
+        .menu-btn {
+            background: linear-gradient(135deg, rgba(0, 68, 102, 0.8), rgba(0, 34, 51, 0.9));
+            border: 2px solid #00ffff;
+            color: #ffffff;
+            padding: 14px 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 13px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.25);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-btn:hover {
+            background: #00ffff;
+            color: #000000;
+            box-shadow: 0 0 15px #00ffff;
+            transform: translateY(-2px);
+        }
+
+        /* Pie de página */
+        .footer-brand {
+            margin-top: 10px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #00ffff;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+        }
     </style>
 </head>
 <body>
 
-    <!-- PANTALLA DE BIENVENIDA / ENTRADA (Se oculta al hacer clic) -->
-    <div id="welcome-screen">
-        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="Zaard Logo" class="intro-logo">
-        <div class="text-box">
-            <h1 class="title-blink" style="font-size: 1.3em; margin-bottom: 12px;">ZAARD INNOVATION</h1>
-            <p style="color: #c7d2fe; font-size: 0.9em; line-height: 1.5; margin-bottom: 15px;">Somos un ecosistema de alta gama, diseñado para llevar la experiencia Web3 al siguiente nivel. Disfruta de utilidad en NFTs, juegos innovadores y herramientas financieras en la BNB Smart Chain.</p>
-            <button onclick="document.getElementById('welcome-screen').style.opacity='0'; setTimeout(() => document.getElementById('welcome-screen').style.display='none', 800);" class="btn title-blink" style="background: linear-gradient(135deg, #8a2be2 0%, #00f3ff 100%); color: #fff; font-size: 1rem; padding: 12px; margin: 0 auto; width: 100%; border: none; border-radius: 30px; cursor: pointer; box-shadow: 0 0 20px rgba(0,243,255,0.5);">GO ECOSISTEMA ZAARD</button>
+    <div class="overlay">
+        <!-- Selector de Idioma -->
+        <div class="language-selector">
+            <select id="langSwitch" onchange="changeLanguage()">
+                <option value="es">🇪🇸 ES</option>
+                <option value="en">🇬🇧 EN</option>
+            </select>
         </div>
-    </div>
 
-    <!-- CARRUSEL DE IMÁGENES DEL ECOSISTEMA -->
-    <div class="marquee-container">
-        <div class="marquee">
-            <!-- Bloque 1 -->
-            <img src="https://ipfs.io/ipfs/bafybeigxro3eht2lctrk4akglifsxuvwolwqfzgqzvnstabnpjjiungza4">
-            <img src="https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790286366724-9003585f30626b9963bd86a5cf26c8ca.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790286307495-7850b9884619f2e0ccb7358994c11b42.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790286563823-5039a28ff802b79aa6069d75b09ad789.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790288769685-7d9a89bc13043a812c4889cb55ac4a54.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790290122445-0077664fb41e21b3aec6f1685fd6ec56.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790290143709-10b712b064b3dca0c1a6417000db08e3.png">
-            
-            <!-- Bloque 2 (Duplicado para bucle perfecto) -->
-            <img src="https://ipfs.io/ipfs/bafybeigxro3eht2lctrk4akglifsxuvwolwqfzgqzvnstabnpjjiungza4">
-            <img src="https://ipfs.io/ipfs/bafybeiggz26x26hncisti5s5y74ciuk4yuymtczhsbwdufoql2gidl57mu">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790286366724-9003585f30626b9963bd86a5cf26c8ca.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790286307495-7850b9884619f2e0ccb7358994c11b42.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790286563823-5039a28ff802b79aa6069d75b09ad789.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790288769685-7d9a89bc13043a812c4889cb55ac4a54.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790290122445-0077664fb41e21b3aec6f1685fd6ec56.png">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790290143709-10b712b064b3dca0c1a6417000db08e3.png">
+        <!-- Iconos Superiores (Asegúrate de cambiar las URLs por tus imágenes locales o enlaces válidos) -->
+        <div class="top-icons-container">
+            <div class="icon-circle"><img src="token1.png" alt="Token" onerror="this.src='https://via.placeholder.com/50/111/00ffff?text=Z'"></div>
+            <div class="icon-circle"><img src="token2.png" alt="Token" onerror="this.src='https://via.placeholder.com/50/111/00ffff?text=Z'"></div>
+            <div class="icon-circle"><img src="token3.png" alt="Token" onerror="this.src='https://via.placeholder.com/50/111/00ffff?text=Z'"></div>
+            <div class="icon-circle"><img src="token4.png" alt="Token" onerror="this.src='https://via.placeholder.com/50/111/00ffff?text=Z'"></div>
+            <div class="icon-circle"><img src="token5.png" alt="Token" onerror="this.src='https://via.placeholder.com/50/111/00ffff?text=Z'"></div>
+            <div class="icon-circle"><img src="token6.png" alt="Token" onerror="this.src='https://via.placeholder.com/50/111/00ffff?text=Z'"></div>
         </div>
-    </div>
 
-    <!-- CONTENEDOR PRINCIPAL DEL ECOSISTEMA -->
-    <div class="main-container" style="margin-top: 5px; width: 100%; display: flex; flex-direction: column; align-items: center;"> 
-        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; width: 90%; max-width: 350px; margin-bottom: 5px;">
-            <!-- Vídeo de YouTube -->
-            <div style="width: 60%; height: 130px; border: 2px solid #00f3ff; border-radius: 10px; overflow: hidden; box-shadow: 0 0 15px rgba(0,243,255,0.3);">
-                <iframe src="https://www.youtube.com/embed/3ZLhfmZWLXk" style="width:100%; height:100%; border:none;"></iframe>
-            </div>
-            
-            <!-- Botones Laterales de Tokens -->
-            <div style="width: 35%; display: flex; flex-direction: column; gap: 5px;">
-                <div>
-                    <a href="https://app.binance.com/uni-qr/web3-token-details?utm_medium=share&tokenCA=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38&binanceChainId=56&chain=bsc" class="btn-token">
-                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZARD">
-                    </a>
-                    <span class="blink-green">ZARD</span>
+        <!-- Carrusel con imágenes protegidas contra errores (rutas corregidas) -->
+        <div class="carousel-container">
+            <div class="carousel-slides" id="slider">
+                <div class="carousel-slide-item">
+                    <img src="banner-carrusel-1.jpg" alt="Carrusel 1" onerror="this.src='https://via.placeholder.com/420x200/111/00ffff?text=ZAARD+INNOVATION+1'">
                 </div>
-                <div>
-                    <a href="#" class="btn-token">
-                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790286307495-7850b9884619f2e0ccb7358994c11b42.png" alt="PANGA">
-                    </a>
-                    <span class="blink-green">PANGA</span>
-                </div>
-                <div>
-                    <a href="#" class="btn-token">
-                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790288769685-7d9a89bc13043a812c4889cb55ac4a54.png" alt="ZARED">
-                    </a>
-                    <span class="blink-green">ZARED</span>
+                <div class="carousel-slide-item">
+                    <img src="banner-carrusel-2.jpg" alt="Carrusel 2" onerror="this.src='https://via.placeholder.com/420x200/111/00ffff?text=ZAARD+INNOVATION+2'">
                 </div>
             </div>
         </div>
 
-        <!-- Botón PancakeSwap -->
-        <a href="https://pancakeswap.finance/swap?outputCurrency=0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38" style="width: 90%; max-width: 280px; height: 50px; background: url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790287451706-4593a246bbbf27b508770c328ab883c0.png') center/cover; border: 3px solid; border-radius: 10px; animation: border-cycle 3s infinite; margin-top: 5px; box-shadow: 0 0 15px rgba(138,43,226,0.4);"></a>
+        <!-- Banner Central (Renacimiento) -->
+        <div class="central-banner">
+            <img src="banner-renacimiento.jpg" alt="Renacimiento" onerror="this.src='https://via.placeholder.com/420x100/111/00ffff?text=RENACIMIENTO'">
+        </div>
+
+        <!-- Insignia NFT Central -->
+        <div class="nft-badge-container">
+            <div class="nft-circle">
+                <img src="nft-logo.jpg" alt="NFT" onerror="this.src='https://via.placeholder.com/70/111/00ffff?text=NFT'">
+            </div>
+        </div>
+
+        <!-- Menú de Botones Principales con soporte multi-idioma -->
+        <div class="menu-grid">
+            <a href="#" class="menu-btn" data-es="MÚSICA" data-en="MUSIC">MÚSICA</a>
+            <a href="#" class="menu-btn" data-es="DEPORTES" data-en="SPORTS">DEPORTES</a>
+            <a href="#" class="menu-btn" data-es="WEB3" data-en="WEB3">WEB3</a>
+            <a href="#" class="menu-btn" data-es="X (TWITTER)" data-en="X (TWITTER)">X (TWITTER)</a>
+            <a href="#" class="menu-btn" data-es="ZAARD WEB" data-en="ZAARD WEB">ZAARD WEB</a>
+            <a href="#" class="menu-btn" data-es="DISCORD" data-en="DISCORD">DISCORD</a>
+        </div>
+
+        <!-- Pie de página -->
+        <div class="footer-brand">ZAARD_ALX</div>
+    </div>
+
+    <script>
+        // Función para cambiar los textos del menú según el idioma seleccionado
+        function changeLanguage() {
+            const lang = document.getElementById('langSwitch').value;
+            const buttons = document.querySelectorAll('.menu-btn');
+            
+            buttons.forEach(btn => {
+                if (lang === 'en') {
+                    btn.textContent = btn.getAttribute('data-en');
+                } else {
+                    btn.textContent = btn.getAttribute('data-es');
+                }
+            });
+        }
+
+        // Lógica automática del carrusel para rotar las imágenes sin que se rompan
+        let currentIndex = 0;
+        function slideCarousel() {
+            const slider = document.getElementById('slider');
+            const totalSlides = slider.children.length;
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
         
-        <!-- Botón NFT -->
-        <a href="https://element.market/account/collection" class="btn-nft" style="margin-top: 5px;">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790265552390-0f039d18ee1d653bf30587b1e0baca3a.png" alt="NFT">
-        </a>
-        <span class="blink-green" style="margin-top: -5px;">NFT</span>
-
-       <!-- Bloque de Botones del Ecosistema -->
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 90%; max-width: 350px; margin-top: 10px;">
-            <a href="https://open.spotify.com/playlist/2WoPMH4aMnQ0IsHx0yPZFk?si=RyYSkwQETm6bp-oV-3GwlQ" class="btn">MÚSICA</a>
-            <a href="https://www.youtube.com/live/iZqU70-LizY?si=BO-ST_sdUTmKSzDd" class="btn">DEPORTES</a>
-            <a href="https://share.google/kFlBcNnLr7SvJ8QRF" class="btn">WEB3</a>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 90%; max-width: 350px; margin-top: 5px; margin-bottom: 20px;">
-            <a href="https://x.com/ZAARD_ALX" class="btn">X (TWITTER)</a>
-            <a href="https://figueredo56.github.io/zaard-official/" class="btn">ZAARD WEB</a>
-            <a href="https://discord.gg/rRxNpNXdj" class="btn">DISCORD</a>
-        </div>
-    </div>
+        // Cambia de imagen cada 4 segundos automáticamente
+        setInterval(slideCarousel, 4000);
+    </script>
 
 </body>
 </html>
