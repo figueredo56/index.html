@@ -12,7 +12,7 @@
     <meta property="og:description" content="Crea tu propio token emparejado con ZARD o PANGA, gestiona tu billetera y explora el ecosistema financiero global.">
     <meta property="og:image" content="https://photos.pinksale.finance/file/pinksale-logo-upload/1791940828941-906fd2a3d85625f79d066e5b033f6011.png">
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #07020f;
@@ -46,8 +46,102 @@
             flex-direction: column;
             align-items: center;
             padding: 10px;
+            overflow-x: hidden;
         }
 
+        /* PANTALLA DE BIENVENIDA A PANTALLA COMPLETA (SPLASH OVERLAY) */
+        #welcomeOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #05020c;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            text-align: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        #welcomeOverlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* FONDO DE AGUA TRANSLÚCIDO PARA LA BIENVENIDA */
+        .welcome-bg-watermark {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.18;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* SELECTOR DE IDIOMAS FLOTANTE EN BIENVENIDA */
+        .welcome-lang-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 5;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(76, 201, 240, 0.4);
+            padding: 6px 12px;
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+        }
+
+        .welcome-lang-box select {
+            background: transparent;
+            color: #fff;
+            border: none;
+            font-size: 0.85em;
+            font-weight: bold;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* ANIMACIÓN FLOTANTE E ILUMINACIÓN DE LA IMAGEN REDONDA */
+        @keyframes floatGlow {
+            0% { transform: translateY(0px); box-shadow: 0 0 25px #06d6a0, inset 0 0 10px rgba(6,214,160,0.4); }
+            50% { transform: translateY(-10px); box-shadow: 0 0 40px #06d6a0, inset 0 0 20px rgba(6,214,160,0.7); }
+            100% { transform: translateY(0px); box-shadow: 0 0 25px #06d6a0, inset 0 0 10px rgba(6,214,160,0.4); }
+        }
+
+        .floating-glow-img {
+            animation: floatGlow 3s ease-in-out infinite;
+        }
+
+        .ecosystem-enter-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, rgba(123,44,191,0.6), rgba(6,214,160,0.4));
+            border: 2px solid #06d6a0;
+            border-radius: 14px;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(6,214,160,0.5);
+            transition: all 0.3s ease;
+        }
+
+        .ecosystem-enter-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 45px #06d6a0, 0 0 20px rgba(123,44,191,0.8);
+            background: linear-gradient(135deg, rgba(123,44,191,0.8), rgba(6,214,160,0.6));
+        }
+
+        /* ESTRUCTURA PRINCIPAL DE LA DAPP */
         .main-wrapper {
             width: 100%;
             max-width: 1100px;
@@ -147,60 +241,34 @@
             display: flex;
         }
 
-        /* ESTILOS DE LA BIENVENIDA EXPLICATIVA (ZAARD INNOVATION) */
-        .zaard-welcome-hero {
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(123, 44, 191, 0.6);
-            box-shadow: 0 0 40px rgba(123, 44, 191, 0.4);
-            background: linear-gradient(135deg, rgba(7,2,15,0.92), rgba(22,10,40,0.88));
-            padding: 35px 25px;
-            border-radius: 20px;
-            margin-bottom: 20px;
+        .welcome-hero, .creator-header-banner {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
 
-        .zaard-watermark {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.12;
-            z-index: 0;
-            pointer-events: none;
+        .hero-banner, .top-creator-img {
+            width: 100%;
+            max-height: 240px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid var(--border-glow);
+            box-shadow: 0 0 25px rgba(76,201,240,0.35);
         }
 
-        @keyframes floatGlow {
-            0% { transform: translateY(0px); box-shadow: 0 0 20px #06d6a0, inset 0 0 10px rgba(6,214,160,0.4); }
-            50% { transform: translateY(-8px); box-shadow: 0 0 35px #06d6a0, inset 0 0 20px rgba(6,214,160,0.7); }
-            100% { transform: translateY(0px); box-shadow: 0 0 20px #06d6a0, inset 0 0 10px rgba(6,214,160,0.4); }
+        .welcome-hero h1, .creator-header-banner h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #fff, var(--neon-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .floating-glow-img {
-            animation: floatGlow 3s ease-in-out infinite;
-        }
-
-        .ecosystem-enter-btn {
-            display: inline-block;
-            padding: 14px 35px;
-            background: linear-gradient(135deg, rgba(123,44,191,0.5), rgba(6,214,160,0.3));
-            border: 2px solid #06d6a0;
-            border-radius: 14px;
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.95em;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 0 25px rgba(6,214,160,0.4);
-            transition: all 0.3s ease;
-        }
-
-        .ecosystem-enter-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 35px #06d6a0, 0 0 15px rgba(123,44,191,0.8);
-            background: linear-gradient(135deg, rgba(123,44,191,0.7), rgba(6,214,160,0.5));
+        .welcome-hero p, .creator-header-banner p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         .hub-cards-grid {
@@ -501,7 +569,7 @@
             font-weight: 600;
         }
 
-        /* MODALES */
+        /* MODALES DE CONEXIÓN */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -586,6 +654,50 @@
 </head>
 <body>
 
+    <!-- 1. PANTALLA DE BIENVENIDA A PANTALLA COMPLETA (INICIAL) -->
+    <div id="welcomeOverlay">
+        <div class="welcome-bg-watermark"></div>
+
+        <!-- Selector de Idioma Flotante Superior -->
+        <div class="welcome-lang-box">
+            <span style="font-size: 0.8em; color: #c7b9e4;">🌐 Lang:</span>
+            <select id="welcomeLangSelect" onchange="changeLanguage(this.value)">
+                <option value="es">🇪🇸 ES</option>
+                <option value="en">🇬🇧 EN</option>
+                <option value="zh">🇨🇳 中文</option>
+            </select>
+        </div>
+
+        <!-- Imagen Redonda Flotante -->
+        <div style="position: relative; z-index: 2; margin-bottom: 25px; display: flex; justify-content: center;">
+            <div class="floating-glow-img" style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 3px solid #06d6a0; background: rgba(0,0,0,0.5); padding: 4px;">
+                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZAARD INNOVATION Core" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+            </div>
+        </div>
+
+        <!-- Textos Explicativos Morados con ZARD y PANGA en Verde -->
+        <div style="position: relative; z-index: 2; max-width: 720px; margin: 0 auto 30px auto;">
+            <h1 style="font-family: 'Orbitron', sans-serif; color: #d8b4fe; font-size: 1.8em; margin-bottom: 15px; text-shadow: 0 0 15px rgba(216,180,254,0.5);" data-i18n="welcome-title">
+                BIENVENIDOS AL ECOSISTEMA ZAARD INNOVATION
+            </h1>
+            <p style="color: #e9d5ff; font-size: 1em; line-height: 1.6; margin-bottom: 12px; font-weight: 300;" data-i18n="welcome-desc1">
+                Centro descentralizado de alta precisión técnica. Aquí puedes <strong style="color: #c084fc;">rastrear en vivo</strong> las compras y ventas de los tokens del ecosistema.
+            </p>
+            <p style="color: #d8b4fe; font-size: 0.95em; line-height: 1.6; font-weight: 300;" data-i18n="welcome-desc2">
+                Crea tus propios tokens con liquidez integrada de <span style="color: #06d6a0; font-weight: bold; text-shadow: 0 0 8px rgba(6,214,160,0.6);">ZARD</span> o <span style="color: #06d6a0; font-weight: bold; text-shadow: 0 0 8px rgba(6,214,160,0.6);">PANGA</span> bajo los estándares más seguros de BNB Smart Chain. 🚀
+            </p>
+        </div>
+
+        <!-- Botón de Entrada Principal -->
+        <div style="position: relative; z-index: 2;">
+            <button onclick="enterEcosystem()" class="ecosystem-enter-btn" data-i18n="welcome-btn">
+                ⚡ ENTRAR AL ECOSISTEMA ↗
+            </button>
+        </div>
+    </div>
+
+
+    <!-- 2. ESTRUCTURA INTERNA DE LA DAPP -->
     <div class="main-wrapper">
         <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
         <header>
@@ -608,39 +720,12 @@
         <!-- CONTENEDOR DE PESTAÑAS -->
         <main class="content-container">
 
-            <!-- VISTA 1: HOME / BIENVENIDA -->
+            <!-- VISTA 1: HOME / TARJETAS DEL ECOSISTEMA -->
             <section id="tab-home" class="view-section active">
-                
-                <!-- BLOQUE: BIENVENIDA EXPLICATIVA - ZAARD INNOVATION -->
-                <div class="zaard-welcome-hero">
-                    <div class="zaard-watermark"></div>
-
-                    <!-- Imagen Redonda Flotante con Brillo Neón -->
-                    <div style="position: relative; z-index: 2; margin-bottom: 20px; display: flex; justify-content: center;">
-                        <div class="floating-glow-img" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 3px solid #06d6a0; background: rgba(0,0,0,0.5); padding: 4px;">
-                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZAARD INNOVATION Core" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-                        </div>
-                    </div>
-
-                    <!-- Textos Explicativos -->
-                    <div style="position: relative; z-index: 2; max-width: 700px; margin: 0 auto 25px auto;">
-                        <h1 style="font-family: 'Orbitron', sans-serif; color: #d8b4fe; font-size: 1.6em; margin-bottom: 12px; text-shadow: 0 0 15px rgba(216,180,254,0.5);" data-i18n="welcome-title">
-                            BIENVENIDOS AL ECOSISTEMA ZAARD INNOVATION
-                        </h1>
-                        <p style="color: #e9d5ff; font-size: 0.95em; line-height: 1.6; margin-bottom: 10px; font-weight: 300;" data-i18n="welcome-desc1">
-                            Centro descentralizado de alta precisión técnica. Aquí puedes <strong style="color: #c084fc;">rastrear en vivo</strong> las compras y ventas de los tokens del ecosistema.
-                        </p>
-                        <p style="color: #d8b4fe; font-size: 0.9em; line-height: 1.6; font-weight: 300;" data-i18n="welcome-desc2">
-                            Crea tus propios tokens con liquidez integrada de <span style="color: #06d6a0; font-weight: bold; text-shadow: 0 0 8px rgba(6,214,160,0.6);">ZARD</span> o <span style="color: #06d6a0; font-weight: bold; text-shadow: 0 0 8px rgba(6,214,160,0.6);">PANGA</span> bajo los estándares más seguros de BNB Smart Chain. 🚀
-                        </p>
-                    </div>
-
-                    <!-- Botón de Entrada -->
-                    <div style="position: relative; z-index: 2;">
-                        <button onclick="switchTab('creator')" class="ecosystem-enter-btn" data-i18n="welcome-btn">
-                            ⚡ ENTRAR AL ECOSISTEMA ↗
-                        </button>
-                    </div>
+                <div class="welcome-hero">
+                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1792865596414-22890f0deb10ff50d0525508a0eea986.png" alt="ZARD Finance Banner" class="hero-banner">
+                    <h1 data-i18n="hero-title">Bienvenido al Núcleo de ZARD Finance</h1>
+                    <p data-i18n="hero-subtitle">Selecciona una opción del ecosistema para comenzar la innovación financiera</p>
                 </div>
 
                 <div class="hub-cards-grid">
@@ -686,7 +771,7 @@
                 </div>
 
                 <!-- ENLACES RÁPIDOS INFERIORES -->
-                <div class="ecosystem-footer-links" style="margin-top: 15px;">
+                <div class="ecosystem-footer-links">
                     <h4 data-i18n="eco-links-title">🔗 Enlaces Rápidos del Ecosistema</h4>
                     <div class="footer-links-grid">
                         <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="eco-link-btn nexus-btn" data-i18n="nav-nexus">⚡ Regresar al Nexus</a>
@@ -821,12 +906,12 @@
         // Traducciones Multi-idioma
         const translations = {
             es: {
-                "nav-web": "🌐 Web Oficial", "nav-wallet": "👛 ZARD Wallet", "nav-nexus": "⚡ Regresar al Nexus", "nav-tracker": "📊 Tracker Pro",
-                "btn-connect": "Conectar Billetera",
                 "welcome-title": "BIENVENIDOS AL ECOSISTEMA ZAARD INNOVATION",
-                "welcome-desc1": "Centro descentralizado de alta precisión técnica. Aquí puedes <strong>rastrear en vivo</strong> las compras y ventas de los tokens del ecosistema.",
-                "welcome-desc2": "Crea tus propios tokens con liquidez integrada de ZARD o PANGA bajo los estándares más seguros de BNB Smart Chain. 🚀",
+                "welcome-desc1": "Centro descentralizado de alta precisión técnica. Aquí puedes <strong style='color: #c084fc;'>rastrear en vivo</strong> las compras y ventas de los tokens del ecosistema.",
+                "welcome-desc2": "Crea tus propios tokens con liquidez integrada de <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> o <span style='color: #06d6a0; font-weight: bold;'>PANGA</span> bajo los estándares más seguros de BNB Smart Chain. 🚀",
                 "welcome-btn": "⚡ ENTRAR AL ECOSISTEMA ↗",
+                "nav-web": "🌐 Web Oficial", "nav-wallet": "❤️‍🔥 ZARD Wallet", "nav-nexus": "⚡ Regresar al Nexus", "nav-tracker": "📊 Tracker Pro",
+                "btn-connect": "Conectar Billetera",
                 "hero-title": "Bienvenido al Núcleo de ZARD Finance",
                 "hero-subtitle": "Selecciona una opción del ecosistema para comenzar la innovación financiera",
                 "card1-title": "ZARD Wallet", "card1-desc": "Gestiona tus activos y tokens de forma segura.", "card1-link": "Abrir Billetera →",
@@ -846,12 +931,12 @@
                 "footer-text": "© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC."
             },
             en: {
-                "nav-web": "🌐 Official Web", "nav-wallet": "👛 ZARD Wallet", "nav-nexus": "⚡ Return to Nexus", "nav-tracker": "📊 Tracker Pro",
-                "btn-connect": "Connect Wallet",
                 "welcome-title": "WELCOME TO THE ZAARD INNOVATION ECOSYSTEM",
-                "welcome-desc1": "Decentralized high-precision technical center. Here you can <strong>live track</strong> ecosystem token purchases and sales.",
-                "welcome-desc2": "Create your own tokens with integrated ZARD or PANGA liquidity under the most secure BNB Smart Chain standards. 🚀",
+                "welcome-desc1": "Decentralized high-precision technical center. Here you can <strong style='color: #c084fc;'>live track</strong> ecosystem token purchases and sales.",
+                "welcome-desc2": "Create your own tokens with integrated <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> or <span style='color: #06d6a0; font-weight: bold;'>PANGA</span> liquidity under the most secure BNB Smart Chain standards. 🚀",
                 "welcome-btn": "⚡ ENTER ECOSYSTEM ↗",
+                "nav-web": "🌐 Official Web", "nav-wallet": "❤️‍🔥 ZARD Wallet", "nav-nexus": "⚡ Return to Nexus", "nav-tracker": "📊 Tracker Pro",
+                "btn-connect": "Connect Wallet",
                 "hero-title": "Welcome to ZARD Finance Core",
                 "hero-subtitle": "Select an ecosystem option to start financial innovation",
                 "card1-title": "ZARD Wallet", "card1-desc": "Manage your assets and tokens securely.", "card1-link": "Open Wallet →",
@@ -871,12 +956,12 @@
                 "footer-text": "© 2026 ZARD Finance Ecosystem. Deployment synchronized with Web3 BSC."
             },
             zh: {
-                "nav-web": "🌐 官方网站", "nav-wallet": "👛 ZARD 钱包", "nav-nexus": "⚡ 返回 Nexus", "nav-tracker": "📊 Tracker Pro",
-                "btn-connect": "连接钱包",
                 "welcome-title": "欢迎来到 ZAARD INNOVATION 生态系统",
-                "welcome-desc1": "去中心化的高精度技术中心。在这里您可以<strong>实时追踪</strong>生态代币的买卖情况。",
-                "welcome-desc2": "在最安全的 BNB 智能链标准下，使用集成 ZARD 或 PANGA 流动性创建您自己的代币。 🚀",
+                "welcome-desc1": "去中心化的高精度技术中心。在这里您可以<strong style='color: #c084fc;'>实时追踪</strong>生态代币的买卖情况。",
+                "welcome-desc2": "在最安全的 BNB 智能链标准下，使用集成 <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> 或 <span style='color: #06d6a0; font-weight: bold;'>PANGA</span> 流动性创建您自己的代币。 🚀",
                 "welcome-btn": "⚡ 进入生态系统 ↗",
+                "nav-web": "🌐 官方网站", "nav-wallet": "❤️‍🔥 ZARD 钱包", "nav-nexus": "⚡ 返回 Nexus", "nav-tracker": "📊 Tracker Pro",
+                "btn-connect": "连接钱包",
                 "hero-title": "欢迎来到 ZARD Finance 核心",
                 "hero-subtitle": "选择生态系统选项以开启金融创新",
                 "card1-title": "ZARD 钱包", "card1-desc": "在网络中安全地管理您的资产和代币。", "card1-link": "打开钱包 →",
@@ -897,6 +982,12 @@
             }
         };
 
+        // FUNCIÓN PARA ENTRAR AL ECOSISTEMA Y OCULTAR EL BIENVENIDA
+        function enterEcosystem() {
+            const overlay = document.getElementById('welcomeOverlay');
+            overlay.classList.add('hidden');
+        }
+
         function changeLanguage(lang) {
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
@@ -909,12 +1000,14 @@
                 }
             });
             document.getElementById('languageSelect').value = lang;
+            document.getElementById('welcomeLangSelect').value = lang;
             localStorage.setItem('zard_lang', lang);
         }
 
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('zard_lang') || 'es';
             document.getElementById('languageSelect').value = savedLang;
+            document.getElementById('welcomeLangSelect').value = savedLang;
             changeLanguage(savedLang);
         });
 
