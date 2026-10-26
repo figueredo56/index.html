@@ -49,7 +49,7 @@
             overflow-x: hidden;
         }
 
-        /* PANTALLA DE BIENVENIDA PROFESIONAL Y TÉCNICA (SPLASH SCREEN) */
+        /* PANTALLA DE BIENVENIDA CON SCROLL HABILITADO PARA MÓVILES */
         #welcomeOverlay {
             position: fixed;
             top: 0;
@@ -60,9 +60,11 @@
             z-index: 9999;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Permite empezar desde arriba */
             align-items: center;
-            padding: 30px;
+            overflow-y: auto; /* Habilita el desplazamiento vertical en la pantalla de bienvenida */
+            -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iOS y Android */
+            padding: 40px 20px 60px 20px;
             text-align: center;
             transition: opacity 0.6s ease, visibility 0.6s ease;
         }
@@ -75,9 +77,9 @@
 
         /* FONDO DE AGUA TRANSLÚCIDO PARA LA BIENVENIDA */
         .welcome-bg-watermark {
-            position: absolute;
+            position: fixed;
             top: 0; left: 0;
-            width: 100%; height: 100%;
+            width: 100vw; height: 100vh;
             background-image: url('https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png');
             background-size: cover;
             background-position: center;
@@ -86,17 +88,18 @@
             pointer-events: none;
         }
 
-        /* SELECTOR DE IDIOMAS FLOTANTE EN BIENVENIDA */
+        /* SELECTOR DE IDIOMAS FIJO EN BIENVENIDA */
         .welcome-lang-box {
-            position: absolute;
-            top: 25px;
-            right: 25px;
+            position: sticky;
+            top: 10px;
+            align-self: flex-end;
             z-index: 5;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             border: 1px solid rgba(76, 201, 240, 0.5);
-            padding: 8px 14px;
+            padding: 6px 12px;
             border-radius: 12px;
             backdrop-filter: blur(10px);
+            margin-bottom: 10px;
         }
 
         .welcome-lang-box select {
@@ -133,6 +136,7 @@
             cursor: pointer;
             box-shadow: 0 0 30px rgba(6,214,160,0.5);
             transition: all 0.3s ease;
+            margin-top: 15px;
         }
 
         .ecosystem-enter-btn:hover {
@@ -654,11 +658,11 @@
 </head>
 <body>
 
-    <!-- 1. PANTALLA DE BIENVENIDA PROFESIONAL Y TÉCNICA (SPLASH SCREEN) -->
+    <!-- 1. PANTALLA DE BIENVENIDA PROFESIONAL CON SCROLL HABILITADO -->
     <div id="welcomeOverlay">
         <div class="welcome-bg-watermark"></div>
 
-        <!-- Selector de Idioma Flotante Superior -->
+        <!-- Selector de Idioma Superior -->
         <div class="welcome-lang-box">
             <span style="font-size: 0.8em; color: #c7b9e4;">🌐 Lang:</span>
             <select id="welcomeLangSelect" onchange="changeLanguage(this.value)">
@@ -669,27 +673,27 @@
         </div>
 
         <!-- Imagen Redonda Flotante con Brillo -->
-        <div style="position: relative; z-index: 2; margin-bottom: 25px; display: flex; justify-content: center;">
-            <div class="floating-glow-img" style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 3px solid #06d6a0; background: rgba(0,0,0,0.5); padding: 4px;">
+        <div style="position: relative; z-index: 2; margin: 15px 0 25px 0; display: flex; justify-content: center;">
+            <div class="floating-glow-img" style="width: 130px; height: 130px; border-radius: 50%; overflow: hidden; border: 3px solid #06d6a0; background: rgba(0,0,0,0.5); padding: 4px;">
                 <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZAARD INNOVATION Core" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
             </div>
         </div>
 
-        <!-- Textos Explicativos Técnicos, Formales y de Alta Confianza -->
-        <div style="position: relative; z-index: 2; max-width: 780px; margin: 0 auto 30px auto;">
-            <h1 style="font-family: 'Orbitron', sans-serif; color: #d8b4fe; font-size: 1.7em; margin-bottom: 15px; text-shadow: 0 0 15px rgba(216,180,254,0.5);" data-i18n="welcome-title">
+        <!-- Textos Explicativos Técnicos, Formales y Detallados -->
+        <div style="position: relative; z-index: 2; max-width: 780px; margin: 0 auto 25px auto;">
+            <h1 style="font-family: 'Orbitron', sans-serif; color: #d8b4fe; font-size: 1.6em; margin-bottom: 15px; text-shadow: 0 0 15px rgba(216,180,254,0.5);" data-i18n="welcome-title">
                 INFRAESTRUCTURA Y PORTAL DESCENTRALIZADO DE ZAARD INNOVATION
             </h1>
-            <p style="color: #e9d5ff; font-size: 0.98em; line-height: 1.7; margin-bottom: 12px; font-weight: 300;" data-i18n="welcome-desc1">
+            <p style="color: #e9d5ff; font-size: 0.95em; line-height: 1.7; margin-bottom: 12px; font-weight: 300;" data-i18n="welcome-desc1">
                 Bienvenido al núcleo de alta precisión técnica operando bajo la red <strong>BNB Smart Chain (BSC)</strong>. Nuestra arquitectura descentralizada garantiza la máxima transparencia, permitiendo un <strong style="color: #c084fc;">rastreo analítico en tiempo real</strong> de las métricas, órdenes, flujos de liquidez y transacciones de los activos del ecosistema.
             </p>
-            <p style="color: #d8b4fe; font-size: 0.95em; line-height: 1.7; font-weight: 300;" data-i18n="welcome-desc2">
+            <p style="color: #d8b4fe; font-size: 0.9em; line-height: 1.7; font-weight: 300;" data-i18n="welcome-desc2">
                 Despliega contratos inteligentes de nueva generación con sistemas de permisos auditados y emparejamientos de liquidez automatizados directamente con <span style="color: #06d6a0; font-weight: bold; text-shadow: 0 0 8px rgba(6,214,160,0.6);">ZARD</span> o <span style="color: #06d6a0; font-weight: bold; text-shadow: 0 0 8px rgba(6,214,160,0.6);">PANGA</span>, blindando la integridad de tus proyectos bajo estándares institucionales. 🚀
             </p>
         </div>
 
         <!-- Botón de Entrada Principal -->
-        <div style="position: relative; z-index: 2;">
+        <div style="position: relative; z-index: 2; margin-bottom: 20px;">
             <button onclick="enterEcosystem()" class="ecosystem-enter-btn" data-i18n="welcome-btn">
                 ⚡ ACCEDER AL PORTAL DESCENTRALIZADO ↗
             </button>
@@ -886,7 +890,7 @@
         </footer>
     </div>
 
-    <!-- Scripts Web3 y Lógica (Conexión robustecida y lectura de balances) -->
+    <!-- Scripts Web3 y Lógica -->
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <script>
         // Direcciones oficiales verificadas en la red BNB Smart Chain
@@ -910,7 +914,7 @@
                 "welcome-desc1": "Bienvenido al núcleo de alta precisión técnica operando bajo la red <strong>BNB Smart Chain (BSC)</strong>. Nuestra arquitectura descentralizada garantiza la máxima transparencia, permitiendo un <strong style='color: #c084fc;'>rastreo analítico en tiempo real</strong> de las métricas, órdenes, flujos de liquidez y transacciones de los activos del ecosistema.",
                 "welcome-desc2": "Despliega contratos inteligentes de nueva generación con sistemas de permisos auditados y emparejamientos de liquidez automatizados directamente con <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> o <span style='color: #06d6a0; font-weight: bold;'>PANGA</span>, blindando la integridad de tus proyectos bajo estándares institucionales. 🚀",
                 "welcome-btn": "⚡ ACCEDER AL PORTAL DESCENTRALIZADO ↗",
-                "nav-web": "🌐 Web Oficial", "nav-wallet": "❤️‍🔥 ZARD Wallet", "nav-nexus": "⚡ Regresar al Nexus", "nav-tracker": "📊 Tracker Pro",
+                "nav-web": "🌐 Web Oficial", "nav-wallet": "👛 ZARD Wallet", "nav-nexus": "⚡ Regresar al Nexus", "nav-tracker": "📊 Tracker Pro",
                 "btn-connect": "Conectar Billetera",
                 "hero-title": "Bienvenido al Núcleo de ZARD Finance",
                 "hero-subtitle": "Selecciona una opción del ecosistema para comenzar la innovación financiera",
@@ -935,7 +939,7 @@
                 "welcome-desc1": "Welcome to the high-precision technical core operating on the <strong>BNB Smart Chain (BSC)</strong> network. Our decentralized architecture guarantees maximum transparency, enabling <strong style='color: #c084fc;'>real-time analytical tracking</strong> of ecosystem asset metrics, orders, liquidity flows, and transactions.",
                 "welcome-desc2": "Deploy next-generation smart contracts with audited permission systems and automated liquidity pairings directly with <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> or <span style='color: #06d6a0; font-weight: bold;'>PANGA</span>, protecting your project integrity under institutional standards. 🚀",
                 "welcome-btn": "⚡ ACCESS DECENTRALIZED PORTAL ↗",
-                "nav-web": "🌐 Official Web", "nav-wallet": "❤️‍🔥 ZARD Wallet", "nav-nexus": "⚡ Return to Nexus", "nav-tracker": "📊 Tracker Pro",
+                "nav-web": "🌐 Official Web", "nav-wallet": "👛 ZARD Wallet", "nav-nexus": "⚡ Return to Nexus", "nav-tracker": "📊 Tracker Pro",
                 "btn-connect": "Connect Wallet",
                 "hero-title": "Welcome to ZARD Finance Core",
                 "hero-subtitle": "Select an ecosystem option to start financial innovation",
@@ -960,7 +964,7 @@
                 "welcome-desc1": "欢迎来到在 <strong>BNB 智能链 (BSC)</strong> 网络上运行的高精度技术核心。我们的去中心化架构确保了最高透明度，支持对生态系统资产指标、订单、流动性流向和交易进行<strong style='color: #c084fc;'>实时分析追踪</strong>。",
                 "welcome-desc2": "部署带有经审计权限系统并与 <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> 或 <span style='color: #06d6a0; font-weight: bold;'>PANGA</span> 直接自动配对流动性的新一代智能合约，在机构标准下保障您项目的完整性。 🚀",
                 "welcome-btn": "⚡ 进入去中心化门户 ↗",
-                "nav-web": "🌐 官方网站", "nav-wallet": "❤️‍🔥 ZARD 钱包", "nav-nexus": "⚡ 返回 Nexus", "nav-tracker": "📊 Tracker Pro",
+                "nav-web": "🌐 官方网站", "nav-wallet": "👛 ZARD 钱包", "nav-nexus": "⚡ 返回 Nexus", "nav-tracker": "📊 Tracker Pro",
                 "btn-connect": "连接钱包",
                 "hero-title": "欢迎来到 ZARD Finance 核心",
                 "hero-subtitle": "选择生态系统选项以开启金融创新",
@@ -982,7 +986,6 @@
             }
         };
 
-        // FUNCIÓN PARA ENTRAR AL ECOSISTEMA Y OCULTAR EL BIENVENIDA
         function enterEcosystem() {
             const overlay = document.getElementById('welcomeOverlay');
             overlay.classList.add('hidden');
@@ -1041,19 +1044,16 @@
             document.getElementById(modalId).style.display = 'none';
         }
 
-        // CONEXIÓN ROBUSTA DE BILLETERAS (CORREGIDA PARA EVITAR QUE SE QUEDE CONGELADA)
         async function connectSpecificWallet(walletType) {
             closeModal('walletModal');
             try {
                 let ethProvider = window.ethereum;
 
-                // Verificación de proveedores inyectados específicos
                 if (walletType === 'binance' && (window.BinanceChain || window.ethereum)) {
                     ethProvider = window.BinanceChain || window.ethereum;
                 }
 
                 if (!ethProvider) {
-                    // Si no hay inyección directa y es móvil, intentamos deep link
                     const cleanDappUrl = window.location.href.replace(/^https?:\/\//, '');
                     if (walletType === 'metamask') {
                         window.location.href = `https://metamask.app.link/dapp/${cleanDappUrl}`;
@@ -1062,12 +1062,11 @@
                         window.location.href = `https://link.trustwallet.com/open_url?url=${encodeURIComponent(window.location.href)}`;
                         return;
                     } else {
-                        alert("No se detectó un proveedor Web3 compatible en este navegador. Por favor, abre la DApp desde la app de tu billetera.");
+                        alert("No se detectó un proveedor Web3 compatible en este navegador.");
                         return;
                     }
                 }
 
-                // Solicitud estándar de cuentas
                 const accounts = await ethProvider.request({ method: 'eth_requestAccounts' });
                 if (accounts && accounts.length > 0) {
                     provider = new ethers.providers.Web3Provider(ethProvider);
