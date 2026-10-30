@@ -60,10 +60,10 @@
             z-index: 9999;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Permite empezar desde arriba */
+            justify-content: flex-start;
             align-items: center;
-            overflow-y: auto; /* Habilita el desplazamiento vertical en la pantalla de bienvenida */
-            -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iOS y Android */
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
             padding: 40px 20px 60px 20px;
             text-align: center;
             transition: opacity 0.6s ease, visibility 0.6s ease;
@@ -383,6 +383,71 @@
             background: linear-gradient(135deg, rgba(247, 37, 133, 0.3), rgba(76, 201, 240, 0.3));
             border-color: var(--neon-pink);
             font-weight: 600;
+        }
+
+        /* ESTILOS PARA EL CONTENEDOR TIPO VISOR DE ZAARD INNOVATION */
+        .portal-preview-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+        }
+
+        .portal-preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .portal-preview-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .portal-preview-btn {
+            background: linear-gradient(135deg, rgba(76,201,240,0.2), rgba(123,44,191,0.3));
+            border: 1px solid var(--neon-cyan);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+
+        .portal-preview-btn:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 12px var(--neon-cyan);
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 480px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-glow);
+            background: #05020c;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         .liquidity-card {
@@ -784,6 +849,17 @@
                         <a href="https://figueredo56.github.io/zaard-tracker/" target="_blank" class="eco-link-btn" data-i18n="nav-tracker">📊 Tracker Pro</a>
                     </div>
                 </div>
+
+                <!-- CONTENEDOR NUEVO: VISTA PREVIA / PORTAL DE ZAARD INNOVATION -->
+                <div class="portal-preview-section">
+                    <div class="portal-preview-header">
+                        <span class="portal-preview-title">🌐 ZAARD INNOVATION La nueva era de la web3</span>
+                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="portal-preview-btn">↗ Abrir en Pantalla Completa</a>
+                    </div>
+                    <div class="iframe-container">
+                        <iframe src="https://figueredo56.github.io/DAIoficial/" title="ZAARD INNOVATION Portal"></iframe>
+                    </div>
+                </div>
             </section>
 
             <!-- VISTA 2: CREADOR DE TOKENS -->
@@ -837,8 +913,8 @@
                     <div class="input-group">
                         <label data-i18n="label-token-select">Seleccionar Token de Liquidez</label>
                         <select id="liquidityTokenSelect" class="text-input" onchange="updateLiquidityTokenUI()">
-                            <option value="ZARD">💎 ZARD Token (0x973b...85d38)</option>
-                            <option value="PANGA">🔥 PANGA Token (0x6a7c...fAd2)</option>
+                            <option value="ZARD">❤️‍🔥 ZARD Token (0x973b...85d38)</option>
+                            <option value="PANGA">🔥 PANGA Token (0x4a6c...01366e)</option>
                         </select>
                     </div>
 
@@ -852,50 +928,50 @@
                     </div>
 
                     <div class="action-buttons">
-                        <button id="backHomeBtn" class="btn-action secondary" onclick="switchTab('home')" data-i18n="btn-back">⬅ Volver</button>
-                        <button id="deployAndSupplyBtn" onclick="deployAndCreateLiquidity()" class="btn-action supply" data-i18n="btn-deploy">🚀 Desplegar y Crear Liquidez</button>
+                        <button type="button" class="btn-action secondary" onclick="switchTab('home')" data-i18n="btn-back">← Volver</button>
+                        <button type="button" class="btn-action supply" onclick="deployAndCreateLiquidity()" data-i18n="btn-deploy">🚀 Desplegar y Crear Liquidez</button>
                     </div>
-                    
+
                     <div class="lp-info-box">
-                        <small><span data-i18n="status-label">Estado:</span> <span id="statusText" class="text-glow" data-i18n="status-ready">Listo para configurar...</span></small>
+                        <span data-i18n="status-label">Estado:</span> <span id="statusText" class="text-glow" data-i18n="status-ready">Lista para configurar...</span>
                     </div>
                 </div>
             </section>
+
         </main>
-
-        <!-- MODAL DE SELECCIÓN DE BILLETERAS -->
-        <div id="walletModal" class="modal-overlay">
-            <div class="modal-content">
-                <h3 data-i18n="modal-title">Elige tu Billetera Web3</h3>
-                <div class="wallet-option" onclick="connectSpecificWallet('metamask')">🦊 MetaMask</div>
-                <div class="wallet-option" onclick="connectSpecificWallet('trust')">🛡️ Trust Wallet</div>
-                <div class="wallet-option" onclick="connectSpecificWallet('binance')">🟡 Binance Web3 Wallet</div>
-                <div class="wallet-option" onclick="connectSpecificWallet('injected')">🌐 Proveedor Estándar</div>
-                <button class="close-modal" onclick="closeModal('walletModal')" data-i18n="modal-close">Cancelar</button>
-            </div>
-        </div>
-
-        <!-- MODAL DE DESCONEXIÓN -->
-        <div id="disconnectModal" class="modal-overlay">
-            <div class="modal-content">
-                <h3 data-i18n="disc-title">Gestión de Billetera</h3>
-                <p id="connectedAddressText" style="font-size: 0.75rem; color: var(--neon-cyan); word-break: break-all;"></p>
-                <div class="wallet-option disconnect" onclick="disconnectWallet()">🚫 Desconectar Billetera</div>
-                <button class="close-modal" onclick="closeModal('disconnectModal')" data-i18n="modal-close">Cancelar</button>
-            </div>
-        </div>
-
-        <footer>
-            <p data-i18n="footer-text">© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC.</p>
-        </footer>
     </div>
+
+    <!-- MODALES DE CONEXIÓN -->
+    <div id="walletModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 data-i18n="modal-title">Elige tu Billetera Web3</h3>
+            <div class="wallet-option" onclick="connectSpecificWallet('metamask')">🦊 MetaMask</div>
+            <div class="wallet-option" onclick="connectSpecificWallet('trust')">🛡️ Trust Wallet</div>
+            <div class="wallet-option" onclick="connectSpecificWallet('binance')">🟡 Binance Web3 Wallet</div>
+            <div class="wallet-option" onclick="connectSpecificWallet('injected')">🌐 Proveedor Estándar</div>
+            <button class="close-modal" onclick="closeModal('walletModal')" data-i18n="modal-close">Cancelar</button>
+        </div>
+    </div>
+
+    <div id="disconnectModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 data-i18n="disc-title">Gestión de Billetera</h3>
+            <p id="connectedAddressText" style="font-size: 0.75rem; color: var(--neon-cyan); word-break: break-all;"></p>
+            <div class="wallet-option disconnect" onclick="disconnectWallet()">🚫 Desconectar Billetera</div>
+            <button class="close-modal" onclick="closeModal('disconnectModal')" data-i18n="modal-close">Cancelar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p data-i18n="footer-text">© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC.</p>
+    </footer>
 
     <!-- Scripts Web3 y Lógica -->
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <script>
         // Direcciones oficiales verificadas en la red BNB Smart Chain
         const ZARD_TOKEN_ADDRESS = "0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38";
-        const PANGA_TOKEN_ADDRESS = "0x6a7cc7d5749e028c8f78f29c1d6ac8eda0eefad2";
+        const PANGA_TOKEN_ADDRESS = "0x4a6c3ea9e7132ad217c31f8252119f08c801366e";
 
         let userAccount = null;
         let provider = null;
@@ -914,7 +990,7 @@
                 "welcome-desc1": "Bienvenido al núcleo de alta precisión técnica operando bajo la red <strong>BNB Smart Chain (BSC)</strong>. Nuestra arquitectura descentralizada garantiza la máxima transparencia, permitiendo un <strong style='color: #c084fc;'>rastreo analítico en tiempo real</strong> de las métricas, órdenes, flujos de liquidez y transacciones de los activos del ecosistema.",
                 "welcome-desc2": "Despliega contratos inteligentes de nueva generación con sistemas de permisos auditados y emparejamientos de liquidez automatizados directamente con <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> o <span style='color: #06d6a0; font-weight: bold;'>PANGA</span>, blindando la integridad de tus proyectos bajo estándares institucionales. 🚀",
                 "welcome-btn": "⚡ ACCEDER AL PORTAL DESCENTRALIZADO ↗",
-                "nav-web": "🌐 Web Oficial", "nav-wallet": "👛 ZARD Wallet", "nav-nexus": "⚡ Regresar al Nexus", "nav-tracker": "📊 Tracker Pro",
+                "nav-web": "🌐 Web Oficial", "nav-wallet": "✅ ZARD Wallet", "nav-nexus": "⚡ Regresar al Nexus", "nav-tracker": "📊 Tracker Pro",
                 "btn-connect": "Conectar Billetera",
                 "hero-title": "Bienvenido al Núcleo de ZARD Finance",
                 "hero-subtitle": "Selecciona una opción del ecosistema para comenzar la innovación financiera",
@@ -924,65 +1000,65 @@
                 "card4-title": "ZAARD & PANGA", "card4-desc": "Rastreador de métricas y análisis en tiempo real.", "card4-link": "Abrir Tracker →",
                 "eco-links-title": "🔗 Enlaces Rápidos del Ecosistema",
                 "creator-title": "Centro de Creación ZARD Finance", "creator-subtitle": "Diseña tu token con par directo en ZARD / PANGA y despliegue automatizado",
-                "label-name": "Nombre y Símbolo del Token", "label-logo": "URL del Logo (Imagen del Token)",
-                "tip-logo": "💡 <strong>Consejo Pro:</strong> Sube tu logo a <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> y pega aquí el enlace directo IPFS.",
+                "label-name": "Nombre y Símbolo del Token",
+                "tip-logo": "<strong>Consejo Pro:</strong> Sube tu logo a <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> y pega aquí el enlace directo IPFS.",
                 "label-social": "Información / Redes (Web, X, Discord)", "label-supply": "Suministro Total (Supply)",
                 "lp-title": "Aporte de Liquidez Base (ZARD / PANGA)", "lp-subtitle": "Elige con qué token del ecosistema vas a emparejar la liquidez de tu nueva moneda",
                 "label-token-select": "Seleccionar Token de Liquidez",
-                "balance-label": "Balance disponible:", "btn-back": "⬅ Volver", "btn-deploy": "🚀 Desplegar y Crear Liquidez",
-                "status-label": "Estado:", "status-ready": "Listo para configurar...",
+                "balance-label": "Balance disponible:", "btn-back": "← Volver", "btn-deploy": "🚀 Desplegar y Crear Liquidez",
+                "status-label": "Estado:", "status-ready": "Lista para configurar...",
                 "modal-title": "Elige tu Billetera Web3", "modal-close": "Cancelar", "disc-title": "Gestión de Billetera",
                 "footer-text": "© 2026 ZARD Finance Ecosystem. Despliegue sincronizado con Web3 BSC."
             },
             en: {
                 "welcome-title": "ZAARD INNOVATION INFRASTRUCTURE & DECENTRALIZED PORTAL",
-                "welcome-desc1": "Welcome to the high-precision technical core operating on the <strong>BNB Smart Chain (BSC)</strong> network. Our decentralized architecture guarantees maximum transparency, enabling <strong style='color: #c084fc;'>real-time analytical tracking</strong> of ecosystem asset metrics, orders, liquidity flows, and transactions.",
-                "welcome-desc2": "Deploy next-generation smart contracts with audited permission systems and automated liquidity pairings directly with <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> or <span style='color: #06d6a0; font-weight: bold;'>PANGA</span>, protecting your project integrity under institutional standards. 🚀",
+                "welcome-desc1": "Welcome to the high-precision technical core operating on the <strong>BNB Smart Chain (BSC)</strong> network. Our decentralized architecture guarantees maximum transparency, enabling <strong style='color: #c084fc;'>real-time analytical tracking</strong> of metrics, orders, liquidity flows, and ecosystem asset transactions.",
+                "welcome-desc2": "Deploy next-generation smart contracts with audited permission systems and automated liquidity pairings directly with <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> or <span style='color: #06d6a0; font-weight: bold;'>PANGA</span>, safeguarding your projects under institutional standards. 🚀",
                 "welcome-btn": "⚡ ACCESS DECENTRALIZED PORTAL ↗",
-                "nav-web": "🌐 Official Web", "nav-wallet": "👛 ZARD Wallet", "nav-nexus": "⚡ Return to Nexus", "nav-tracker": "📊 Tracker Pro",
+                "nav-web": "🌐 Official Web", "nav-wallet": "✅ ZARD Wallet", "nav-nexus": "⚡ Return to Nexus", "nav-tracker": "📊 Tracker Pro",
                 "btn-connect": "Connect Wallet",
                 "hero-title": "Welcome to ZARD Finance Core",
-                "hero-subtitle": "Select an ecosystem option to start financial innovation",
+                "hero-subtitle": "Select an ecosystem option to start financial innovation.",
                 "card1-title": "ZARD Wallet", "card1-desc": "Manage your assets and tokens securely.", "card1-link": "Open Wallet →",
                 "card2-title": "Create Token & Liquidity", "card2-desc": "Deploy your own coin paired with ZARD or PANGA.", "card2-link": "Start Creation →",
                 "card3-title": "ZARD Ecosystem", "card3-desc": "Explore alerts and official platforms.", "card3-link": "Explore Web →",
                 "card4-title": "ZAARD & PANGA", "card4-desc": "Real-time metrics and analytics tracker.", "card4-link": "Open Tracker →",
                 "eco-links-title": "🔗 Ecosystem Quick Links",
                 "creator-title": "ZARD Finance Creation Center", "creator-subtitle": "Design your token with direct ZARD / PANGA pair and automated deployment",
-                "label-name": "Token Name & Symbol", "label-logo": "Logo URL (Token Image)",
-                "tip-logo": "💡 <strong>Pro Tip:</strong> Upload your logo to <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> and paste the direct IPFS link here.",
+                "label-name": "Token Name & Symbol",
+                "tip-logo": "<strong>Pro Tip:</strong> Upload your logo to <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> and paste the direct IPFS link here.",
                 "label-social": "Info / Socials (Web, X, Discord)", "label-supply": "Total Supply",
-                "lp-title": "Base Liquidity Contribution (ZARD / PANGA)", "lp-subtitle": "Choose which ecosystem token you will pair your new currency liquidity with",
+                "lp-title": "Base Liquidity Contribution (ZARD / PANGA)", "lp-subtitle": "Choose which ecosystem token you want to pair your new coin's liquidity with",
                 "label-token-select": "Select Liquidity Token",
-                "balance-label": "Available Balance:", "btn-back": "⬅ Back", "btn-deploy": "🚀 Deploy & Create Liquidity",
+                "balance-label": "Available Balance:", "btn-back": "← Back", "btn-deploy": "🚀 Deploy & Create Liquidity",
                 "status-label": "Status:", "status-ready": "Ready to configure...",
                 "modal-title": "Choose your Web3 Wallet", "modal-close": "Cancel", "disc-title": "Wallet Management",
                 "footer-text": "© 2026 ZARD Finance Ecosystem. Deployment synchronized with Web3 BSC."
             },
             zh: {
                 "welcome-title": "ZAARD INNOVATION 基础设施与去中心化门户",
-                "welcome-desc1": "欢迎来到在 <strong>BNB 智能链 (BSC)</strong> 网络上运行的高精度技术核心。我们的去中心化架构确保了最高透明度，支持对生态系统资产指标、订单、流动性流向和交易进行<strong style='color: #c084fc;'>实时分析追踪</strong>。",
-                "welcome-desc2": "部署带有经审计权限系统并与 <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> 或 <span style='color: #06d6a0; font-weight: bold;'>PANGA</span> 直接自动配对流动性的新一代智能合约，在机构标准下保障您项目的完整性。 🚀",
+                "welcome-desc1": "欢迎来到在 <strong>BNB Smart Chain (BSC)</strong> 网络上运行的高精度技术核心。我们的去中心化架构确保了最高的透明度，允许对生态系统资产指标、订单、流动性流向和交易进行<strong style='color: #c084fc;'>实时分析追踪</strong>。",
+                "welcome-desc2": "部署带有经审计权限系统的新一代智能合约，并直接与 <span style='color: #06d6a0; font-weight: bold;'>ZARD</span> 或 <span style='color: #06d6a0; font-weight: bold;'>PANGA</span> 进行自动化流动性配对，在机构标准下保护您的项目安全。 🚀",
                 "welcome-btn": "⚡ 进入去中心化门户 ↗",
-                "nav-web": "🌐 官方网站", "nav-wallet": "👛 ZARD 钱包", "nav-nexus": "⚡ 返回 Nexus", "nav-tracker": "📊 Tracker Pro",
+                "nav-web": "🌐 官方网站", "nav-wallet": "✅ ZARD 钱包", "nav-nexus": "⚡ 返回 Nexus", "nav-tracker": "📊 专业追踪器",
                 "btn-connect": "连接钱包",
                 "hero-title": "欢迎来到 ZARD Finance 核心",
-                "hero-subtitle": "选择生态系统选项以开启金融创新",
-                "card1-title": "ZARD 钱包", "card1-desc": "在网络中安全地管理您的资产和代币。", "card1-link": "打开钱包 →",
-                "card2-title": "创建代币与流动性", "card2-desc": "部署您与 ZARD 或 PANGA 配对的代币。", "card2-link": "开始创建 →",
-                "card3-title": "ZARD 生态系统", "card3-desc": "探索官方警报和平台。", "card3-link": "探索网站 →",
-                "card4-title": "ZAARD & PANGA", "card4-desc": "实时指标和分析跟踪器。", "card4-link": "打开跟踪器 →",
+                "hero-subtitle": "选择生态系统选项以开启金融创新。",
+                "card1-title": "ZARD 钱包", "card1-desc": "安全管理您的资产和代币。", "card1-link": "打开钱包 →",
+                "card2-title": "创建代币与流动性", "card2-desc": "部署与 ZARD 或 PANGA 配对的您自己的代币。", "card2-link": "开始创建 →",
+                "card3-title": "ZARD 生态系统", "card3-desc": "探索警报和官方平台。", "card3-link": "探索网页 →",
+                "card4-title": "ZAARD & PANGA", "card4-desc": "实时指标和分析追踪器。", "card4-link": "打开追踪器 →",
                 "eco-links-title": "🔗 生态系统快速链接",
-                "creator-title": "ZARD Finance 创建中心", "creator-subtitle": "设计您的代币，实现直接与 ZARD / PANGA 配对并自动部署",
-                "label-name": "代币名称与符号", "label-logo": "Logo URL (代币图片)",
-                "tip-logo": "💡 <strong>专业提示：</strong> 将您的 Logo 上传到 <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> 并在此处粘贴 IPFS 链接。",
-                "label-social": "信息 / 社交链接 (Web, X, Discord)", "label-supply": "总供应量",
-                "lp-title": "基础流动性注入 (ZARD / PANGA)", "lp-subtitle": "选择将使用哪种生态代币配对新代币的流动性",
+                "creator-title": "ZARD Finance 创建中心", "creator-subtitle": "设计带有直接 ZARD / PANGA 配对和自动部署功能的代币",
+                "label-name": "代币名称与符号",
+                "tip-logo": "<strong>专业提示：</strong>将您的 logo 上传到 <a href='https://www.pinata.cloud' target='_blank'>Pinata.cloud</a> 并在此处粘贴直接的 IPFS 链接。",
+                "label-social": "信息 / 社交媒体 (Web, X, Discord)", "label-supply": "总供应量",
+                "lp-title": "基础流动性贡献 (ZARD / PANGA)", "lp-subtitle": "选择您希望用于配对新代币流动性的生态系统代币",
                 "label-token-select": "选择流动性代币",
-                "balance-label": "可用余额:", "btn-back": "⬅ 返回", "btn-deploy": "🚀 部署并创建流动性",
-                "status-label": "状态:", "status-ready": "准备配置...",
+                "balance-label": "可用余额：", "btn-back": "← 返回", "btn-deploy": "🚀 部署并创建流动性",
+                "status-label": "状态：", "status-ready": "准备配置...",
                 "modal-title": "选择您的 Web3 钱包", "modal-close": "取消", "disc-title": "钱包管理",
-                "footer-text": "© 2026 ZARD Finance Ecosystem. 与 Web3 BSC 同步部署。"
+                "footer-text": "© 2026 ZARD Finance Ecosystem. 部署已与 Web3 BSC 同步。"
             }
         };
 
@@ -1059,7 +1135,7 @@
                         window.location.href = `https://metamask.app.link/dapp/${cleanDappUrl}`;
                         return;
                     } else if (walletType === 'trust') {
-                        window.location.href = `https://link.trustwallet.com/open_url?url=${encodeURIComponent(window.location.href)}`;
+                        window.location.href = `https://link.trustwallet.com/open_url?coin_id=20000714&url=${encodeURIComponent(window.location.href)}`;
                         return;
                     } else {
                         alert("No se detectó un proveedor Web3 compatible en este navegador.");
@@ -1087,7 +1163,6 @@
             btn.innerText = shortAddr;
             btn.classList.add('connected');
             document.getElementById('statusText').innerText = "Billetera conectada correctamente.";
-            
             updateTokenBalance();
         }
 
@@ -1113,7 +1188,7 @@
                 symbolSpan.innerText = "ZARD";
                 symbolSpan.style.color = "var(--neon-cyan)";
             } else {
-                logoImg.src = "https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c13098c92f8a665ac39a838c2.png";
+                logoImg.src = "https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559f4d3c13098c92f8a6b1897d95368a.png";
                 symbolSpan.innerText = "PANGA";
                 symbolSpan.style.color = "var(--neon-gold)";
             }
@@ -1125,7 +1200,7 @@
 
         async function updateTokenBalance() {
             if (!userAccount) return;
-            
+
             try {
                 if (!provider && window.ethereum) {
                     provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -1135,12 +1210,11 @@
                 const tokenAddress = (selectedToken === 'ZARD') ? ZARD_TOKEN_ADDRESS : PANGA_TOKEN_ADDRESS;
 
                 const tokenContract = new ethers.Contract(tokenAddress, ERC20_ABI, provider);
-                
+
                 const balanceWei = await tokenContract.balanceOf(userAccount);
                 const decimals = await tokenContract.decimals();
-                
+
                 const formattedBalance = ethers.utils.formatUnits(balanceWei, decimals);
-                
                 document.getElementById('tokenBalance').innerText = Number(formattedBalance).toLocaleString('en-US', { maximumFractionDigits: 4 });
             } catch (err) {
                 console.error("Error consultando balance del token:", err);
@@ -1160,16 +1234,14 @@
             const supply = document.getElementById('tokenSupply').value;
             const liquidityAmount = document.getElementById('liquidityAmount').value;
             const selectedToken = document.getElementById('liquidityTokenSelect').value;
-            
-            const activeTokenAddress = (selectedToken === 'ZARD') ? ZARD_TOKEN_ADDRESS : PANGA_TOKEN_ADDRESS;
 
             if (!name || !symbol || !supply) {
                 alert("Por favor, completa los campos obligatorios del token.");
                 return;
             }
 
-            document.getElementById('statusText').innerText = `Preparando despliegue con par ${selectedToken}...`;
-            alert(`Configuración lista para el token ${name} (${symbol}). Se procederá al despliegue inteligente emparejado con ${selectedToken} (Contrato: ${activeTokenAddress}).`);
+            document.getElementById('statusText').innerText = `Preparando despliegue con par (${selectedToken})...`;
+            alert(`Configuración lista para el token ${name} (${symbol}). Se procederá al despliegue inteligente emparejado con ${selectedToken}.`);
         }
     </script>
 </body>
