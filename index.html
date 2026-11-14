@@ -57,19 +57,19 @@
             100% { box-shadow: 0 0 15px rgba(76, 201, 240, 0.3); }
         }
 
-        /* EFECTO DE LUZ Y CHISPAS PARA EL LOGO GIGANTE DE BIENVENIDA */
+        /* EFECTO DE PODER MÁS INTENSO PARA EL LOGO GIGANTE */
         @keyframes powerGlow {
             0% { 
                 transform: translateY(0px) scale(1); 
-                box-shadow: 0 0 30px #06d6a0, 0 0 60px #4cc9f0, inset 0 0 20px rgba(6,214,160,0.8); 
+                box-shadow: 0 0 40px #06d6a0, 0 0 80px #4cc9f0, inset 0 0 25px rgba(6,214,160,0.9); 
             }
             50% { 
-                transform: translateY(-6px) scale(1.03); 
-                box-shadow: 0 0 50px #f72585, 0 0 90px #7b2cbf, inset 0 0 30px rgba(247,37,133,0.9); 
+                transform: translateY(-8px) scale(1.04); 
+                box-shadow: 0 0 70px #f72585, 0 0 120px #7b2cbf, inset 0 0 40px rgba(247,37,133,1); 
             }
             100% { 
                 transform: translateY(0px) scale(1); 
-                box-shadow: 0 0 30px #06d6a0, 0 0 60px #4cc9f0, inset 0 0 20px rgba(6,214,160,0.8); 
+                box-shadow: 0 0 40px #06d6a0, 0 0 80px #4cc9f0, inset 0 0 25px rgba(6,214,160,0.9); 
             }
         }
 
@@ -79,7 +79,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* 1. PANTALLA DE BIENVENIDA MEJORADA (CENTRADA Y POTENTE) */
+        /* PANTALLA DE BIENVENIDA (LOGO MÁS GRANDE Y LETRAS AMPLIAS) */
         #welcomeOverlay {
             position: fixed;
             top: 0; left: 0;
@@ -138,14 +138,16 @@
         }
 
         .giant-glow-logo {
-            width: 150px;
-            height: 150px;
+            width: 185px;
+            height: 185px;
+            min-width: 185px;
+            min-height: 185px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3.5px solid var(--neon-cyan);
-            background: rgba(0,0,0,0.6);
-            padding: 5px;
-            margin-bottom: 20px;
+            border: 4px solid var(--neon-cyan);
+            background: rgba(0,0,0,0.7);
+            padding: 6px;
+            margin-bottom: 25px;
             position: relative;
             z-index: 2;
             animation: powerGlow 3s ease-in-out infinite;
@@ -161,52 +163,52 @@
         .welcome-content-box {
             position: relative;
             z-index: 2;
-            max-width: 720px;
+            max-width: 750px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 16px;
         }
 
         .welcome-content-box h1 {
             font-family: 'Orbitron', sans-serif;
             color: #f3e8ff;
-            font-size: 1.45rem;
-            line-height: 1.3;
-            text-shadow: 0 0 20px rgba(247, 37, 133, 0.6);
+            font-size: 1.65rem;
+            line-height: 1.35;
+            text-shadow: 0 0 25px rgba(247, 37, 133, 0.7);
         }
 
         .welcome-content-box p {
-            color: #e9d5ff;
-            font-size: 0.96rem;
-            line-height: 1.65;
-            font-weight: 300;
+            color: #f3e8ff;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-weight: 400;
         }
 
         .ecosystem-enter-btn {
             display: inline-block;
-            padding: 16px 40px;
-            background: linear-gradient(135deg, rgba(123,44,191,0.9), rgba(6,214,160,0.6));
+            padding: 18px 45px;
+            background: linear-gradient(135deg, rgba(123,44,191,0.95), rgba(6,214,160,0.7));
             border: 2px solid var(--neon-green);
-            border-radius: 14px;
+            border-radius: 16px;
             color: #fff;
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.98rem;
+            font-size: 1.05rem;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 0 35px rgba(6,214,160,0.6);
+            box-shadow: 0 0 40px rgba(6,214,160,0.7);
             transition: all 0.3s ease;
-            margin-top: 10px;
+            margin-top: 12px;
             position: relative;
             z-index: 2;
         }
 
         .ecosystem-enter-btn:hover {
-            transform: scale(1.04);
-            box-shadow: 0 0 55px var(--neon-green), 0 0 25px rgba(123,44,191,0.9);
+            transform: scale(1.05);
+            box-shadow: 0 0 60px var(--neon-green), 0 0 30px rgba(123,44,191,0.9);
         }
 
-        /* 2. ESTRUCTURA PRINCIPAL DE LA DAPP */
+        /* ESTRUCTURA PRINCIPAL */
         .main-wrapper {
             width: 100%;
             max-width: 1100px;
@@ -344,7 +346,6 @@
             color: var(--text-muted);
         }
 
-        /* TARJETAS DEL HUB */
         .hub-cards-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -499,7 +500,7 @@
             border: none;
         }
 
-        /* 3. PANEL CREADOR DE TOKENS (AMPLIO DE LADO A LADO Y MONEDAS GRANDES) */
+        /* PANEL CREADOR DE TOKENS ANCHO Y VISIBLE */
         .liquidity-card {
             background: var(--card-bg);
             border: 1.5px solid var(--neon-cyan);
@@ -508,7 +509,7 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
-            max-width: 100%; /* Ocupa de lado a lado manteniendo margen perfecto */
+            max-width: 100%;
             width: 100%;
             margin: 0 auto;
             backdrop-filter: blur(14px);
@@ -603,7 +604,7 @@
             box-shadow: 0 0 10px var(--neon-cyan);
         }
 
-        /* TARJETAS DE MONEDAS DEL ECOSISTEMA (MÁS GRANDES Y VISIBLES) */
+        /* TARJETAS DE MONEDAS DEL ECOSISTEMA GRANDES */
         .eco-liquidity-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -730,7 +731,7 @@
             font-weight: 600;
         }
 
-        /* MODALES */
+        /* MODALES DE BILLETERA */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -752,7 +753,7 @@
             padding: 22px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
             box-shadow: 0 0 30px rgba(76,201,240,0.45);
             text-align: center;
         }
@@ -794,17 +795,21 @@
             margin-top: 4px;
         }
 
-        footer {
-            text-align: center;
-            font-size: 0.68rem;
-            color: var(--text-muted);
-            padding: 16px 0;
+        .browser-tip-box {
+            background: rgba(243, 186, 47, 0.12);
+            border: 1px solid rgba(243, 186, 47, 0.4);
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 0.73rem;
+            color: #fef08a;
+            line-height: 1.4;
+            text-align: left;
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. PANTALLA DE BIENVENIDA CENTRADA Y CON LOGO DE PODER GIGANTE -->
+    <!-- 1. PANTALLA DE BIENVENIDA (LOGO GIGANTE E IMPONENTE + LETRAS MÁS GRANDES) -->
     <div id="welcomeOverlay">
         <div class="welcome-bg-watermark"></div>
 
@@ -817,7 +822,6 @@
             </select>
         </div>
 
-        <!-- LOGO GIGANTE CON LUZ Y CHISPAS DE PODER -->
         <div class="giant-glow-logo">
             <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZAARD INNOVATION Core">
         </div>
@@ -924,7 +928,7 @@
                 </div>
             </section>
 
-            <!-- VISTA 2: CREADOR DE TOKENS (TARJETA ANCHA Y MONEDAS GRANDES) -->
+            <!-- VISTA 2: CREADOR DE TOKENS -->
             <section id="tab-creator" class="view-section">
                 <div class="creator-header-banner">
                     <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1792865596414-22890f0deb10ff50d0525508a0eea986.png" alt="Creator Banner" class="top-creator-img">
@@ -938,7 +942,6 @@
                         <span style="font-weight: 700;">0% Tax · Verificable</span>
                     </div>
 
-                    <!-- NOMBRE Y SÍMBOLO -->
                     <div class="input-group">
                         <label>1. Nombre y Símbolo del Token</label>
                         <div class="dual-inputs">
@@ -947,7 +950,6 @@
                         </div>
                     </div>
 
-                    <!-- SUMINISTRO TOTAL -->
                     <div class="input-group">
                         <label>2. Suministro Total (Supply) y Decimales (18)</label>
                         <div class="supply-buttons">
@@ -959,20 +961,17 @@
                         <input type="number" id="tokenSupply" value="1000000000" class="text-input" style="text-align: center; font-weight: 700;">
                     </div>
 
-                    <!-- URL DEL LOGO IPFS -->
                     <div class="input-group">
                         <label>3. URL Directa del Logo (IPFS / Imagen)</label>
                         <input type="text" id="tokenLogoUrl" placeholder="https://gateway.pinata.cloud/ipfs/tu_hash_de_imagen" class="text-input">
                         <span style="font-size: 0.72rem; color: var(--text-muted);">💡 Sube tu logo a <a href="https://www.pinata.cloud" target="_blank" style="color:var(--neon-cyan);">Pinata.cloud</a> para que aparezca en todas las billeteras.</span>
                     </div>
 
-                    <!-- DESCRIPCIÓN Y REDES -->
                     <div class="input-group">
                         <label>4. Descripción y Redes Sociales (Web, X, Telegram)</label>
                         <input type="text" id="projectSocials" placeholder="Ej: Token comunitario Web3 | https://t.me/tu_canal | @tu_usuario" class="text-input">
                     </div>
 
-                    <!-- SELECCIONAR LIQUIDEZ BASE (MONEDAS MÁS GRANDES Y NITIDAS) -->
                     <div class="input-group">
                         <label>5. Selecciona el Token Base para la Liquidez Inicial</label>
                         <div class="eco-liquidity-grid">
@@ -1007,18 +1006,15 @@
                         </div>
                     </div>
 
-                    <!-- CANTIDAD DE LIQUIDEZ -->
                     <div class="input-group">
                         <label>6. Cantidad de <span id="selectedEcoLabel" style="color: var(--neon-cyan);">ZARD</span> para el Par de Liquidez Inicial</label>
                         <input type="number" id="ecoLiquidityAmount" placeholder="Ej: 100" step="any" min="0" class="text-input">
                     </div>
 
-                    <!-- PROTECCIÓN DE ECOSISTEMA -->
                     <div class="shield-info-card">
                         🛡️ <strong>Blindaje de Ecosistema Activo:</strong> Tu contrato se genera 100% limpio (sin comisiones ocultas). El par de liquidez es independiente: protege el valor base de <strong>ZARD, PANGA, ZARED y ZYM</strong> ante fluctuaciones externas y permite bloquear tus Tokens LP en <strong>PinkSale</strong> o <strong>Mudra Manager</strong>.
                     </div>
 
-                    <!-- BOTONES DE ACCIÓN -->
                     <div class="action-buttons">
                         <button type="button" class="btn-action secondary" onclick="switchTab('home')">← Volver</button>
                         <button type="button" id="deployTokenBtn" class="btn-action supply" onclick="deployEcosystemToken()">🚀 Crear Token & Par LP</button>
@@ -1037,15 +1033,21 @@
         </footer>
     </div>
 
-    <!-- MODAL DE BILLETERA -->
+    <!-- MODAL DE BILLETERA CORREGIDO (CONSEJO PRO PARA NAVEGADOR WEB3) -->
     <div id="walletModal" class="modal-overlay">
         <div class="modal-content">
             <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1rem;">Conectar Billetera Web3</h3>
-            <p style="font-size: 0.74rem; color: var(--text-muted);">Selecciona tu billetera para autorizar y firmar la conexión directa en BSC.</p>
+            <p style="font-size: 0.74rem; color: var(--text-muted);">Selecciona tu método de conexión preferido en BNB Smart Chain.</p>
+            
+            <div class="browser-tip-box">
+                💡 <strong>Recomendación Móvil:</strong> Para una conexión 100% fluida sin errores, abre este enlace directamente en el <em>Navegador DApp</em> de tu billetera (Binance Web3, Trust Wallet o MetaMask).
+            </div>
+
+            <div class="wallet-option" onclick="connectDirectWallet('injected')">⚡ Conectar Inyectado (Web3 Wallet)</div>
             <div class="wallet-option" onclick="connectDirectWallet('binance')">🟡 Binance Web3 Wallet</div>
             <div class="wallet-option" onclick="connectDirectWallet('trust')">🛡️ Trust Wallet</div>
             <div class="wallet-option" onclick="connectDirectWallet('metamask')">🦊 MetaMask</div>
-            <div class="wallet-option" onclick="connectDirectWallet('bitget')">⚡ Bitget / Navegador Web3</div>
+            
             <button class="close-modal" onclick="closeModal('walletModal')">Cancelar</button>
         </div>
     </div>
@@ -1078,12 +1080,6 @@
         let selectedEcoToken = "ZARD";
         let userAccount = null;
         let provider = null;
-        let discoveredProviders = [];
-
-        window.addEventListener("eip6963:announceProvider", (event) => {
-            discoveredProviders.push(event.detail);
-        });
-        window.dispatchEvent(new Event("eip6963:requestProvider"));
 
         function enterEcosystem() {
             document.getElementById('welcomeOverlay').classList.add('hidden');
@@ -1096,19 +1092,12 @@
         }
 
         window.addEventListener('DOMContentLoaded', async () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const pendingWallet = localStorage.getItem('zaard_pending_wallet');
-
             if (window.ethereum) {
                 try {
                     const accounts = await window.ethereum.request({ method: 'eth_accounts' });
                     if (accounts && accounts.length > 0) {
                         provider = new ethers.providers.Web3Provider(window.ethereum);
                         setConnectedAccount(accounts[0]);
-                        localStorage.removeItem('zaard_pending_wallet');
-                    } else if (pendingWallet || urlParams.get('connect') === '1') {
-                        localStorage.removeItem('zaard_pending_wallet');
-                        await executeWeb3Handshake(window.ethereum);
                     }
                 } catch (e) {}
             }
@@ -1140,70 +1129,21 @@
 
         async function connectDirectWallet(walletType) {
             closeModal('walletModal');
-            let targetProvider = null;
-
-            if (discoveredProviders.length > 0) {
-                const match = discoveredProviders.find(p => {
-                    const name = p.info.name.toLowerCase();
-                    if (walletType === 'binance') return name.includes('binance');
-                    if (walletType === 'trust') return name.includes('trust');
-                    if (walletType === 'metamask') return name.includes('metamask');
-                    return true;
-                });
-                if (match) targetProvider = match.provider;
-            }
-
-            if (!targetProvider) {
-                if (walletType === 'binance' && window.BinanceChain) {
-                    targetProvider = window.BinanceChain;
-                } else if (window.ethereum && window.ethereum.providers) {
-                    targetProvider = window.ethereum.providers.find(p => {
-                        if (walletType === 'binance') return p.isBinance;
-                        if (walletType === 'trust') return p.isTrust || p.isTrustWallet;
-                        if (walletType === 'metamask') return p.isMetaMask;
-                        return true;
-                    }) || window.ethereum;
-                } else if (window.ethereum) {
-                    targetProvider = window.ethereum;
-                }
-            }
-
-            if (!targetProvider) {
-                localStorage.setItem('zaard_pending_wallet', walletType);
-                const targetUrl = new URL(window.location.href);
-                targetUrl.searchParams.set('connect', '1');
-                const fullUrl = targetUrl.toString();
-                const cleanUrl = fullUrl.replace(/^https?:\/\//, '');
-
-                if (walletType === 'metamask') {
-                    window.location.href = `https://metamask.app.link/dapp/${cleanUrl}`;
-                    return;
-                } else if (walletType === 'trust') {
-                    window.location.href = `https://link.trustwallet.com/open_url?coin_id=20000714&url=${encodeURIComponent(fullUrl)}`;
-                    return;
-                } else if (walletType === 'binance') {
-                    window.location.href = `bnc://app.binance.com/mp/app?appId=1016&startPagePath=pages/browser/index&startPageQuery=${encodeURIComponent('url=' + fullUrl)}`;
-                    setTimeout(() => {
-                        window.location.href = `https://app.binance.com/cedefi/wc?uri=${encodeURIComponent(fullUrl)}`;
-                    }, 700);
-                    return;
-                } else if (walletType === 'bitget') {
-                    window.location.href = `https://bkcode.vip?action=dapp&url=${encodeURIComponent(fullUrl)}`;
-                    return;
-                }
-            }
-
-            await executeWeb3Handshake(targetProvider);
-        }
-
-        async function executeWeb3Handshake(ethProvider) {
             const statusEl = document.getElementById('statusText');
+
             try {
-                if (statusEl) statusEl.innerText = "Esperando aprobación de conexión en tu billetera...";
+                let ethProvider = window.ethereum;
+                if (!ethProvider) {
+                    alert("Por favor abre esta DApp desde el navegador interno de tu billetera Web3 (Binance, Trust o MetaMask) para conectar de forma instantánea.");
+                    return;
+                }
+
+                if (statusEl) statusEl.innerText = "Solicitando conexión en tu billetera...";
                 const accounts = await ethProvider.request({ method: 'eth_requestAccounts' });
 
                 if (!accounts || accounts.length === 0) return;
 
+                // Cambiar a BSC Mainnet (0x38)
                 try {
                     await ethProvider.request({
                         method: 'wallet_switchEthereumChain',
@@ -1227,8 +1167,8 @@
                 provider = new ethers.providers.Web3Provider(ethProvider);
                 const signer = provider.getSigner();
 
-                if (statusEl) statusEl.innerText = "Firma el mensaje en tu billetera para completar el acceso...";
-                const authMsg = `ZAARD INNOVATION · ZARD Finance\nAutorización de sesión en BNB Smart Chain\nCuenta: ${accounts[0]}`;
+                if (statusEl) statusEl.innerText = "Firma el mensaje en tu billetera para verificar la sesión...";
+                const authMsg = `ZAARD INNOVATION · ZARD Finance\nAutorización segura en BNB Smart Chain\nCuenta: ${accounts[0]}`;
                 await signer.signMessage(authMsg);
 
                 setConnectedAccount(accounts[0]);
