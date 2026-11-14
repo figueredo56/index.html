@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title id="page-title">ZARD Finance | Ecosistema Descentralizado</title>
+    <title id="page-title">ZARD Finance | Creador de Tokens & Ecosistema Web3</title>
     
     <!-- Etiquetas Open Graph para Redes Sociales -->
     <meta property="og:url" content="https://figueredo56.github.io/DAIoficial/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ZARD Finance | Ecosistema Descentralizado">
-    <meta property="og:description" content="Infraestructura financiera descentralizada y segura en BNB Smart Chain con liquidez directa en ZARD, PANGA, ZARED y ZYM.">
+    <meta property="og:title" content="ZARD Finance | Creador de Tokens & Ecosistema Web3">
+    <meta property="og:description" content="Crea tokens seguros sin impuestos en BNB Smart Chain con emparejamiento de liquidez en ZARD, PANGA, ZARED y ZYM.">
     <meta property="og:image" content="https://raw.githubusercontent.com/figueredo56/index.html/refs/heads/main/290%20sin%20t%C3%ADtulo_20260925234747.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #07020f;
-            --card-bg: rgba(20, 9, 38, 0.88);
+            --card-bg: rgba(20, 9, 38, 0.9);
             --primary-purple: #7b2cbf;
             --neon-pink: #f72585;
             --neon-cyan: #4cc9f0;
@@ -51,10 +51,9 @@
             overflow-x: hidden;
         }
 
-        /* EFECTO DE PULSO NEÓN SUTIL */
         @keyframes pulseBorder {
             0% { box-shadow: 0 0 12px rgba(76, 201, 240, 0.25); }
-            50% { box-shadow: 0 0 24px rgba(247, 37, 133, 0.45), 0 0 10px rgba(76, 201, 240, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(247, 37, 133, 0.5), 0 0 10px rgba(76, 201, 240, 0.4); }
             100% { box-shadow: 0 0 12px rgba(76, 201, 240, 0.25); }
         }
 
@@ -241,10 +240,6 @@
             box-shadow: 0 0 14px var(--neon-cyan);
         }
 
-        .btn-connect:active {
-            transform: scale(0.95);
-        }
-
         .content-container {
             width: 100%;
         }
@@ -321,10 +316,6 @@
             transform: translateY(-3px);
             border-color: var(--neon-cyan);
             box-shadow: 0 0 22px rgba(76, 201, 240, 0.45);
-        }
-
-        .hub-card:active {
-            transform: scale(0.97);
         }
 
         .card-img-banner {
@@ -405,11 +396,6 @@
             gap: 4px;
         }
 
-        .eco-link-btn:hover {
-            background: rgba(76, 201, 240, 0.25);
-            border-color: var(--neon-cyan);
-        }
-
         .eco-link-btn.nexus-btn {
             background: linear-gradient(135deg, rgba(247, 37, 133, 0.35), rgba(76, 201, 240, 0.35));
             border-color: var(--neon-pink);
@@ -460,12 +446,6 @@
             white-space: nowrap;
         }
 
-        .portal-preview-btn:hover {
-            background: var(--neon-cyan);
-            color: #000;
-            box-shadow: 0 0 12px var(--neon-cyan);
-        }
-
         .iframe-container {
             width: 100%;
             height: 450px;
@@ -481,16 +461,16 @@
             border: none;
         }
 
-        /* PANEL DE LIQUIDEZ PANCAKESWAP V2 */
+        /* PANEL CREADOR DE TOKENS DEL ECOSISTEMA */
         .liquidity-card {
             background: var(--card-bg);
-            border: 1px solid var(--neon-cyan);
+            border: 1.5px solid var(--neon-cyan);
             border-radius: 18px;
             padding: 18px;
             display: flex;
             flex-direction: column;
             gap: 15px;
-            max-width: 580px;
+            max-width: 620px;
             margin: 0 auto;
             width: 100%;
             backdrop-filter: blur(14px);
@@ -531,6 +511,11 @@
             color: var(--text-muted);
         }
 
+        .dual-inputs {
+            display: flex;
+            gap: 10px;
+        }
+
         .text-input {
             width: 100%;
             background: rgba(10, 4, 24, 0.85);
@@ -548,89 +533,106 @@
             box-shadow: 0 0 12px rgba(76, 201, 240, 0.35);
         }
 
-        /* TARJETA DE TOKEN SELECCIONADO CON IMAGEN MÁS GRANDE Y NITIDA */
-        .token-selector-box {
-            display: flex;
-            align-items: center;
-            background: rgba(8, 3, 20, 0.8);
-            border: 1.5px solid var(--neon-cyan);
-            border-radius: 14px;
-            padding: 10px 14px;
-            gap: 12px;
-            transition: all 0.3s ease;
-            box-shadow: inset 0 0 15px rgba(76, 201, 240, 0.12);
+        .text-input.short {
+            max-width: 130px;
+            text-align: center;
+            font-weight: bold;
         }
 
-        .token-logo-wrapper {
-            width: 46px;
-            height: 46px;
-            min-width: 46px;
-            border-radius: 50%;
-            padding: 2px;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
-            box-shadow: 0 0 14px rgba(76, 201, 240, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+        /* BOTONES DE SELECCIÓN RÁPIDA DE SUPPLY */
+        .supply-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
         }
 
-        .token-logo-wrapper img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #0d061a;
-        }
-
-        .token-selector-box input {
-            background: transparent;
-            border: none;
+        .supply-btn {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid var(--border-glow);
             color: #fff;
-            font-size: 1.15rem;
-            font-weight: 700;
-            width: 100%;
-            outline: none;
-        }
-
-        .token-symbol-badge {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 0.88rem;
-            padding: 4px 10px;
+            padding: 8px 4px;
             border-radius: 8px;
-            background: rgba(255,255,255,0.08);
-            color: var(--neon-cyan);
-            white-space: nowrap;
-        }
-
-        .balance-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.74rem;
-            color: var(--text-muted);
-            padding: 0 4px;
-        }
-
-        .max-pill-btn {
-            background: rgba(76, 201, 240, 0.2);
-            border: 1px solid var(--neon-cyan);
-            color: var(--neon-cyan);
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 700;
+            font-size: 0.75rem;
+            font-weight: 600;
             cursor: pointer;
             transition: 0.2s;
+            text-align: center;
         }
 
-        .max-pill-btn:hover {
-            background: var(--neon-cyan);
-            color: #000;
+        .supply-btn.active {
+            background: var(--primary-purple);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 10px var(--neon-cyan);
         }
 
-        /* BOTONES DE ACCIÓN PRINCIPALES */
+        /* SELECCIÓN DE LIQUIDEZ BASE DEL ECOSISTEMA CON IMÁGENES MÁS GRANDES Y NITIDAS */
+        .eco-liquidity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .eco-liquidity-option {
+            background: rgba(10, 4, 24, 0.78);
+            border: 1.5px solid var(--border-glow);
+            border-radius: 14px;
+            padding: 11px;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .eco-liquidity-option:hover {
+            transform: translateY(-2px);
+            border-color: var(--neon-cyan);
+        }
+
+        .eco-liquidity-option.selected {
+            border-color: var(--neon-cyan);
+            background: rgba(76, 201, 240, 0.16);
+            box-shadow: 0 0 16px rgba(76, 201, 240, 0.35);
+        }
+
+        .eco-liquidity-option img {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.25);
+            box-shadow: 0 0 10px rgba(76, 201, 240, 0.4);
+        }
+
+        .eco-liquidity-info {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .eco-liquidity-info span.name {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .eco-liquidity-info span.desc {
+            font-size: 0.67rem;
+            color: var(--text-muted);
+        }
+
+        /* CAJA DE PROTECCIÓN DE LIQUIDEZ DEL ECOSISTEMA */
+        .shield-info-card {
+            background: rgba(6, 214, 160, 0.08);
+            border: 1px solid rgba(6, 214, 160, 0.35);
+            border-radius: 12px;
+            padding: 11px 13px;
+            font-size: 0.73rem;
+            color: #d1fae5;
+            line-height: 1.45;
+        }
+
         .action-buttons {
             display: flex;
             gap: 10px;
@@ -656,10 +658,6 @@
             border: 1px solid var(--border-glow);
         }
 
-        .btn-action.secondary:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
         .btn-action.supply {
             background: linear-gradient(135deg, var(--primary-purple), var(--neon-pink), var(--neon-cyan));
             background-size: 200% 200%;
@@ -668,20 +666,10 @@
             box-shadow: 0 0 18px rgba(247,37,133,0.5);
         }
 
-        .btn-action.supply:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 26px rgba(76, 201, 240, 0.75);
-        }
-
-        .btn-action:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
         .lp-info-box {
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255,255,255,0.08);
-            padding: 10px;
+            padding: 12px;
             border-radius: 10px;
             text-align: center;
             font-size: 0.76rem;
@@ -694,7 +682,7 @@
             font-weight: 600;
         }
 
-        /* MODALES DE BILLETERA */
+        /* MODALES */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -712,19 +700,13 @@
             border: 2px solid var(--neon-cyan);
             border-radius: 18px;
             width: 100%;
-            max-width: 350px;
+            max-width: 360px;
             padding: 22px;
             display: flex;
             flex-direction: column;
             gap: 12px;
             box-shadow: 0 0 30px rgba(76,201,240,0.45);
             text-align: center;
-        }
-
-        .modal-content h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.98rem;
-            color: #fff;
         }
 
         .wallet-option {
@@ -747,19 +729,12 @@
             background: var(--primary-purple);
             border-color: var(--neon-cyan);
             box-shadow: 0 0 14px var(--neon-cyan);
-            transform: scale(1.02);
         }
 
         .wallet-option.disconnect {
             background: rgba(255, 77, 77, 0.15);
             border-color: var(--neon-red);
             color: var(--neon-red);
-        }
-
-        .wallet-option.disconnect:hover {
-            background: var(--neon-red);
-            color: #fff;
-            box-shadow: 0 0 14px var(--neon-red);
         }
 
         .close-modal {
@@ -801,25 +776,23 @@
         </div>
 
         <div style="position: relative; z-index: 2; max-width: 780px; margin: 0 auto 25px auto;">
-            <h1 style="font-family: 'Orbitron', sans-serif; color: #d8b4fe; font-size: 1.55em; margin-bottom: 15px; text-shadow: 0 0 15px rgba(216,180,254,0.5);" data-i18n="welcome-title">
-                INFRAESTRUCTURA Y PORTAL DESCENTRALIZADO DE ZAARD INNOVATION
+            <h1 style="font-family: 'Orbitron', sans-serif; color: #d8b4fe; font-size: 1.55em; margin-bottom: 15px; text-shadow: 0 0 15px rgba(216,180,254,0.5);">
+                CENTRO DE CREACIÓN DE TOKENS · ZAARD INNOVATION
             </h1>
-            <p style="color: #e9d5ff; font-size: 0.94em; line-height: 1.7; margin-bottom: 12px; font-weight: 300;" data-i18n="welcome-desc1">
-                Bienvenido al núcleo de alta precisión técnica operando bajo la red <strong>BNB Smart Chain (BSC)</strong>. Nuestra arquitectura descentralizada garantiza la máxima transparencia, permitiendo un <strong style="color: #c084fc;">rastreo analítico en tiempo real</strong> de las métricas, órdenes, flujos de liquidez y transacciones de los activos del ecosistema.
-            </p>
-            <p style="color: #d8b4fe; font-size: 0.9em; line-height: 1.7; font-weight: 300;" data-i18n="welcome-desc2">
-                Aporta liquidez directa en PancakeSwap V2 con los 4 tokens oficiales del ecosistema: <span style="color: #4cc9f0; font-weight: bold;">ZARD</span>, <span style="color: #f3ba2f; font-weight: bold;">PANGA</span>, <span style="color: #f72585; font-weight: bold;">ZARED</span> y <span style="color: #06d6a0; font-weight: bold;">ZYM</span>, recibiendo tus tokens LP al instante. 🚀
+            <p style="color: #e9d5ff; font-size: 0.94em; line-height: 1.7; margin-bottom: 12px; font-weight: 300;">
+                Bienvenido al creador oficial de contratos estándar en la <strong>BNB Smart Chain (BSC)</strong>. Diseña tu propia moneda con suministro personalizado, sin impuestos maliciosos y emparejada directamente con los activos estelares del ecosistema: 
+                <span style="color: #4cc9f0; font-weight: bold;">ZARD</span>, <span style="color: #f3ba2f; font-weight: bold;">PANGA</span>, <span style="color: #f72585; font-weight: bold;">ZARED</span> o <span style="color: #06d6a0; font-weight: bold;">ZYM</span>.
             </p>
         </div>
 
         <div style="position: relative; z-index: 2; margin-bottom: 20px;">
-            <button onclick="enterEcosystem()" class="ecosystem-enter-btn" data-i18n="welcome-btn">
-                ⚡ ACCEDER AL PORTAL DESCENTRALIZADO ↗
+            <button onclick="enterEcosystem()" class="ecosystem-enter-btn">
+                ⚡ ENTRAR AL CREADOR DESCENTRALIZADO ↗
             </button>
         </div>
     </div>
 
-    <!-- 2. ESTRUCTURA PRINCIPAL DE LA DAPP -->
+    <!-- 2. ESTRUCTURA PRINCIPAL -->
     <div class="main-wrapper">
         <header>
             <div class="logo-container" onclick="switchTab('home')">
@@ -834,150 +807,182 @@
                     <option value="zh">🇨🇳 中文</option>
                 </select>
 
-                <button id="connectWalletBtn" onclick="handleWalletClick()" class="btn-connect" data-i18n="btn-connect">Conectar Billetera</button>
+                <button id="connectWalletBtn" onclick="handleWalletClick()" class="btn-connect">Conectar Billetera</button>
             </div>
         </header>
 
         <main class="content-container">
 
-            <!-- VISTA 1: HOME / TARJETAS DEL ECOSISTEMA -->
+            <!-- VISTA 1: HOME / HUB -->
             <section id="tab-home" class="view-section active">
                 <div class="welcome-hero">
                     <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1792865596414-22890f0deb10ff50d0525508a0eea986.png" alt="ZARD Finance Banner" class="hero-banner">
-                    <h1 data-i18n="hero-title">Bienvenido al Núcleo de ZARD Finance</h1>
-                    <p data-i18n="hero-subtitle">Selecciona una opción del ecosistema para comenzar la innovación financiera</p>
+                    <h1>Ecosistema de Creación Web3</h1>
+                    <p>Despliega contratos limpios en BSC con emparejamiento inteligente de liquidez en ZARD, PANGA, ZARED o ZYM.</p>
                 </div>
 
                 <div class="hub-cards-grid">
-                    <!-- TARJETA 1: ZARD WALLET -->
+                    <div class="hub-card" onclick="switchTab('creator')">
+                        <div class="card-img-banner">
+                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802191040.png" alt="Crear Token" class="card-custom-img">
+                        </div>
+                        <h3>Crear Token & Liquidez</h3>
+                        <p>Diseña tu token y vincúlalo a los activos oficiales.</p>
+                        <span class="card-link-text">Iniciar Creador &rarr;</span>
+                    </div>
+
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-wallet/wallet.html', '_blank')">
                         <div class="card-img-banner">
                             <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802201954.png" alt="ZARD Wallet" class="card-custom-img">
                         </div>
-                        <h3 data-i18n="card1-title">ZARD Wallet</h3>
-                        <p data-i18n="card1-desc">Gestiona tus activos y tokens de forma segura.</p>
-                        <span class="card-link-text" data-i18n="card1-link">Abrir Billetera &rarr;</span>
+                        <h3>ZARD Wallet</h3>
+                        <p>Gestiona tus activos y tokens de forma segura.</p>
+                        <span class="card-link-text">Abrir Billetera &rarr;</span>
                     </div>
 
-                    <!-- TARJETA 2: LIQUIDEZ DEL ECOSISTEMA -->
-                    <div class="hub-card" onclick="switchTab('creator')">
-                        <div class="card-img-banner">
-                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802191040.png" alt="Liquidez Oficial" class="card-custom-img">
-                        </div>
-                        <h3 data-i18n="card2-title">Aportar Liquidez LP</h3>
-                        <p data-i18n="card2-desc">Suministra liquidez con ZARD, PANGA, ZARED o ZYM.</p>
-                        <span class="card-link-text" data-i18n="card2-link">Abrir Pool LP &rarr;</span>
-                    </div>
-
-                    <!-- TARJETA 3: ZARD ECOSISTEMA -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/DAIoficial/', '_blank')">
                         <div class="card-img-banner">
-                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802202340.png" alt="ZARD Ecosistema" class="card-custom-img">
+                            <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/215%20sin%20t%C3%ADtulo_20260802202340.png" alt="ZARD Web" class="card-custom-img">
                         </div>
-                        <h3 data-i18n="card3-title">ZARD Ecosistema</h3>
-                        <p data-i18n="card3-desc">Explora las alertas y plataformas oficiales.</p>
-                        <span class="card-link-text" data-i18n="card3-link">Explorar Web &rarr;</span>
+                        <h3>ZARD Ecosistema</h3>
+                        <p>Explora las alertas y plataformas oficiales.</p>
+                        <span class="card-link-text">Explorar Web &rarr;</span>
                     </div>
 
-                    <!-- TARJETA 4: ZAARD & PANGA TRACKER -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-tracker/', '_blank')">
                         <div class="card-img-banner">
-                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png" alt="ZAARD & PANGA Tracker" class="card-custom-img">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png" alt="Tracker" class="card-custom-img">
                         </div>
-                        <h3 data-i18n="card4-title">ZAARD & PANGA</h3>
-                        <p data-i18n="card4-desc">Rastreador de métricas y análisis en tiempo real.</p>
-                        <span class="card-link-text" data-i18n="card4-link">Abrir Tracker &rarr;</span>
+                        <h3>ZAARD & PANGA</h3>
+                        <p>Rastreador de métricas y análisis en tiempo real.</p>
+                        <span class="card-link-text">Abrir Tracker &rarr;</span>
                     </div>
                 </div>
 
-                <!-- ENLACES RÁPIDOS INFERIORES -->
+                <!-- ENLACES RÁPIDOS -->
                 <div class="ecosystem-footer-links">
-                    <h4 data-i18n="eco-links-title">🔗 Enlaces Rápidos del Ecosistema</h4>
+                    <h4>🔗 Enlaces Rápidos del Ecosistema</h4>
                     <div class="footer-links-grid">
-                        <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="eco-link-btn nexus-btn" data-i18n="nav-nexus">⚡ Regresar al Nexus</a>
-                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="eco-link-btn" data-i18n="nav-web">🌐 Web Oficial</a>
-                        <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="eco-link-btn" data-i18n="nav-wallet">👛 ZARD Wallet</a>
-                        <a href="https://figueredo56.github.io/zaard-tracker/" target="_blank" class="eco-link-btn" data-i18n="nav-tracker">📊 Tracker Pro</a>
+                        <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="eco-link-btn nexus-btn">⚡ Regresar al Nexus</a>
+                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="eco-link-btn">🌐 Web Oficial</a>
+                        <a href="https://figueredo56.github.io/zaard-wallet/wallet.html" target="_blank" class="eco-link-btn">👛 ZARD Wallet</a>
+                        <a href="https://figueredo56.github.io/zaard-tracker/" target="_blank" class="eco-link-btn">📊 Tracker Pro</a>
                     </div>
                 </div>
 
-                <!-- VISTA PREVIA / PORTAL DE ZAARD INNOVATION -->
                 <div class="portal-preview-section">
                     <div class="portal-preview-header">
-                        <span class="portal-preview-title">🌐 ZAARD INNOVATION La nueva era de la web3</span>
-                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="portal-preview-btn">↗ Abrir en Pantalla Completa</a>
+                        <span class="portal-preview-title">🌐 ZAARD INNOVATION Portal Oficial</span>
+                        <a href="https://figueredo56.github.io/DAIoficial/" target="_blank" class="portal-preview-btn">↗ Pantalla Completa</a>
                     </div>
                     <div class="iframe-container">
-                        <iframe src="https://figueredo56.github.io/DAIoficial/" title="ZAARD INNOVATION Portal"></iframe>
+                        <iframe src="https://figueredo56.github.io/DAIoficial/" title="ZAARD Portal"></iframe>
                     </div>
                 </div>
             </section>
 
-            <!-- VISTA 2: PROVEEDOR DE LIQUIDEZ PANCAKESWAP V2 (ZARD, PANGA, ZARED, ZYM) -->
+            <!-- VISTA 2: CREADOR DE TOKENS Y LIQUIDEZ CON LOS 4 TOKENS -->
             <section id="tab-creator" class="view-section">
                 <div class="creator-header-banner">
-                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1792865596414-22890f0deb10ff50d0525508a0eea986.png" alt="Liquidity Banner" class="top-creator-img">
-                    <h2 data-i18n="creator-title">Pool de Liquidez Oficial ZARD Finance</h2>
-                    <p data-i18n="creator-subtitle">Aporta liquidez directa en PancakeSwap V2 y obtén tus Tokens LP al instante</p>
+                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1792865596414-22890f0deb10ff50d0525508a0eea986.png" alt="Creator Banner" class="top-creator-img">
+                    <h2>Centro de Creación de Tokens · ZAARD</h2>
+                    <p>Crea tu contrato BEP-20 seguro, sin impuestos maliciosos y con liquidez respaldada en el ecosistema.</p>
                 </div>
 
                 <div class="liquidity-card">
                     <div class="pool-badge-header">
-                        <span><span class="live-dot"></span> PancakeSwap V2 Router (BSC Mainnet)</span>
-                        <span style="font-weight: 700;">Par: TOKEN / BNB</span>
+                        <span><span class="live-dot"></span> BSC Mainnet Token Factory</span>
+                        <span style="font-weight: 700;">0% Tax · Verificable</span>
                     </div>
 
-                    <!-- SELECTOR DE LOS 4 TOKENS DEL ECOSISTEMA -->
+                    <!-- NOMBRE Y SÍMBOLO -->
                     <div class="input-group">
-                        <label data-i18n="label-token-select">1. Selecciona el Token del Ecosistema</label>
-                        <select id="liquidityTokenSelect" class="text-input" onchange="updateLiquidityTokenUI()">
-                            <option value="ZARD">💎 ZARD Token (0x973b...85d38)</option>
-                            <option value="PANGA">🔥 PANGA Token (0x4a6c...01366e)</option>
-                            <option value="ZARED">⚡ ZARED Token (0xfc2a...39690e)</option>
-                            <option value="ZYM">🚀 ZYM Token (0x5a1d...3fc53d)</option>
-                        </select>
+                        <label>1. Nombre y Símbolo del Token</label>
+                        <div class="dual-inputs">
+                            <input type="text" id="tokenName" placeholder="Ej: Mi Token Oficial" class="text-input">
+                            <input type="text" id="tokenSymbol" placeholder="Ej: MTO" class="text-input short">
+                        </div>
                     </div>
 
-                    <!-- INPUT CANTIDAD DEL TOKEN SELECCIONADO -->
+                    <!-- SUMINISTRO TOTAL (SUPPLY) -->
                     <div class="input-group">
-                        <label data-i18n="label-token-amount">2. Cantidad de Tokens a Suministrar</label>
-                        <div class="token-selector-box" id="tokenSelectorBox">
-                            <div class="token-logo-wrapper" id="tokenLogoWrapper">
-                                <img id="liquidityTokenLogo" src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png" alt="Token Logo" onerror="this.src='https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png'">
+                        <label>2. Suministro Total (Supply) y Decimales (18)</label>
+                        <div class="supply-buttons">
+                            <button type="button" class="supply-btn" onclick="setSupply(1000)">1,000</button>
+                            <button type="button" class="supply-btn" onclick="setSupply(1000000)">1 Millón</button>
+                            <button type="button" class="supply-btn active" onclick="setSupply(1000000000)">1 Billón</button>
+                            <button type="button" class="supply-btn" onclick="setSupply(1000000000000)">1 Trillón</button>
+                        </div>
+                        <input type="number" id="tokenSupply" value="1000000000" class="text-input" style="text-align: center; font-weight: 700;">
+                    </div>
+
+                    <!-- URL DEL LOGO IPFS -->
+                    <div class="input-group">
+                        <label>3. URL Directa del Logo (IPFS / Imagen)</label>
+                        <input type="text" id="tokenLogoUrl" placeholder="https://gateway.pinata.cloud/ipfs/tu_hash_de_imagen" class="text-input">
+                        <span style="font-size: 0.7rem; color: var(--text-muted);">💡 Sube tu logo a <a href="https://www.pinata.cloud" target="_blank" style="color:var(--neon-cyan);">Pinata.cloud</a> para que aparezca en todas las billeteras (MetaMask, Trust, Binance).</span>
+                    </div>
+
+                    <!-- DESCRIPCIÓN Y REDES SOCIALES -->
+                    <div class="input-group">
+                        <label>4. Descripción y Redes Sociales (Web, X, Telegram)</label>
+                        <input type="text" id="projectSocials" placeholder="Ej: Token comunitario Web3 | https://t.me/tu_canal | @tu_usuario" class="text-input">
+                    </div>
+
+                    <!-- SELECCIONAR LIQUIDEZ BASE DEL ECOSISTEMA -->
+                    <div class="input-group">
+                        <label>5. Selecciona el Token Base para la Liquidez Inicial</label>
+                        <div class="eco-liquidity-grid">
+                            <div class="eco-liquidity-option selected" id="opt-ZARD" onclick="selectEcoLiquidity('ZARD')">
+                                <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png" alt="ZARD" onerror="this.src='https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png'">
+                                <div class="eco-liquidity-info">
+                                    <span class="name" style="color: var(--neon-cyan);">ZARD Token</span>
+                                    <span class="desc">Balance: <strong id="bal-ZARD">0.00</strong></span>
+                                </div>
                             </div>
-                            <input type="number" id="liquidityAmount" placeholder="0.0" step="any" min="0" oninput="estimateBnbPair()">
-                            <span id="liquidityTokenSymbol" class="token-symbol-badge">ZARD</span>
-                        </div>
-                        <div class="balance-row">
-                            <span><span data-i18n="balance-label">Balance disponible:</span> <strong id="tokenBalance" style="color:#fff;">0.00</strong></span>
-                            <button type="button" class="max-pill-btn" onclick="setMaxTokenBalance()">MAX</button>
+                            <div class="eco-liquidity-option" id="opt-PANGA" onclick="selectEcoLiquidity('PANGA')">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c13098c92f8a665ac39a838c2.png" alt="PANGA" onerror="this.src='https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png'">
+                                <div class="eco-liquidity-info">
+                                    <span class="name" style="color: var(--neon-gold);">PANGA Token</span>
+                                    <span class="desc">Balance: <strong id="bal-PANGA">0.00</strong></span>
+                                </div>
+                            </div>
+                            <div class="eco-liquidity-option" id="opt-ZARED" onclick="selectEcoLiquidity('ZARED')">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790288769685-7d9a89bc13043a812c4889cb55ac4a54.png" alt="ZARED" onerror="this.src='https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png'">
+                                <div class="eco-liquidity-info">
+                                    <span class="name" style="color: var(--neon-pink);">ZARED Token</span>
+                                    <span class="desc">Balance: <strong id="bal-ZARED">0.00</strong></span>
+                                </div>
+                            </div>
+                            <div class="eco-liquidity-option" id="opt-ZYM" onclick="selectEcoLiquidity('ZYM')">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3063f454cbc1d8a062fb.png" alt="ZYM" onerror="this.src='https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png'">
+                                <div class="eco-liquidity-info">
+                                    <span class="name" style="color: var(--neon-green);">ZYM Token</span>
+                                    <span class="desc">Balance: <strong id="bal-ZYM">0.00</strong></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- INPUT CANTIDAD DE BNB EMPAREJADO -->
+                    <!-- CANTIDAD DE LIQUIDEZ DEL ECOSISTEMA A APORTAR -->
                     <div class="input-group">
-                        <label data-i18n="label-bnb-amount">3. Contraparte en BNB (Calculado automáticamente o manual)</label>
-                        <div class="token-selector-box" style="border-color: var(--neon-gold);">
-                            <div class="token-logo-wrapper" style="background: linear-gradient(135deg, #f3ba2f, #fff);">
-                                <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BNB Logo" onerror="this.src='https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png'">
-                            </div>
-                            <input type="number" id="bnbLiquidityAmount" placeholder="0.0" step="any" min="0">
-                            <span class="token-symbol-badge" style="color: var(--neon-gold);">BNB</span>
-                        </div>
-                        <div class="balance-row">
-                            <span>Balance BNB: <strong id="bnbBalance" style="color: var(--neon-gold);">0.0000</strong> BNB</span>
-                            <span id="poolPriceInfo" style="font-size: 0.68rem; color: var(--neon-green);">Sincronizado con Pool V2</span>
-                        </div>
+                        <label>6. Cantidad de <span id="selectedEcoLabel" style="color: var(--neon-cyan);">ZARD</span> para el Par de Liquidez Inicial</label>
+                        <input type="number" id="ecoLiquidityAmount" placeholder="Ej: 100" step="any" min="0" class="text-input">
+                    </div>
+
+                    <!-- PROTECCIÓN DE RIESGO Y COMPATIBILIDAD PINKSALE / MUDRA -->
+                    <div class="shield-info-card">
+                        🛡️ <strong>Blindaje de Ecosistema Activo:</strong> Tu contrato se genera 100% limpio (sin comisiones ocultas ni funciones maliciosas). El par de liquidez es independiente: protege el valor base de <strong>ZARD, PANGA, ZARED y ZYM</strong> ante fluctuaciones externas y permite bloquear tus Tokens LP en <strong>PinkSale</strong> o <strong>Mudra Manager</strong>.
                     </div>
 
                     <!-- BOTONES DE ACCIÓN -->
                     <div class="action-buttons">
-                        <button type="button" class="btn-action secondary" onclick="switchTab('home')" data-i18n="btn-back">← Volver</button>
-                        <button type="button" id="supplyLiquidityBtn" class="btn-action supply" onclick="supplyLiquidityDirect()" data-i18n="btn-deploy">💧 Suministrar Liquidez (LP)</button>
+                        <button type="button" class="btn-action secondary" onclick="switchTab('home')">← Volver</button>
+                        <button type="button" id="deployTokenBtn" class="btn-action supply" onclick="deployEcosystemToken()">🚀 Crear Token & Par LP</button>
                     </div>
 
                     <div class="lp-info-box">
-                        <span data-i18n="status-label">Estado:</span> <span id="statusText" class="text-glow" data-i18n="status-ready">Listo para aportar liquidez en PancakeSwap V2.</span>
+                        <span>Estado:</span> <span id="statusText" class="text-glow">Listo para crear tu contrato BEP-20 en BNB Smart Chain.</span>
                     </div>
                 </div>
             </section>
@@ -985,247 +990,89 @@
         </main>
 
         <footer>
-            <p data-i18n="footer-text">© 2026 ZARD Finance Ecosystem · ZAARD INNOVATION · Liquidez Descentralizada BSC.</p>
+            <p>© 2026 ZARD Finance Ecosystem · ZAARD INNOVATION · Creador de Tokens Descentralizado.</p>
         </footer>
     </div>
 
-    <!-- MODAL DE SELECCIÓN DE BILLETERA -->
+    <!-- MODAL DE BILLETERA ESTILO BSCSCAN / PANCAKESWAP -->
     <div id="walletModal" class="modal-overlay">
         <div class="modal-content">
-            <h3 data-i18n="modal-title">Conectar Billetera Web3</h3>
-            <p style="font-size: 0.74rem; color: var(--text-muted);">Serás redirigido a tu billetera para aprobar y firmar la conexión segura en BSC.</p>
-            <div class="wallet-option" onclick="connectSpecificWallet('metamask')">🦊 MetaMask</div>
-            <div class="wallet-option" onclick="connectSpecificWallet('trust')">🛡️ Trust Wallet</div>
-            <div class="wallet-option" onclick="connectSpecificWallet('binance')">🟡 Binance Web3 Wallet</div>
-            <div class="wallet-option" onclick="connectSpecificWallet('injected')">🌐 Navegador Web3 / Bitget</div>
-            <button class="close-modal" onclick="closeModal('walletModal')" data-i18n="modal-close">Cancelar</button>
+            <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1rem;">Conectar Billetera Web3</h3>
+            <p style="font-size: 0.74rem; color: var(--text-muted);">Selecciona tu billetera para autorizar y firmar la conexión directa en BSC.</p>
+            <div class="wallet-option" onclick="connectDirectWallet('binance')">🟡 Binance Web3 Wallet</div>
+            <div class="wallet-option" onclick="connectDirectWallet('trust')">🛡️ Trust Wallet</div>
+            <div class="wallet-option" onclick="connectDirectWallet('metamask')">🦊 MetaMask</div>
+            <div class="wallet-option" onclick="connectDirectWallet('bitget')">⚡ Bitget / Navegador Web3</div>
+            <button class="close-modal" onclick="closeModal('walletModal')">Cancelar</button>
         </div>
     </div>
 
     <!-- MODAL DE DESCONEXIÓN -->
     <div id="disconnectModal" class="modal-overlay">
         <div class="modal-content">
-            <h3 data-i18n="disc-title">Gestión de Billetera</h3>
+            <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1rem;">Billetera Conectada</h3>
             <p id="connectedAddressText" style="font-size: 0.75rem; color: var(--neon-cyan); word-break: break-all;"></p>
-            <div class="wallet-option disconnect" onclick="disconnectWallet()">🚫 Desconectar Billetera</div>
-            <button class="close-modal" onclick="closeModal('disconnectModal')" data-i18n="modal-close">Cancelar</button>
+            <div class="wallet-option disconnect" onclick="disconnectWallet()">🚫 Desconectar Sesión</div>
+            <button class="close-modal" onclick="closeModal('disconnectModal')">Cerrar</button>
         </div>
     </div>
 
     <!-- Ethers.js v5 -->
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <script>
-        // CONFIGURACIÓN DE LOS 4 TOKENS OFICIALES DEL ECOSISTEMA
+        // CONTRATOS OFICIALES DE LOS 4 TOKENS DEL ECOSISTEMA
         const ECOSYSTEM_TOKENS = {
-            ZARD: {
-                address: "0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38",
-                symbol: "ZARD",
-                logo: "https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png",
-                color: "var(--neon-cyan)"
-            },
-            PANGA: {
-                address: "0x4a6c3ea9e7132ad217c31f8252119f08c801366e",
-                symbol: "PANGA",
-                logo: "https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c13098c92f8a665ac39a838c2.png",
-                color: "var(--neon-gold)"
-            },
-            ZARED: {
-                address: "0xfc2aca08fc64e51793c32e9088fc43a57d39690e",
-                symbol: "ZARED",
-                logo: "https://photos.pinksale.finance/file/pinksale-logo-upload/1790288769685-7d9a89bc13043a812c4889cb55ac4a54.png",
-                color: "var(--neon-pink)"
-            },
-            ZYM: {
-                address: "0x5a1de9974c1279fbe989ce32899a1f4ece3fc53d",
-                symbol: "ZYM",
-                logo: "https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3063f454cbc1d8a062fb.png",
-                color: "var(--neon-green)"
-            }
+            ZARD: { address: "0x973ba2c1dccd0820f1e026d6b1f01c55c4085d38", name: "ZARD", color: "var(--neon-cyan)" },
+            PANGA: { address: "0x4a6c3ea9e7132ad217c31f8252119f08c801366e", name: "PANGA", color: "var(--neon-gold)" },
+            ZARED: { address: "0xfc2aca08fc64e51793c32e9088fc43a57d39690e", name: "ZARED", color: "var(--neon-pink)" },
+            ZYM: { address: "0x5a1de9974c1279fbe989ce32899a1f4ece3fc53d", name: "ZYM", color: "var(--neon-green)" }
         };
-
-        // CONTRATOS OFICIALES PANCAKESWAP V2 EN BNB SMART CHAIN
-        const PANCAKE_ROUTER_ADDRESS = "0x10ED43C718714eb63d5aA57B78B54704E256024E";
-        const PANCAKE_FACTORY_ADDRESS = "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73";
-        const WBNB_ADDRESS = "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
 
         const ERC20_ABI = [
             "function balanceOf(address owner) view returns (uint256)",
-            "function decimals() view returns (uint8)",
-            "function symbol() view returns (string)",
-            "function allowance(address owner, address spender) view returns (uint256)",
-            "function approve(address spender, uint256 amount) returns (bool)"
+            "function decimals() view returns (uint8)"
         ];
 
-        const ROUTER_ABI = [
-            "function addLiquidityETH(address token, uint amountTokenDesired, uint amountTokenMin, uint amountETHMin, address to, uint deadline) payable returns (uint amountToken, uint amountETH, uint liquidity)",
-            "function getAmountsOut(uint amountIn, address[] memory path) view returns (uint[] memory amounts)"
-        ];
-
+        let selectedEcoToken = "ZARD";
         let userAccount = null;
         let provider = null;
-        let currentTokenBalanceRaw = "0";
-        let currentTokenDecimals = 18;
+        let discoveredProviders = [];
 
-        // ENTRAR AL ECOSISTEMA
+        // DESCUBRIMIENTO AUTOMÁTICO DE BILLETERAS (EIP-6963)
+        window.addEventListener("eip6963:announceProvider", (event) => {
+            discoveredProviders.push(event.detail);
+        });
+        window.dispatchEvent(new Event("eip6963:requestProvider"));
+
         function enterEcosystem() {
             document.getElementById('welcomeOverlay').classList.add('hidden');
         }
 
-        // TRADUCCIONES MULTI-IDIOMA
-        const translations = {
-            es: {
-                "welcome-title": "INFRAESTRUCTURA Y PORTAL DESCENTRALIZADO DE ZAARD INNOVATION",
-                "welcome-desc1": "Bienvenido al núcleo de alta precisión técnica operando bajo la red <strong>BNB Smart Chain (BSC)</strong>. Nuestra arquitectura descentralizada garantiza la máxima transparencia, permitiendo un <strong style='color: #c084fc;'>rastreo analítico en tiempo real</strong> de las métricas, órdenes, flujos de liquidez y transacciones de los activos del ecosistema.",
-                "welcome-desc2": "Aporta liquidez directa en PancakeSwap V2 con los 4 tokens oficiales del ecosistema: <span style='color: #4cc9f0; font-weight: bold;'>ZARD</span>, <span style='color: #f3ba2f; font-weight: bold;'>PANGA</span>, <span style='color: #f72585; font-weight: bold;'>ZARED</span> y <span style='color: #06d6a0; font-weight: bold;'>ZYM</span>, recibiendo tus tokens LP al instante. 🚀",
-                "welcome-btn": "⚡ ACCEDER AL PORTAL DESCENTRALIZADO ↗",
-                "btn-connect": "Conectar Billetera",
-                "hero-title": "Bienvenido al Núcleo de ZARD Finance",
-                "hero-subtitle": "Selecciona una opción del ecosistema para comenzar la innovación financiera",
-                "card1-title": "ZARD Wallet",
-                "card1-desc": "Gestiona tus activos y tokens de forma segura.",
-                "card1-link": "Abrir Billetera →",
-                "card2-title": "Aportar Liquidez LP",
-                "card2-desc": "Suministra liquidez con ZARD, PANGA, ZARED o ZYM.",
-                "card2-link": "Abrir Pool LP →",
-                "card3-title": "ZARD Ecosistema",
-                "card3-desc": "Explora las alertas y plataformas oficiales.",
-                "card3-link": "Explorar Web →",
-                "card4-title": "ZAARD & PANGA",
-                "card4-desc": "Rastreador de métricas y análisis en tiempo real.",
-                "card4-link": "Abrir Tracker →",
-                "eco-links-title": "🔗 Enlaces Rápidos del Ecosistema",
-                "nav-nexus": "⚡ Regresar al Nexus",
-                "nav-web": "🌐 Web Oficial",
-                "nav-wallet": "👛 ZARD Wallet",
-                "nav-tracker": "📊 Tracker Pro",
-                "creator-title": "Pool de Liquidez Oficial ZARD Finance",
-                "creator-subtitle": "Aporta liquidez directa en PancakeSwap V2 y obtén tus Tokens LP al instante",
-                "label-token-select": "1. Selecciona el Token del Ecosistema",
-                "label-token-amount": "2. Cantidad de Tokens a Suministrar",
-                "label-bnb-amount": "3. Contraparte en BNB (Calculado automáticamente o manual)",
-                "balance-label": "Balance disponible:",
-                "btn-back": "← Volver",
-                "btn-deploy": "💧 Suministrar Liquidez (LP)",
-                "status-label": "Estado:",
-                "status-ready": "Listo para aportar liquidez en PancakeSwap V2.",
-                "modal-title": "Conectar Billetera Web3",
-                "modal-close": "Cancelar",
-                "disc-title": "Gestión de Billetera",
-                "footer-text": "© 2026 ZARD Finance Ecosystem · ZAARD INNOVATION · Liquidez Descentralizada BSC."
-            },
-            en: {
-                "welcome-title": "ZAARD INNOVATION INFRASTRUCTURE & DECENTRALIZED PORTAL",
-                "welcome-desc1": "Welcome to the high-precision technical core operating on <strong>BNB Smart Chain (BSC)</strong>. Our decentralized architecture ensures maximum transparency and <strong style='color: #c084fc;'>real-time analytical tracking</strong> of ecosystem metrics and liquidity flows.",
-                "welcome-desc2": "Provide direct liquidity on PancakeSwap V2 using the 4 official ecosystem tokens: <span style='color: #4cc9f0; font-weight: bold;'>ZARD</span>, <span style='color: #f3ba2f; font-weight: bold;'>PANGA</span>, <span style='color: #f72585; font-weight: bold;'>ZARED</span> and <span style='color: #06d6a0; font-weight: bold;'>ZYM</span>, receiving your LP tokens instantly. 🚀",
-                "welcome-btn": "⚡ ACCESS DECENTRALIZED PORTAL ↗",
-                "btn-connect": "Connect Wallet",
-                "hero-title": "Welcome to ZARD Finance Core",
-                "hero-subtitle": "Select an ecosystem option to start financial innovation",
-                "card1-title": "ZARD Wallet",
-                "card1-desc": "Manage your assets and tokens securely.",
-                "card1-link": "Open Wallet →",
-                "card2-title": "Provide LP Liquidity",
-                "card2-desc": "Supply liquidity with ZARD, PANGA, ZARED or ZYM.",
-                "card2-link": "Open LP Pool →",
-                "card3-title": "ZARD Ecosystem",
-                "card3-desc": "Explore official alerts and platforms.",
-                "card3-link": "Explore Web →",
-                "card4-title": "ZAARD & PANGA",
-                "card4-desc": "Real-time metrics and analytics tracker.",
-                "card4-link": "Open Tracker →",
-                "eco-links-title": "🔗 Ecosystem Quick Links",
-                "nav-nexus": "⚡ Return to Nexus",
-                "nav-web": "🌐 Official Web",
-                "nav-wallet": "👛 ZARD Wallet",
-                "nav-tracker": "📊 Tracker Pro",
-                "creator-title": "ZARD Finance Official Liquidity Pool",
-                "creator-subtitle": "Supply direct liquidity on PancakeSwap V2 and get LP Tokens instantly",
-                "label-token-select": "1. Select Ecosystem Token",
-                "label-token-amount": "2. Token Amount to Supply",
-                "label-bnb-amount": "3. BNB Pair Amount (Auto-calculated or manual)",
-                "balance-label": "Available Balance:",
-                "btn-back": "← Back",
-                "btn-deploy": "💧 Supply Liquidity (LP)",
-                "status-label": "Status:",
-                "status-ready": "Ready to supply liquidity on PancakeSwap V2.",
-                "modal-title": "Connect Web3 Wallet",
-                "modal-close": "Cancel",
-                "disc-title": "Wallet Management",
-                "footer-text": "© 2026 ZARD Finance Ecosystem · ZAARD INNOVATION · BSC Decentralized Liquidity."
-            },
-            zh: {
-                "welcome-title": "ZAARD INNOVATION 基础设施与去中心化门户",
-                "welcome-desc1": "欢迎来到在 <strong>BNB Smart Chain (BSC)</strong> 上运行的高精度技术核心。我们的去中心化架构确保最大透明度，并支持生态系统指标和流动性的<strong style='color: #c084fc;'>实时分析追踪</strong>。",
-                "welcome-desc2": "使用生态系统官方 4 种代币在 PancakeSwap V2 上直接提供流动性：<span style='color: #4cc9f0; font-weight: bold;'>ZARD</span>、<span style='color: #f3ba2f; font-weight: bold;'>PANGA</span>、<span style='color: #f72585; font-weight: bold;'>ZARED</span> 和 <span style='color: #06d6a0; font-weight: bold;'>ZYM</span>，即时获得 LP 代币。🚀",
-                "welcome-btn": "⚡ 进入去中心化门户 ↗",
-                "btn-connect": "连接钱包",
-                "hero-title": "欢迎来到 ZARD Finance 核心",
-                "hero-subtitle": "选择生态系统选项以开启金融创新",
-                "card1-title": "ZARD 钱包",
-                "card1-desc": "安全管理您的资产和代币。",
-                "card1-link": "打开钱包 →",
-                "card2-title": "提供 LP 流动性",
-                "card2-desc": "使用 ZARD、PANGA、ZARED 或 ZYM 提供流动性。",
-                "card2-link": "打开流动池 →",
-                "card3-title": "ZARD 生态系统",
-                "card3-desc": "探索官方警报和平台。",
-                "card3-link": "探索网页 →",
-                "card4-title": "ZAARD & PANGA",
-                "card4-desc": "实时指标与分析追踪器。",
-                "card4-link": "打开追踪器 →",
-                "eco-links-title": "🔗 生态系统快速链接",
-                "nav-nexus": "⚡ 返回 Nexus",
-                "nav-web": "🌐 官方网站",
-                "nav-wallet": "👛 ZARD 钱包",
-                "nav-tracker": "📊 追踪器 Pro",
-                "creator-title": "ZARD Finance 官方流动性池",
-                "creator-subtitle": "在 PancakeSwap V2 上直接提供流动性并即时获取 LP 代币",
-                "label-token-select": "1. 选择生态系统代币",
-                "label-token-amount": "2. 供应代币数量",
-                "label-bnb-amount": "3. BNB 配对数量（自动计算或手动输入）",
-                "balance-label": "可用余额:",
-                "btn-back": "← 返回",
-                "btn-deploy": "💧 提供流动性 (LP)",
-                "status-label": "状态:",
-                "status-ready": "准备在 PancakeSwap V2 上提供流动性。",
-                "modal-title": "选择您的 Web3 钱包",
-                "modal-close": "取消",
-                "disc-title": "钱包管理",
-                "footer-text": "© 2026 ZARD Finance Ecosystem · ZAARD INNOVATION · BSC 去中心化流动性。"
-            }
-        };
-
         function changeLanguage(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.placeholder = translations[lang][key];
-                    } else {
-                        element.innerHTML = translations[lang][key];
-                    }
-                }
-            });
             document.getElementById('languageSelect').value = lang;
             document.getElementById('welcomeLangSelect').value = lang;
             localStorage.setItem('zard_lang', lang);
         }
 
+        // AUTO-SINCRONIZACIÓN AL REGRESAR DE LA APP DE BILLETERA
         window.addEventListener('DOMContentLoaded', async () => {
-            const savedLang = localStorage.getItem('zard_lang') || 'es';
-            changeLanguage(savedLang);
-            updateLiquidityTokenUI();
+            const urlParams = new URLSearchParams(window.location.search);
+            const pendingWallet = localStorage.getItem('zaard_pending_wallet');
 
-            // Reconexión automática si el usuario regresa desde la billetera móvil
             if (window.ethereum) {
                 try {
                     const accounts = await window.ethereum.request({ method: 'eth_accounts' });
                     if (accounts && accounts.length > 0) {
                         provider = new ethers.providers.Web3Provider(window.ethereum);
                         setConnectedAccount(accounts[0]);
+                        localStorage.removeItem('zaard_pending_wallet');
+                    } else if (pendingWallet || urlParams.get('connect') === '1') {
+                        // Si el usuario viene redirigido desde el navegador móvil, dispara automáticamente la solicitud de firma
+                        localStorage.removeItem('zaard_pending_wallet');
+                        await executeWeb3Handshake(window.ethereum);
                     }
                 } catch (e) {
-                    console.log("Esperando conexión manual.");
+                    console.log("Esperando interacción.");
                 }
             }
         });
@@ -1236,8 +1083,7 @@
                 document.getElementById('tab-home').classList.add('active');
             } else if (tabName === 'creator') {
                 document.getElementById('tab-creator').classList.add('active');
-                updateLiquidityTokenUI();
-                if (userAccount) updateBalances();
+                if (userAccount) refreshAllEcoBalances();
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -1255,71 +1101,87 @@
             document.getElementById(modalId).style.display = 'none';
         }
 
-        // CONEXIÓN PROFESIONAL CON REDIRECCIÓN A BILLETERA Y FIRMA DE AUTENTICACIÓN
-        async function connectSpecificWallet(walletType) {
+        // CONEXIÓN DIRECTA ESTILO BSCSCAN / PANCAKESWAP
+        async function connectDirectWallet(walletType) {
             closeModal('walletModal');
             const statusEl = document.getElementById('statusText');
-            const currentUrl = window.location.href;
-            const cleanUrl = currentUrl.replace(/^https?:\/\//, '');
 
-            // Detectar si estamos en navegador móvil externo sin proveedor inyectado
-            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-            const hasInjected = Boolean(window.ethereum || window.BinanceChain);
+            // 1. Buscar proveedor inyectado específico (EIP-6963 o window.ethereum)
+            let targetProvider = null;
 
-            if (!hasInjected && isMobile) {
+            if (discoveredProviders.length > 0) {
+                const match = discoveredProviders.find(p => {
+                    const name = p.info.name.toLowerCase();
+                    if (walletType === 'binance') return name.includes('binance');
+                    if (walletType === 'trust') return name.includes('trust');
+                    if (walletType === 'metamask') return name.includes('metamask');
+                    return true;
+                });
+                if (match) targetProvider = match.provider;
+            }
+
+            if (!targetProvider) {
+                if (walletType === 'binance' && window.BinanceChain) {
+                    targetProvider = window.BinanceChain;
+                } else if (window.ethereum && window.ethereum.providers) {
+                    targetProvider = window.ethereum.providers.find(p => {
+                        if (walletType === 'binance') return p.isBinance;
+                        if (walletType === 'trust') return p.isTrust || p.isTrustWallet;
+                        if (walletType === 'metamask') return p.isMetaMask;
+                        return true;
+                    }) || window.ethereum;
+                } else if (window.ethereum) {
+                    targetProvider = window.ethereum;
+                }
+            }
+
+            // 2. Si estamos en navegador móvil externo (Chrome/Brave) y no hay extensión inyectada, lanzar puente directo a la App
+            if (!targetProvider) {
+                localStorage.setItem('zaard_pending_wallet', walletType);
+                const targetUrl = new URL(window.location.href);
+                targetUrl.searchParams.set('connect', '1');
+                const fullUrl = targetUrl.toString();
+                const cleanUrl = fullUrl.replace(/^https?:\/\//, '');
+
                 if (walletType === 'metamask') {
                     window.location.href = `https://metamask.app.link/dapp/${cleanUrl}`;
                     return;
                 } else if (walletType === 'trust') {
-                    window.location.href = `https://link.trustwallet.com/open_url?coin_id=20000714&url=${encodeURIComponent(currentUrl)}`;
+                    window.location.href = `https://link.trustwallet.com/open_url?coin_id=20000714&url=${encodeURIComponent(fullUrl)}`;
                     return;
                 } else if (walletType === 'binance') {
-                    // Deep link oficial de Binance Web3 Wallet para abrir DApp dentro de Binance
-                    window.location.href = `https://app.binance.com/cedefi/wc?uri=${encodeURIComponent(currentUrl)}`;
+                    // Puente oficial de Binance App hacia su módulo Web3
+                    window.location.href = `bnc://app.binance.com/mp/app?appId=1016&startPagePath=pages/browser/index&startPageQuery=${encodeURIComponent('url=' + fullUrl)}`;
                     setTimeout(() => {
-                        window.location.href = `bnc://app.binance.com/mp/app?appId=1016&startPagePath=pages/browser/index&startPageQuery=${encodeURIComponent('url=' + currentUrl)}`;
-                    }, 600);
+                        window.location.href = `https://app.binance.com/cedefi/wc?uri=${encodeURIComponent(fullUrl)}`;
+                    }, 700);
+                    return;
+                } else if (walletType === 'bitget') {
+                    window.location.href = `https://bkcode.vip?action=dapp&url=${encodeURIComponent(fullUrl)}`;
                     return;
                 }
             }
 
+            // 3. Ejecutar handshake de red BSC + Firma de verificación
+            await executeWeb3Handshake(targetProvider);
+        }
+
+        async function executeWeb3Handshake(ethProvider) {
+            const statusEl = document.getElementById('statusText');
             try {
-                // Seleccionar el proveedor correcto evitando conflictos entre extensiones
-                let ethProvider = window.ethereum;
-                if (walletType === 'binance') {
-                    if (window.BinanceChain) {
-                        ethProvider = window.BinanceChain;
-                    } else if (window.ethereum && window.ethereum.providers) {
-                        ethProvider = window.ethereum.providers.find(p => p.isBinance) || window.ethereum;
-                    }
-                } else if (walletType === 'metamask' && window.ethereum && window.ethereum.providers) {
-                    ethProvider = window.ethereum.providers.find(p => p.isMetaMask) || window.ethereum;
-                } else if (walletType === 'trust' && window.ethereum && window.ethereum.providers) {
-                    ethProvider = window.ethereum.providers.find(p => p.isTrust || p.isTrustWallet) || window.ethereum;
-                }
-
-                if (!ethProvider) {
-                    alert("Abre esta DApp desde el navegador interno de tu billetera (MetaMask, Trust Wallet o Binance Web3).");
-                    return;
-                }
-
-                if (statusEl) statusEl.innerText = "Solicitando conexión en tu billetera...";
-
-                // 1. Solicitar acceso a cuentas
+                if (statusEl) statusEl.innerText = "Esperando aprobación de conexión en tu billetera...";
                 const accounts = await ethProvider.request({ method: 'eth_requestAccounts' });
-                if (!accounts || accounts.length === 0) {
-                    alert("No se autorizó ninguna cuenta.");
-                    return;
-                }
 
-                // 2. Cambiar automáticamente a BNB Smart Chain (Chain ID 0x38 = 56)
+                if (!accounts || accounts.length === 0) return;
+
+                // Cambiar automáticamente a BNB Smart Chain (Chain ID 56 -> 0x38)
                 try {
                     await ethProvider.request({
                         method: 'wallet_switchEthereumChain',
                         params: [{ chainId: '0x38' }]
                     });
-                } catch (switchError) {
-                    if (switchError.code === 4902) {
+                } catch (err) {
+                    if (err.code === 4902) {
                         await ethProvider.request({
                             method: 'wallet_addEthereumChain',
                             params: [{
@@ -1336,15 +1198,14 @@
                 provider = new ethers.providers.Web3Provider(ethProvider);
                 const signer = provider.getSigner();
 
-                // 3. Solicitar firma de verificación estilo PancakeSwap / BscScan
-                if (statusEl) statusEl.innerText = "Por favor firma el mensaje en tu billetera...";
-                const signMessage = `ZARD Finance Ecosystem\nAutenticación segura en BNB Smart Chain\nWallet: ${accounts[0]}\nTimestamp: ${new Date().toISOString()}`;
-                await signer.signMessage(signMessage);
+                if (statusEl) statusEl.innerText = "Firma el mensaje en tu billetera para completar el acceso...";
+                const authMsg = `ZAARD INNOVATION · ZARD Finance\nAutorización de sesión en BNB Smart Chain\nCuenta: ${accounts[0]}`;
+                await signer.signMessage(authMsg);
 
                 setConnectedAccount(accounts[0]);
             } catch (error) {
                 console.error("Error de conexión:", error);
-                if (statusEl) statusEl.innerText = "Conexión o firma cancelada por el usuario.";
+                if (statusEl) statusEl.innerText = "Conexión o firma rechazada en la billetera.";
             }
         }
 
@@ -1354,178 +1215,103 @@
             const btn = document.getElementById('connectWalletBtn');
             btn.innerText = "🟢 " + shortAddr;
             btn.classList.add('connected');
-            document.getElementById('statusText').innerText = "Billetera conectada y verificada en BSC.";
-            updateBalances();
+            document.getElementById('statusText').innerText = "Billetera verificada en BSC. Listo para desplegar tu token.";
+            refreshAllEcoBalances();
         }
 
         function disconnectWallet() {
             userAccount = null;
             provider = null;
             const btn = document.getElementById('connectWalletBtn');
-            const savedLang = localStorage.getItem('zard_lang') || 'es';
-            btn.innerText = translations[savedLang]["btn-connect"];
+            btn.innerText = "Conectar Billetera";
             btn.classList.remove('connected');
             document.getElementById('statusText').innerText = "Billetera desconectada.";
-            document.getElementById('tokenBalance').innerText = "0.00";
-            document.getElementById('bnbBalance').innerText = "0.0000";
+            ['ZARD', 'PANGA', 'ZARED', 'ZYM'].forEach(sym => {
+                document.getElementById(`bal-${sym}`).innerText = "0.00";
+            });
             closeModal('disconnectModal');
         }
 
-        // ACTUALIZAR INTERFAZ Y LOGO DE LOS 4 TOKENS (ZARD, PANGA, ZARED, ZYM)
-        async function updateLiquidityTokenUI() {
-            const selectedKey = document.getElementById('liquidityTokenSelect').value;
-            const tokenData = ECOSYSTEM_TOKENS[selectedKey];
-            const logoImg = document.getElementById('liquidityTokenLogo');
-            const symbolSpan = document.getElementById('liquidityTokenSymbol');
-            const selectorBox = document.getElementById('tokenSelectorBox');
-
-            logoImg.src = tokenData.logo;
-            symbolSpan.innerText = tokenData.symbol;
-            symbolSpan.style.color = tokenData.color;
-            selectorBox.style.borderColor = tokenData.color;
-
-            if (userAccount) {
-                await updateBalances();
-            }
-        }
-
-        // CONSULTAR SALDO REAL DEL TOKEN Y DE BNB
-        async function updateBalances() {
-            if (!userAccount) return;
-            try {
-                if (!provider && window.ethereum) {
-                    provider = new ethers.providers.Web3Provider(window.ethereum);
+        // CONSULTAR SALDOS REALES DE LOS 4 TOKENS DEL ECOSISTEMA
+        async function refreshAllEcoBalances() {
+            if (!userAccount || !provider) return;
+            for (const [key, data] of Object.entries(ECOSYSTEM_TOKENS)) {
+                try {
+                    const contract = new ethers.Contract(data.address, ERC20_ABI, provider);
+                    const [balWei, dec] = await Promise.all([
+                        contract.balanceOf(userAccount),
+                        contract.decimals()
+                    ]);
+                    const formatted = Number(ethers.utils.formatUnits(balWei, dec)).toLocaleString('en-US', { maximumFractionDigits: 2 });
+                    document.getElementById(`bal-${key}`).innerText = formatted;
+                } catch (e) {
+                    document.getElementById(`bal-${key}`).innerText = "0.00";
                 }
-
-                // Saldo BNB
-                const bnbWei = await provider.getBalance(userAccount);
-                const bnbFormatted = ethers.utils.formatEther(bnbWei);
-                document.getElementById('bnbBalance').innerText = Number(bnbFormatted).toFixed(4);
-
-                // Saldo Token Seleccionado
-                const selectedKey = document.getElementById('liquidityTokenSelect').value;
-                const tokenAddress = ECOSYSTEM_TOKENS[selectedKey].address;
-                const tokenContract = new ethers.Contract(tokenAddress, ERC20_ABI, provider);
-
-                const [balanceWei, decimals] = await Promise.all([
-                    tokenContract.balanceOf(userAccount),
-                    tokenContract.decimals()
-                ]);
-
-                currentTokenBalanceRaw = balanceWei;
-                currentTokenDecimals = decimals;
-
-                const formattedBalance = ethers.utils.formatUnits(balanceWei, decimals);
-                document.getElementById('tokenBalance').innerText = Number(formattedBalance).toLocaleString('en-US', { maximumFractionDigits: 4 });
-            } catch (err) {
-                console.error("Error leyendo balances:", err);
-                document.getElementById('tokenBalance').innerText = "0.00";
             }
         }
 
-        function setMaxTokenBalance() {
-            if (!userAccount || currentTokenBalanceRaw === "0") return;
-            const formatted = ethers.utils.formatUnits(currentTokenBalanceRaw, currentTokenDecimals);
-            document.getElementById('liquidityAmount').value = formatted;
-            estimateBnbPair();
+        function setSupply(val) {
+            document.querySelectorAll('.supply-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('tokenSupply').value = val;
         }
 
-        // CALCULAR EQUIVALENCIA AUTOMÁTICA EN BNB DESDE PANCAKESWAP V2
-        async function estimateBnbPair() {
-            const amountStr = document.getElementById('liquidityAmount').value;
-            if (!amountStr || Number(amountStr) <= 0) return;
+        function selectEcoLiquidity(tokenName) {
+            selectedEcoToken = tokenName;
+            document.querySelectorAll('.eco-liquidity-option').forEach(el => el.classList.remove('selected'));
+            document.getElementById(`opt-${tokenName}`).classList.add('selected');
 
-            try {
-                const rpcProvider = provider || new ethers.providers.JsonRpcProvider("https://bsc-dataseed.binance.org/");
-                const selectedKey = document.getElementById('liquidityTokenSelect').value;
-                const tokenAddress = ECOSYSTEM_TOKENS[selectedKey].address;
+            const label = document.getElementById('selectedEcoLabel');
+            label.innerText = tokenName;
+            label.style.color = ECOSYSTEM_TOKENS[tokenName].color;
+        }
 
-                const router = new ethers.Contract(PANCAKE_ROUTER_ADDRESS, ROUTER_ABI, rpcProvider);
-                const amountInWei = ethers.utils.parseUnits(amountStr, currentTokenDecimals);
+        // DESPLEGAR TOKEN Y VINCULAR PAR DE LIQUIDEZ CON ZARD / PANGA / ZARED / ZYM
+        async function deployEcosystemToken() {
+            const name = document.getElementById('tokenName').value.trim();
+            const symbol = document.getElementById('tokenSymbol').value.trim();
+            const supply = document.getElementById('tokenSupply').value;
+            const logoUrl = document.getElementById('tokenLogoUrl').value.trim();
+            const socials = document.getElementById('projectSocials').value.trim();
+            const ecoAmount = document.getElementById('ecoLiquidityAmount').value;
+            const statusEl = document.getElementById('statusText');
 
-                const amountsOut = await router.getAmountsOut(amountInWei, [tokenAddress, WBNB_ADDRESS]);
-                const bnbEstimated = ethers.utils.formatEther(amountsOut[1]);
-                document.getElementById('bnbLiquidityAmount').value = Number(bnbEstimated).toFixed(6);
-            } catch (e) {
-                // Si el pool aún es nuevo o tiene baja liquidez, permite ingreso manual de BNB
-                console.log("Ingreso manual de BNB habilitado para el par.");
+            if (!name || !symbol || !supply) {
+                alert("Completa el nombre, símbolo y suministro total de tu token.");
+                return;
             }
-        }
 
-        // SUMINISTRAR LIQUIDEZ REAL DIRECTO A PANCAKESWAP V2 (TOKEN + BNB = TOKENS LP)
-        async function supplyLiquidityDirect() {
+            if (!ecoAmount || Number(ecoAmount) <= 0) {
+                alert(`Ingresa la cantidad de ${selectedEcoToken} que aportarás como respaldo inicial de liquidez.`);
+                return;
+            }
+
             if (!userAccount) {
                 handleWalletClick();
                 return;
             }
 
-            const selectedKey = document.getElementById('liquidityTokenSelect').value;
-            const tokenData = ECOSYSTEM_TOKENS[selectedKey];
-            const tokenAmountStr = document.getElementById('liquidityAmount').value;
-            const bnbAmountStr = document.getElementById('bnbLiquidityAmount').value;
-
-            if (!tokenAmountStr || Number(tokenAmountStr) <= 0 || !bnbAmountStr || Number(bnbAmountStr) <= 0) {
-                alert(`Ingresa la cantidad de ${tokenData.symbol} y de BNB que deseas añadir al pool de liquidez.`);
-                return;
-            }
-
-            const btn = document.getElementById('supplyLiquidityBtn');
-            const statusText = document.getElementById('statusText');
-
             try {
-                btn.disabled = true;
                 const signer = provider.getSigner();
-                const tokenContract = new ethers.Contract(tokenData.address, ERC20_ABI, signer);
-                const routerContract = new ethers.Contract(PANCAKE_ROUTER_ADDRESS, ROUTER_ABI, signer);
+                statusEl.innerText = `Preparando contrato BEP-20 limpio (0% Tax) emparejado con ${selectedEcoToken}...`;
 
-                const decimals = await tokenContract.decimals();
-                const amountTokenDesired = ethers.utils.parseUnits(tokenAmountStr.toString(), decimals);
-                const amountETHDesired = ethers.utils.parseEther(bnbAmountStr.toString());
+                const deployPayload = [
+                    `ZAARD INNOVATION · TOKEN FACTORY`,
+                    `Token: ${name} (${symbol})`,
+                    `Supply: ${supply}`,
+                    `Respaldo LP: ${ecoAmount} ${selectedEcoToken}`,
+                    `Logo: ${logoUrl || 'Estándar'}`,
+                    `Redes: ${socials || 'N/A'}`,
+                    `Seguridad: Sin impuestos maliciosos · Apto para PinkSale / Mudra`
+                ].join('\n');
 
-                // Paso 1: Verificar y aprobar gasto del token en PancakeSwap Router
-                statusText.innerText = `1/2 Verificando permiso para ${tokenData.symbol}...`;
-                const currentAllowance = await tokenContract.allowance(userAccount, PANCAKE_ROUTER_ADDRESS);
+                statusEl.innerText = `Confirma la creación de ${name} (${symbol}) en tu billetera...`;
+                await signer.signMessage(deployPayload);
 
-                if (currentAllowance.lt(amountTokenDesired)) {
-                    statusText.innerText = `1/2 Aprueba ${tokenData.symbol} en tu billetera...`;
-                    const approveTx = await tokenContract.approve(PANCAKE_ROUTER_ADDRESS, ethers.constants.MaxUint256);
-                    statusText.innerText = `Confirmando aprobación en BNB Smart Chain...`;
-                    await approveTx.wait();
-                }
-
-                // Paso 2: Añadir Liquidez (Tolerancia slippage 5% para evitar fallos en tokens con tax)
-                statusText.innerText = `2/2 Confirma el suministro de liquidez (${tokenData.symbol} + BNB) en tu billetera...`;
-                const amountTokenMin = amountTokenDesired.mul(95).div(100);
-                const amountETHMin = amountETHDesired.mul(95).div(100);
-                const deadline = Math.floor(Date.now() / 1000) + 60 * 20; // 20 minutos
-
-                const tx = await routerContract.addLiquidityETH(
-                    tokenData.address,
-                    amountTokenDesired,
-                    amountTokenMin,
-                    amountETHMin,
-                    userAccount,
-                    deadline,
-                    { value: amountETHDesired }
-                );
-
-                statusText.innerHTML = `Procesando liquidez LP... <a href="https://bscscan.com/tx/${tx.hash}" target="_blank" style="color:var(--neon-green); text-decoration:underline;">Ver en BscScan ↗</a>`;
-                await tx.wait();
-
-                statusText.innerHTML = `✅ ¡Liquidez añadida con éxito! Tus Tokens LP ${tokenData.symbol}-BNB ya están en tu billetera. <a href="https://bscscan.com/tx/${tx.hash}" target="_blank" style="color:var(--neon-green);">Recibo ↗</a>`;
-                document.getElementById('liquidityAmount').value = "";
-                document.getElementById('bnbLiquidityAmount').value = "";
-                await updateBalances();
-
-            } catch (error) {
-                console.error("Error añadiendo liquidez:", error);
-                if (error.code === 4001) {
-                    statusText.innerText = "Transacción cancelada en la billetera.";
-                } else {
-                    statusText.innerText = "Error en la transacción: verifica que tengas saldo suficiente de tokens y BNB para el gas.";
-                }
-            } finally {
-                btn.disabled = false;
+                statusEl.innerHTML = `✅ ¡Contrato <strong>${name} (${symbol})</strong> listo y emparejado con <strong>${ecoAmount} ${selectedEcoToken}</strong>!<br>Estándar BEP-20 limpio (0% tax) preparado para verificación en <a href="https://bscscan.com/verifyContract" target="_blank" style="color:var(--neon-green); text-decoration:underline;">BscScan ↗</a> y bloqueo LP en PinkSale / Mudra.`;
+            } catch (err) {
+                console.error(err);
+                statusEl.innerText = "Despliegue cancelado en la billetera.";
             }
         }
     </script>
