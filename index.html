@@ -16,7 +16,7 @@
     <style>
         :root {
             --bg-color: #07020f;
-            --card-bg: rgba(18, 8, 35, 0.92);
+            --card-bg: rgba(18, 8, 35, 0.94);
             --primary-purple: #7b2cbf;
             --neon-pink: #f72585;
             --neon-cyan: #4cc9f0;
@@ -57,7 +57,6 @@
             100% { box-shadow: 0 0 15px rgba(76, 201, 240, 0.3); }
         }
 
-        /* EFECTO DE PODER MÁS INTENSO PARA EL LOGO GIGANTE */
         @keyframes powerGlow {
             0% { 
                 transform: translateY(0px) scale(1); 
@@ -79,7 +78,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* PANTALLA DE BIENVENIDA (LOGO MÁS GRANDE Y LETRAS AMPLIAS) */
+        /* PANTALLA DE BIENVENIDA */
         #welcomeOverlay {
             position: fixed;
             top: 0; left: 0;
@@ -500,7 +499,155 @@
             border: none;
         }
 
-        /* PANEL CREADOR DE TOKENS ANCHO Y VISIBLE */
+        /* -------------------------------------------------- */
+        /* NUEVO BLOQUE EXCLUSIVO: INNOVACIÓN Y REMASTERIZACIÓN */
+        /* -------------------------------------------------- */
+        .innovation-tech-banner {
+            background: linear-gradient(135deg, rgba(20, 9, 38, 0.95), rgba(45, 10, 75, 0.92));
+            border: 2px solid var(--neon-cyan);
+            border-radius: 22px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 0 35px rgba(76, 201, 240, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .innovation-tech-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(123,44,191,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .innovation-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 2;
+        }
+
+        .innovation-badge-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-green);
+            object-fit: cover;
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .innovation-title-area h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: #fff;
+            background: linear-gradient(90deg, #fff, var(--neon-cyan), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .innovation-title-area p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .innovation-manifesto {
+            background: rgba(10, 4, 24, 0.85);
+            border: 1px solid rgba(123, 44, 191, 0.6);
+            border-radius: 14px;
+            padding: 14px;
+            font-size: 0.82rem;
+            color: #e9d5ff;
+            line-height: 1.6;
+            z-index: 2;
+        }
+
+        .ecosystem-logo-showcase {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 4px 0;
+            z-index: 2;
+        }
+
+        .showcase-coin {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-glow);
+            object-fit: cover;
+            box-shadow: 0 0 12px rgba(76,201,240,0.5);
+            transition: transform 0.3s;
+        }
+
+        .showcase-coin:hover {
+            transform: scale(1.12);
+            border-color: var(--neon-green);
+        }
+
+        .pinksale-guide-card {
+            background: rgba(6, 214, 160, 0.08);
+            border: 1px dashed var(--neon-green);
+            border-radius: 14px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .pinksale-guide-card h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.88rem;
+            color: var(--neon-green);
+        }
+
+        .pinksale-steps-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .pinksale-steps-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .pinksale-steps-list li strong {
+            color: #fff;
+        }
+
+        .pinksale-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--primary-purple));
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 10px 16px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(76,201,240,0.4);
+            transition: 0.3s;
+            margin-top: 4px;
+        }
+
+        .pinksale-link-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px var(--neon-cyan);
+        }
+
+        /* PANEL CREADOR DE TOKENS */
         .liquidity-card {
             background: var(--card-bg);
             border: 1.5px solid var(--neon-cyan);
@@ -604,7 +751,6 @@
             box-shadow: 0 0 10px var(--neon-cyan);
         }
 
-        /* TARJETAS DE MONEDAS DEL ECOSISTEMA GRANDES */
         .eco-liquidity-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -731,7 +877,7 @@
             font-weight: 600;
         }
 
-        /* MODALES DE BILLETERA */
+        /* MODALES */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -771,7 +917,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
 
         .wallet-option:hover {
@@ -809,7 +955,7 @@
 </head>
 <body>
 
-    <!-- 1. PANTALLA DE BIENVENIDA (LOGO GIGANTE E IMPONENTE + LETRAS MÁS GRANDES) -->
+    <!-- 1. PANTALLA DE BIENVENIDA -->
     <div id="welcomeOverlay">
         <div class="welcome-bg-watermark"></div>
 
@@ -928,12 +1074,48 @@
                 </div>
             </section>
 
-            <!-- VISTA 2: CREADOR DE TOKENS -->
+            <!-- VISTA 2: CREADOR DE TOKENS CON EL NUEVO BLOQUE EXCLUSIVO DE INNOVACIÓN -->
             <section id="tab-creator" class="view-section">
                 <div class="creator-header-banner">
                     <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1792865596414-22890f0deb10ff50d0525508a0eea986.png" alt="Creator Banner" class="top-creator-img">
                     <h2>Centro de Creación de Tokens · ZAARD</h2>
                     <p>Crea tu contrato BEP-20 seguro, sin impuestos maliciosos y con liquidez respaldada en el ecosistema.</p>
+                </div>
+
+                <!-- BLOQUE EXCLUSIVO: INNOVACIÓN Y REMASTERIZACIÓN DE CARTERAS Y TOKENS -->
+                <div class="innovation-tech-banner">
+                    <div class="innovation-header">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZAARD Innovation" class="innovation-badge-icon">
+                        <div class="innovation-title-area">
+                            <h3>⚡ INNOVACIÓN & REMASTERIZACIÓN WEB3</h3>
+                            <p>Constancia, ingeniería y evolución técnica constante en carteras y contratos.</p>
+                        </div>
+                    </div>
+
+                    <div class="innovation-manifesto">
+                        En <strong>ZAARD INNOVATION</strong> estamos yendo más allá. A través de un trabajo técnico riguroso y constante, hemos remasterizado nuestras arquitecturas y carteras para ofrecer la máxima seguridad y potencia descentralizada. Ahora, la creación de tokens en la BNB Smart Chain cuenta con un estándar superior respaldado por nuestra propia familia de activos:
+                    </div>
+
+                    <!-- LOGOS DE LAS MONEDAS DEL ECOSISTEMA BIEN CHULOS -->
+                    <div class="ecosystem-logo-showcase">
+                        <img src="https://raw.githubusercontent.com/figueredo56/zaard-innovation-dapp/refs/heads/main/CC_20260527_151822.png" alt="ZARD" class="showcase-coin" title="ZARD Token">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c13098c92f8a665ac39a838c2.png" alt="PANGA" class="showcase-coin" title="PANGA Token">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790288769685-7d9a89bc13043a812c4889cb55ac4a54.png" alt="ZARED" class="showcase-coin" title="ZARED Token">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3063f454cbc1d8a062fb.png" alt="ZYM" class="showcase-coin" title="ZYM Token">
+                    </div>
+
+                    <!-- GUÍA TÉCNICA DE CREACIÓN CON PINKSALE UPLOAD -->
+                    <div class="pinksale-guide-card">
+                        <h4>🚀 Guía Rápida: Cómo alojar tu Logo y Activo</h4>
+                        <ul class="pinksale-steps-list">
+                            <li><span>1.</span> Sube la imagen o logo que desees para tu token directamente en <strong>PinkSale Upload</strong> para obtener tu URL cifrada.</li>
+                            <li><span>2.</span> Introduce el <strong>nombre y símbolo</strong> de tu activo en nuestro generador inteligente.</li>
+                            <li><span>3.</span> Rellena tu descripción, vincula tu <strong>cuenta principal</strong> y selecciona tu par de liquidez base en ZARD, PANGA, ZARED o ZYM[cite: 1, 2, 3, 4].</li>
+                        </ul>
+                        <a href="https://upload.pinksale.finance/" target="_blank" class="pinksale-link-btn">
+                            📁 Ir a PinkSale Upload (Subir Imagen) ↗
+                        </a>
+                    </div>
                 </div>
 
                 <div class="liquidity-card">
@@ -962,14 +1144,14 @@
                     </div>
 
                     <div class="input-group">
-                        <label>3. URL Directa del Logo (IPFS / Imagen)</label>
-                        <input type="text" id="tokenLogoUrl" placeholder="https://gateway.pinata.cloud/ipfs/tu_hash_de_imagen" class="text-input">
-                        <span style="font-size: 0.72rem; color: var(--text-muted);">💡 Sube tu logo a <a href="https://www.pinata.cloud" target="_blank" style="color:var(--neon-cyan);">Pinata.cloud</a> para que aparezca en todas las billeteras.</span>
+                        <label>3. URL Directa del Logo (PinkSale Uploader / IPFS)</label>
+                        <input type="text" id="tokenLogoUrl" placeholder="https://upload.pinksale.finance/uploads/..." class="text-input">
+                        <span style="font-size: 0.72rem; color: var(--text-muted);">💡 Usa <a href="https://upload.pinksale.finance/" target="_blank" style="color:var(--neon-cyan);">upload.pinksale.finance</a> para generar el enlace de tu logo.</span>
                     </div>
 
                     <div class="input-group">
-                        <label>4. Descripción y Redes Sociales (Web, X, Telegram)</label>
-                        <input type="text" id="projectSocials" placeholder="Ej: Token comunitario Web3 | https://t.me/tu_canal | @tu_usuario" class="text-input">
+                        <label>4. Cuenta Principal, Descripción y Redes Sociales</label>
+                        <input type="text" id="projectSocials" placeholder="Ej: 0xTuCuentaPrincipal... | Token Web3 | @tu_usuario" class="text-input">
                     </div>
 
                     <div class="input-group">
@@ -1012,7 +1194,7 @@
                     </div>
 
                     <div class="shield-info-card">
-                        🛡️ <strong>Blindaje de Ecosistema Activo:</strong> Tu contrato se genera 100% limpio (sin comisiones ocultas). El par de liquidez es independiente: protege el valor base de <strong>ZARD, PANGA, ZARED y ZYM</strong> ante fluctuaciones externas y permite bloquear tus Tokens LP en <strong>PinkSale</strong> o <strong>Mudra Manager</strong>.
+                        🛡️ <strong>Blindaje de Ecosistema Activo:</strong> Tu contrato se genera 100% limpio (sin comisiones ocultas). El par de liquidez es independiente: protege el valor base de <strong>ZARD, PANGA, ZARED y ZYM</strong> ante fluctuaciones externas y permite bloquear tus Tokens LP en <strong>PinkSale</strong> o <strong>Mudra Manager</strong>[cite: 1, 2, 3, 4].
                     </div>
 
                     <div class="action-buttons">
@@ -1033,7 +1215,7 @@
         </footer>
     </div>
 
-    <!-- MODAL DE BILLETERA CORREGIDO (CONSEJO PRO PARA NAVEGADOR WEB3) -->
+    <!-- MODAL DE BILLETERA -->
     <div id="walletModal" class="modal-overlay">
         <div class="modal-content">
             <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1rem;">Conectar Billetera Web3</h3>
@@ -1143,7 +1325,6 @@
 
                 if (!accounts || accounts.length === 0) return;
 
-                // Cambiar a BSC Mainnet (0x38)
                 try {
                     await ethProvider.request({
                         method: 'wallet_switchEthereumChain',
@@ -1275,7 +1456,7 @@
                 statusEl.innerText = `Confirma la creación de ${name} (${symbol}) en tu billetera...`;
                 await signer.signMessage(deployPayload);
 
-                statusEl.innerHTML = `✅ ¡Contrato <strong>${name} (${symbol})</strong> listo y emparejado con <strong>${ecoAmount} ${selectedEcoToken}</strong>!<br>Estándar BEP-20 limpio (0% tax) preparado para verificación en <a href="https://bscscan.com/verifyContract" target="_blank" style="color:var(--neon-green); text-decoration:underline;">BscScan ↗</a> y bloqueo LP en PinkSale / Mudra.`;
+                statusEl.innerHTML = `✅ ¡Contrato <strong>${name} (${symbol})</strong> listo y emparejado con <strong>${ecoAmount} ${selectedEcoToken}</strong>!<br>Estándar BEP-20 limpio (0% tax) preparado para verificación en <a href="https://bscscan.com/verifyContract" target="_blank" style="color:var(--neon-green); text-decoration:underline;">BscScan ↗</a> y bloqueo LP en PinkSale / Mudra[cite: 1, 2, 3, 4].`;
             } catch (err) {
                 console.error(err);
                 statusEl.innerText = "Despliegue cancelado en la billetera.";
