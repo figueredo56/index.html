@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="ZARD Finance | Creador de Tokens & Ecosistema Web3">
     <meta property="og:description" content="Crea tokens seguros sin impuestos en BNB Smart Chain con emparejamiento de liquidez en ZARD, PANGA, ZARED y ZYM.">
-    <meta property="og:image" content="https://photos.pinksale.finance/file/pinksale-logo-upload/1791940828941-906fd2a3d85625f79d066e5b033f6011.png">
+    <meta property="og:image" content="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
@@ -345,38 +345,39 @@
             color: var(--text-muted);
         }
 
+        /* CONTENEDORES DE TARJETAS MÁS ALTOS E IMOPONENTES (1 COLUMNA) */
         .hub-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .hub-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-glow);
-            border-radius: 14px;
-            padding: 12px;
+            border: 1.5px solid var(--border-glow);
+            border-radius: 18px;
+            padding: 16px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 12px;
             cursor: pointer;
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.45);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
         }
 
         .hub-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             border-color: var(--neon-cyan);
-            box-shadow: 0 0 22px rgba(76, 201, 240, 0.45);
+            box-shadow: 0 0 30px rgba(76, 201, 240, 0.5);
         }
 
         .card-img-banner {
             width: 100%;
-            height: 98px;
-            border-radius: 10px;
+            height: 150px; /* Contenedor más alto y rectangular */
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
         }
 
         .card-custom-img {
@@ -386,22 +387,44 @@
             transition: transform 0.4s ease;
         }
 
+        .hub-card:hover .card-custom-img {
+            transform: scale(1.04);
+        }
+
         .hub-card h3 {
-            font-size: 0.9rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.05rem;
             color: #fff;
+            text-shadow: 0 0 10px rgba(76,201,240,0.4);
         }
 
         .hub-card p {
-            font-size: 0.72rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
-            line-height: 1.25;
+            line-height: 1.4;
         }
 
         .card-link-text {
-            font-size: 0.74rem;
-            font-weight: 600;
+            display: inline-block;
+            margin-top: 4px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(76,201,240,0.2), rgba(123,44,191,0.3));
+            border: 1px solid var(--neon-cyan);
+            border-radius: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
             color: var(--neon-cyan);
-            margin-top: auto;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(76,201,240,0.2);
+            transition: 0.3s;
+            align-self: flex-start;
+        }
+
+        .hub-card:hover .card-link-text {
+            background: var(--neon-cyan);
+            color: #030308;
+            box-shadow: 0 0 20px var(--neon-cyan);
         }
 
         .ecosystem-footer-links {
@@ -967,7 +990,7 @@
         </div>
 
         <div class="giant-glow-logo">
-            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1791940828941-906fd2a3d85625f79d066e5b033f6011.png" alt="ZAARD INNOVATION Core">
+            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZAARD INNOVATION Core">
         </div>
 
         <div class="welcome-content-box">
@@ -988,7 +1011,7 @@
     <div class="main-wrapper">
         <header>
             <div class="logo-container" onclick="switchTab('home')">
-                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1791940828941-906fd2a3d85625f79d066e5b033f6011.png" alt="ZARD Finance" class="nav-logo">
+                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZARD Finance" class="nav-logo">
                 <span class="brand-name">ZARD<span class="lite">FINANCE</span></span>
             </div>
 
@@ -1013,41 +1036,42 @@
                     <p>Despliega contratos limpios en BSC con emparejamiento inteligente de liquidez en ZARD, PANGA, ZARED o ZYM.</p>
                 </div>
 
+                <!-- TARJETAS RECTANGULARES MÁS ALTAS E IMPONENTES -->
                 <div class="hub-cards-grid">
                     <div class="hub-card" onclick="switchTab('creator')">
                         <div class="card-img-banner">
-                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1791940828941-906fd2a3d85625f79d066e5b033f6011.png" alt="Crear Token" class="card-custom-img">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778044753-1c23fb16c12f60940ba1e7a5c1659e36.png" alt="Crear Token & Liquidez" class="card-custom-img">
                         </div>
                         <h3>Crear Token & Liquidez</h3>
-                        <p>Diseña tu token y vincúlalo a los activos oficiales.</p>
+                        <p>Diseña tu contrato BEP-20 a medida, con suministro configurable y respaldado de forma inteligente en liquidez con los activos oficiales del ecosistema.</p>
                         <span class="card-link-text">Iniciar Creador &rarr;</span>
                     </div>
 
-                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-tracker/', '_blank')">
+                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/DAIoficial/', '_blank')">
                         <div class="card-img-banner">
-                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png" alt="ZARD Ecosistema" class="card-custom-img">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778087598-7211c8eacb0881c46be5963a77a79230.png" alt="ZARD Ecosistema" class="card-custom-img">
                         </div>
                         <h3>ZARD Ecosistema</h3>
-                        <p>Explora las alertas y plataformas oficiales.</p>
-                        <span class="card-link-text">Explorar Web &rarr;</span>
+                        <p>Explora la plataforma principal de la red, comunicados oficiales, auditorías y gobernanza descentralizada de alta ingeniería.</p>
+                        <span class="card-link-text">Explorar Web Oficial &rarr;</span>
                     </div>
 
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-tracker/', '_blank')">
                         <div class="card-img-banner">
-                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790375348672-4de629a77b910ca4b3f245dda1b233f0.png" alt="ZAARD Tracker" class="card-custom-img">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778012283-75f376ee8b42fbf00a8a9e5c9d9799a8.png" alt="ZAARD & PANGA" class="card-custom-img">
                         </div>
                         <h3>ZAARD & PANGA</h3>
-                        <p>Rastreador de métricas y análisis en tiempo real.</p>
+                        <p>Panel analítico en tiempo real de los tokens pilares, seguimiento de paridades, volumen y métricas de tradeo en PancakeSwap.</p>
                         <span class="card-link-text">Abrir Tracker &rarr;</span>
                     </div>
 
-                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/ZAARD-Arcade/index-lucky.html', '_blank')">
+                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-tracker/', '_blank')">
                         <div class="card-img-banner">
-                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794687559048-16ebac67278e144f98b264e40bf5690d.png" alt="Arcade Lucky" class="card-custom-img">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778066658-eefac09b0634ed8847f60f6dc2a826d7.png" alt="Tracker & Gráficos" class="card-custom-img">
                         </div>
-                        <h3>ZAARD Arcade Lucky</h3>
-                        <p>Diviértete, aprende y gana tokens del ecosistema.</p>
-                        <span class="card-link-text">Jugar Ahora &rarr;</span>
+                        <h3>Tracker & Gráficos en Vivo</h3>
+                        <p>Supervisa el comportamiento de velas, órdenes de compra y venta instantáneas para todo el catálogo multitoken de la red BSC.</p>
+                        <span class="card-link-text">Ver Gráficos &rarr;</span>
                     </div>
                 </div>
 
@@ -1083,7 +1107,7 @@
                 <!-- BLOQUE EXCLUSIVO: INNOVACIÓN Y REMASTERIZACIÓN -->
                 <div class="innovation-tech-banner">
                     <div class="innovation-header">
-                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1791940828941-906fd2a3d85625f79d066e5b033f6011.png" alt="ZAARD Innovation Badge" class="innovation-badge-icon">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZAARD Innovation Badge" class="innovation-badge-icon">
                         <div class="innovation-title-area">
                             <h3>⚡ INNOVACIÓN & REMASTERIZACIÓN WEB3</h3>
                             <p>Constancia, ingeniería y evolución técnica constante en carteras y contratos.</p>
@@ -1096,7 +1120,7 @@
 
                     <!-- LOGOS DE LAS MONEDAS DEL ECOSISTEMA -->
                     <div class="ecosystem-logo-showcase">
-                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1791940828941-906fd2a3d85625f79d066e5b033f6011.png" alt="ZARD Token" class="showcase-coin" title="ZARD Token">
+                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZARD Token" class="showcase-coin" title="ZARD Token">
                         <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c13098c92f8a665ac39a838c2.png" alt="PANGA Token" class="showcase-coin" title="PANGA Token">
                         <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794605349763-3b36fe22e2048e05bbf50f8bdf231392.png" alt="ZARED Token" class="showcase-coin" title="ZARED Token">
                         <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3063f454cbc1d8a062fb.png" alt="ZYM Token" class="showcase-coin" title="ZYM Token">
@@ -1162,7 +1186,7 @@
                         <label>5. Selecciona el Token Base para la Liquidez Inicial</label>
                         <div class="eco-liquidity-grid">
                             <div class="eco-liquidity-option selected" id="opt-ZARD" onclick="selectEcoLiquidity('ZARD')">
-                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1791940828941-906fd2a3d85625f79d066e5b033f6011.png" alt="ZARD">
+                                <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZARD">
                                 <div class="eco-liquidity-info">
                                     <span class="name" style="color: var(--neon-cyan);">ZARD <span style="font-size:0.65rem; opacity:0.8;">(...a3fB)</span></span>
                                     <span class="desc">Bal: <strong id="bal-ZARD">0.00</strong></span>
