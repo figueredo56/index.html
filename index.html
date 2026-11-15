@@ -345,21 +345,27 @@
             color: var(--text-muted);
         }
 
-        /* CONTENEDORES DE TARJETAS MÁS ALTOS E IMOPONENTES (1 COLUMNA) */
+        /* CUADRÍCULA DE 2x2 (DOS ARRIBA Y DOS ABAJO) OPTIMIZADA */
         .hub-cards-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        @media (max-width: 650px) {
+            .hub-cards-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .hub-card {
             background: var(--card-bg);
             border: 1.5px solid var(--border-glow);
-            border-radius: 18px;
-            padding: 16px;
+            border-radius: 16px;
+            padding: 14px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             cursor: pointer;
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
             backdrop-filter: blur(10px);
@@ -369,13 +375,13 @@
         .hub-card:hover {
             transform: translateY(-4px);
             border-color: var(--neon-cyan);
-            box-shadow: 0 0 30px rgba(76, 201, 240, 0.5);
+            box-shadow: 0 0 25px rgba(76, 201, 240, 0.45);
         }
 
         .card-img-banner {
             width: 100%;
-            height: 150px; /* Contenedor más alto y rectangular */
-            border-radius: 12px;
+            height: 120px; /* Banner rectangular proporcional y elegante */
+            border-radius: 10px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.15);
         }
@@ -388,35 +394,35 @@
         }
 
         .hub-card:hover .card-custom-img {
-            transform: scale(1.04);
+            transform: scale(1.05);
         }
 
         .hub-card h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.05rem;
+            font-size: 0.92rem;
             color: #fff;
-            text-shadow: 0 0 10px rgba(76,201,240,0.4);
+            text-shadow: 0 0 8px rgba(76,201,240,0.3);
         }
 
         .hub-card p {
-            font-size: 0.82rem;
+            font-size: 0.74rem;
             color: var(--text-muted);
-            line-height: 1.4;
+            line-height: 1.35;
         }
 
         .card-link-text {
             display: inline-block;
-            margin-top: 4px;
-            padding: 8px 16px;
+            margin-top: auto;
+            padding: 7px 12px;
             background: linear-gradient(135deg, rgba(76,201,240,0.2), rgba(123,44,191,0.3));
             border: 1px solid var(--neon-cyan);
-            border-radius: 10px;
+            border-radius: 9px;
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             font-weight: 700;
             color: var(--neon-cyan);
             text-align: center;
-            box-shadow: 0 0 10px rgba(76,201,240,0.2);
+            box-shadow: 0 0 8px rgba(76,201,240,0.2);
             transition: 0.3s;
             align-self: flex-start;
         }
@@ -424,7 +430,7 @@
         .hub-card:hover .card-link-text {
             background: var(--neon-cyan);
             color: #030308;
-            box-shadow: 0 0 20px var(--neon-cyan);
+            box-shadow: 0 0 15px var(--neon-cyan);
         }
 
         .ecosystem-footer-links {
@@ -1036,41 +1042,45 @@
                     <p>Despliega contratos limpios en BSC con emparejamiento inteligente de liquidez en ZARD, PANGA, ZARED o ZYM.</p>
                 </div>
 
-                <!-- TARJETAS RECTANGULARES MÁS ALTAS E IMPONENTES -->
+                <!-- CUADRÍCULA 2x2 (DOS ARRIBA, DOS ABAJO) -->
                 <div class="hub-cards-grid">
+                    <!-- 1. Crear Token & Liquidez -->
                     <div class="hub-card" onclick="switchTab('creator')">
                         <div class="card-img-banner">
                             <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778044753-1c23fb16c12f60940ba1e7a5c1659e36.png" alt="Crear Token & Liquidez" class="card-custom-img">
                         </div>
                         <h3>Crear Token & Liquidez</h3>
-                        <p>Diseña tu contrato BEP-20 a medida, con suministro configurable y respaldado de forma inteligente en liquidez con los activos oficiales del ecosistema.</p>
+                        <p>Diseña tu contrato BEP-20 seguro y respaldado con los activos oficiales.</p>
                         <span class="card-link-text">Iniciar Creador &rarr;</span>
                     </div>
 
+                    <!-- 2. ZARD Ecosistema -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/DAIoficial/', '_blank')">
                         <div class="card-img-banner">
                             <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778087598-7211c8eacb0881c46be5963a77a79230.png" alt="ZARD Ecosistema" class="card-custom-img">
                         </div>
                         <h3>ZARD Ecosistema</h3>
-                        <p>Explora la plataforma principal de la red, comunicados oficiales, auditorías y gobernanza descentralizada de alta ingeniería.</p>
-                        <span class="card-link-text">Explorar Web Oficial &rarr;</span>
+                        <p>Explora la plataforma principal de la red y su gobernanza descentralizada.</p>
+                        <span class="card-link-text">Explorar Web &rarr;</span>
                     </div>
 
+                    <!-- 3. ZAARD & PANGA -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-tracker/', '_blank')">
                         <div class="card-img-banner">
                             <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778012283-75f376ee8b42fbf00a8a9e5c9d9799a8.png" alt="ZAARD & PANGA" class="card-custom-img">
                         </div>
                         <h3>ZAARD & PANGA</h3>
-                        <p>Panel analítico en tiempo real de los tokens pilares, seguimiento de paridades, volumen y métricas de tradeo en PancakeSwap.</p>
+                        <p>Panel analítico en tiempo real de los tokens pilares y paridades en DEX.</p>
                         <span class="card-link-text">Abrir Tracker &rarr;</span>
                     </div>
 
+                    <!-- 4. Tracker & Gráficos -->
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-tracker/', '_blank')">
                         <div class="card-img-banner">
-                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778066658-eefac09b0634ed8847f60f6dc2a826d7.png" alt="Tracker & Gráficos" class="card-custom-img">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778066658-eefac09b0634ed8847f60f6dc2a826d7.png" alt="Tracker & Gráficos en Vivo" class="card-custom-img">
                         </div>
                         <h3>Tracker & Gráficos en Vivo</h3>
-                        <p>Supervisa el comportamiento de velas, órdenes de compra y venta instantáneas para todo el catálogo multitoken de la red BSC.</p>
+                        <p>Supervisa el comportamiento de velas y órdenes instantáneas de la red BSC.</p>
                         <span class="card-link-text">Ver Gráficos &rarr;</span>
                     </div>
                 </div>
