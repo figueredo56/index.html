@@ -589,12 +589,23 @@
         .ecosystem-logo-showcase {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .showcase-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--text-muted);
         }
 
         .showcase-coin {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             border: 2px solid var(--border-glow);
             object-fit: cover;
@@ -798,9 +809,9 @@
         }
 
         .eco-token-top img {
-            width: 46px;
-            height: 46px;
-            min-width: 46px;
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid rgba(255,255,255,0.28);
@@ -1072,13 +1083,13 @@
                         <span class="card-link-text">Explorar Web &rarr;</span>
                     </div>
 
-                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-tracker/', '_blank')">
+                    <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-wallet/wallet.html', '_blank')">
                         <div class="card-img-banner">
                             <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794778044753-1c23fb16c12f60940ba1e7a5c1659e36.png" alt="ZAARD & PANGA" class="card-custom-img">
                         </div>
                         <h3>3. ZAARD & PANGA</h3>
-                        <p>Panel analítico en tiempo real de los tokens pilares y paridades en DEX.</p>
-                        <span class="card-link-text">Abrir Tracker &rarr;</span>
+                        <p>Accede a la billetera y centro de gestión de los tokens pilares del ecosistema.</p>
+                        <span class="card-link-text">Abrir Wallet &rarr;</span>
                     </div>
 
                     <div class="hub-card" onclick="window.open('https://figueredo56.github.io/zaard-tracker/', '_blank')">
@@ -1133,11 +1144,24 @@
                         En <strong>ZAARD INNOVATION</strong> unificamos descentralización, transparencia y respaldo en <strong>ZARD</strong> para la creación de tokens, junto con el monitoreo de balances y enlaces de <strong>PANGA</strong>, <strong>ZARED</strong> y <strong>ZYM</strong>.
                     </div>
 
+                    <!-- LOGOS SUPERIORES DEBAJO DEL TÍTULO -->
                     <div class="ecosystem-logo-showcase">
-                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZARD" class="showcase-coin">
-                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c1309826c1d34ef99f18b2d38.png" alt="PANGA" class="showcase-coin">
-                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794605349763-3b36fe22e2048e1a6b77b5465d91d74a.png" alt="ZARED" class="showcase-coin">
-                        <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3f3c70a76b7421c47958.png" alt="ZYM" class="showcase-coin">
+                        <div class="showcase-item">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790285851823-4955b8f5511ea8235af22dfb82371c91.png" alt="ZARD" class="showcase-coin">
+                            <span style="color:var(--neon-cyan);">ZARD</span>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c13098c92f8a665ac39a838c2.png" alt="PANGA" class="showcase-coin">
+                            <span style="color:var(--neon-gold);">PANGA</span>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794605349763-3b36fe22e2048e05bbf50f8bdf231392.png" alt="ZARED" class="showcase-coin">
+                            <span style="color:var(--neon-pink);">ZARED</span>
+                        </div>
+                        <div class="showcase-item">
+                            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3063f454cbc1d8a062fb.png" alt="ZYM" class="showcase-coin">
+                            <span style="color:var(--neon-green);">ZYM</span>
+                        </div>
                     </div>
 
                     <div class="pinksale-guide-card">
@@ -1237,7 +1261,7 @@
                             <!-- PANGA -->
                             <div class="eco-token-card locked-lp" id="opt-PANGA">
                                 <div class="eco-token-top">
-                                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c1309826c1d34ef99f18b2d38.png" alt="PANGA">
+                                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1790484633328-559fdd3c13098c92f8a665ac39a838c2.png" alt="PANGA">
                                     <div class="eco-liquidity-info">
                                         <span class="name" style="color:var(--neon-gold);">PANGA</span>
                                         <span class="desc">Bal: <strong id="bal-PANGA">0.00</strong></span>
@@ -1250,7 +1274,7 @@
                             <!-- ZARED -->
                             <div class="eco-token-card locked-lp" id="opt-ZARED">
                                 <div class="eco-token-top">
-                                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794605349763-3b36fe22e2048e1a6b77b5465d91d74a.png" alt="ZARED">
+                                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1794605349763-3b36fe22e2048e05bbf50f8bdf231392.png" alt="ZARED">
                                     <div class="eco-liquidity-info">
                                         <span class="name" style="color:var(--neon-pink);">ZARED</span>
                                         <span class="desc">Bal: <strong id="bal-ZARED">0.00</strong></span>
@@ -1263,7 +1287,7 @@
                             <!-- ZYM -->
                             <div class="eco-token-card locked-lp" id="opt-ZYM">
                                 <div class="eco-token-top">
-                                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3f3c70a76b7421c47958.png" alt="ZYM">
+                                    <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1793917735714-d84b28c0d04f3063f454cbc1d8a062fb.png" alt="ZYM">
                                     <div class="eco-liquidity-info">
                                         <span class="name" style="color:var(--neon-green);">ZYM</span>
                                         <span class="desc">Bal: <strong id="bal-ZYM">0.00</strong></span>
